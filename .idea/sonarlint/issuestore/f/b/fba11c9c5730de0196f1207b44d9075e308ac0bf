@@ -1,0 +1,25 @@
+
+m	java:S117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕöÆŒ8ãçÆà÷.
+Z	java:S106A"9Replace this use of System.out or System.err by a logger.(ûÆÿÿÿÿÿ8â°Ëè÷.
+Z	java:S106)"9Replace this use of System.out or System.err by a logger.(ËÖòşÿÿÿÿ8”—úà÷.
+‚
+java:S19898"eHandle the following exceptions that could be thrown by "showBuyForm": ServletException, IOException.(Æ­ç¾8µ–ß÷.
+U	java:S1067"9Replace this use of System.out or System.err by a logger.(•¬©²8ˆ°œß÷.
+U	java:S106,"9Replace this use of System.out or System.err by a logger.(ñ–Øÿ8¹Œˆá÷.
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Àúüé8í®şß÷.
+O
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8ıÏ¯à÷.
+u
+java:S19892"SHandle the following exception that could be thrown by "sendRedirect": IOException.(Í¢¬™úÿÿÿÿ8ï£Íà÷.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¿ñùÙıÿÿÿÿ
+v
+java:S1989/"YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(†ãî8Ï‘á÷.
+z
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Ó‡²§øÿÿÿÿ8şòŠß÷.
+{
+java:S1989("YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(•­ªĞûÿÿÿÿ8ñ¦ïà÷.
+z
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(§½®·şÿÿÿÿ8Ä¿Ûß÷.
+Z	java:S106'"9Replace this use of System.out or System.err by a logger.(Ê¤ìšÿÿÿÿÿ8ûˆùà÷.
+U	java:S106$"9Replace this use of System.out or System.err by a logger.(êæä¸8ûˆùà÷.

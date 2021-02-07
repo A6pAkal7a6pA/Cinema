@@ -1,0 +1,9 @@
+/Users/fest1nalente/IdeaProjects/Cinema/src/main/java/com/epam/kuleshov/Cinema/model/User.java
+/Users/fest1nalente/IdeaProjects/Cinema/src/main/java/com/epam/kuleshov/Cinema/model/Film.java
+/Users/fest1nalente/IdeaProjects/Cinema/src/main/java/com/epam/kuleshov/Cinema/servlet/LogoutServlet.java
+/Users/fest1nalente/IdeaProjects/Cinema/src/main/java/com/epam/kuleshov/Cinema/dao/UserDao.java
+/Users/fest1nalente/IdeaProjects/Cinema/src/main/java/com/epam/kuleshov/Cinema/controller/UserLoginServlet.java
+/Users/fest1nalente/IdeaProjects/Cinema/src/main/java/com/epam/kuleshov/Cinema/filter/AuthFilter.java
+/Users/fest1nalente/IdeaProjects/Cinema/src/main/java/com/epam/kuleshov/Cinema/controller/UserRegisterServlet.java
+/Users/fest1nalente/IdeaProjects/Cinema/src/main/java/com/epam/kuleshov/Cinema/filter/UserLoginFilter.java
+/Users/fest1nalente/IdeaProjects/Cinema/src/main/java/com/epam/kuleshov/Cinema/connection/ConnectionPool.java

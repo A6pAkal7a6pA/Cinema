@@ -1,0 +1,25 @@
+
+j
+java:S1128"HRemove this unused import 'com.finalProject.kuleshov.Cinema.model.Film'.(ôÒ¿şÿÿÿÿ8‘óúÍõ.
+w
+java:S1450"ZRemove the "contextPath" field and declare it as a local variable in the relevant methods.(‘®‡„8ú²Âëõ.
+h
+java:S1192'"FDefine a constant instead of duplicating this literal "login" 3 times.(´Ö¹ªûÿÿÿÿ8îøÕÍõ.
+b
+java:S1128
+"@Remove this unused import 'javax.servlet.annotation.WebServlet'.(™ì¢´şÿÿÿÿ8òĞõ.
+]	java:S125G"<This block of commented-out lines of code should be removed.(›İå÷ÿÿÿÿÿ8ÓÌÅîõ.
+e
+java:S1192("IDefine a constant instead of duplicating this literal "password" 3 times.(àŒ‘8îøÕÍõ.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÒÒïêıÿÿÿÿ
+Z	java:S106E"9Replace this use of System.out or System.err by a logger.(Ï±Èÿşÿÿÿÿ8„­çÈõ.
+]	java:S125J"<This block of commented-out lines of code should be removed.(éß”øÿÿÿÿ8ÓÌÅîõ.
+
+java:S1186R"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î8•ì­Ìô.
+Z	java:S106!"9Replace this use of System.out or System.err by a logger.(¯—ß³üÿÿÿÿ8ÃíòÆô.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(¤àÏŸıÿÿÿÿ8ş×ä’ö.
+L
+java:S1068"/Remove this unused "contextPath" private field.(‘®‡„8ƒéÁëõ.
+Z
+java:S11175"8Rename "user" which hides the field declared at line 18.(íÓñ‚ıÿÿÿÿ8ß•ÛŞ÷.
+Z	java:S106@"9Replace this use of System.out or System.err by a logger.(ù³¿‚üÿÿÿÿ8Ğ¬Ïíõ.

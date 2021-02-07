@@ -1,0 +1,10 @@
+com/epam/kuleshov/Cinema/servlet/LogoutServlet.class
+com/epam/kuleshov/Cinema/controller/UserRegisterServlet.class
+com/epam/kuleshov/Cinema/filter/UserLoginFilter.class
+com/epam/kuleshov/Cinema/model/User.class
+com/epam/kuleshov/Cinema/dao/UserDao.class
+com/epam/kuleshov/Cinema/model/Film.class
+com/epam/kuleshov/Cinema/filter/AuthFilter.class
+com/epam/kuleshov/Cinema/connection/ConnectionPool.class
+com/epam/kuleshov/Cinema/controller/UserLoginServlet.class
+com/epam/kuleshov/Cinema/model/User$ROLE.class

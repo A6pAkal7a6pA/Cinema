@@ -1,0 +1,15 @@
+
+z
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Ó‡²§øÿÿÿÿ8ºÙ–”÷.
+z
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Ø¢¢ùûÿÿÿÿ8ÐÝ©˜÷.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¿ñùÙýÿÿÿÿ
+ˆ
+java:S1989#"fHandle the following exceptions that could be thrown by "showEditForm": ServletException, IOException.(•„™Ûúÿÿÿÿ8Öô¥“÷.
+™
+java:S1130;"wRemove the declaration of thrown exception 'javax.servlet.ServletException', as it cannot be thrown from method's body.(ÿ…„˜üÿÿÿÿ8ÂÀþ”÷.
+u
+java:S1989%"SHandle the following exception that could be thrown by "sendRedirect": IOException.(¢˜ÿ³øÿÿÿÿ8¥»¤“÷.
+Z	java:S106C"9Replace this use of System.out or System.err by a logger.(¨šØÁýÿÿÿÿ8Åó¸˜÷.
+ƒ
+java:S1989-"fHandle the following exceptions that could be thrown by "updateSeance": ServletException, IOException.(ç ‚ä8˜Çž”÷.
