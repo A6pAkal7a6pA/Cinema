@@ -1,13 +1,11 @@
 package com.finalProject.kuleshov.Cinema.filter;
 
-import com.finalProject.kuleshov.Cinema.dao.FilmDao;
-import com.finalProject.kuleshov.Cinema.dao.UserDao;
-import com.finalProject.kuleshov.Cinema.model.Film;
-import com.finalProject.kuleshov.Cinema.model.User;
+import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLFilmDao;
+import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLUserDao;
+import com.finalProject.kuleshov.Cinema.dto.User;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -16,21 +14,22 @@ import java.io.IOException;
 @WebFilter("/login")
 public class AuthFilter implements Filter {
     User user = null;
-    UserDao userDao = null;
-    FilmDao filmDao = null;
+    MySQLUserDao userDao = null;
+    MySQLFilmDao filmDao = null;
     private String contextPath;
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         System.out.println("init /login");
-        filmDao = new FilmDao();
-        userDao = new UserDao();
+        filmDao = new MySQLFilmDao();
+        userDao = new MySQLUserDao();
         contextPath = filterConfig.getServletContext().getContextPath();
     }
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         System.out.println("start doFilter Auth");
+        servletRequest.setCharacterEncoding("UTF-8");
         final HttpServletRequest request = (HttpServletRequest) servletRequest;
         final HttpServletResponse response = (HttpServletResponse) servletResponse;
 
@@ -48,10 +47,11 @@ public class AuthFilter implements Filter {
             final User.ROLE role = (User.ROLE) session.getAttribute("role");
 
             moveToMenu(request, response, role);
-        } else if (userDao.validate(user)) {
+        } else if (userDao.checkUser(user)) {
             final User.ROLE role = userDao.getRoleByLoginPassword(login, password);
             User user = userDao.selectUserByLogin(login);
             request.getSession().setAttribute("id", user.getId());
+            request.getSession().setAttribute("firstName", user.getFirstName());
             request.getSession().setAttribute("password", password);
             request.getSession().setAttribute("login", login);
             request.getSession().setAttribute("role", role);
@@ -69,10 +69,10 @@ public class AuthFilter implements Filter {
         System.out.println(role);
         if (role.equals(User.ROLE.ADMIN)) {
 //            req.getRequestDispatcher("/WEB-INF/view/admin_menu.jsp").forward(req, res);
-            res.sendRedirect(req.getContextPath() + "/account");
+            res.sendRedirect(req.getContextPath() + "/");
         } else if (role.equals(User.ROLE.USER)) {
 //            req.getRequestDispatcher("/WEB-INF/view/user_menu.jsp").forward(req, res);
-            res.sendRedirect(req.getContextPath() + "/account");
+            res.sendRedirect(req.getContextPath() + "/");
         } else {
             req.getRequestDispatcher("/WEB-INF/view/user_login.jsp").forward(req, res);
         }

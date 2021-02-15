@@ -1,17 +1,17 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1" %>
-<html>
-<head>
-    <title>Cinema</title>
-</head>
-<body>
+<%@include file="../header.jsp"%>
+<%@ page contentType="text/html" language="java"  pageEncoding="utf-8" %>
 <c:if test="${role != 'ADMIN'}" >
     <c:redirect url="/"/>
 </c:if>
-<h3>List of Seances</h3>
-<a href="/add_new_seance">Add new seance</a>
-<table border="1" cellspacing="0">
+<h3 class="hire__title table__title">List of Seances</h3>
+<div class="button__wrapper">
+    <div class="button table__button">
+        <a class="button__link table__button-link" href="<%=request.getContextPath()%>/add_new_seance">Add New
+            seance</a>
+    </div>
+</div>
+<table class="table" cellspacing="10">
+    <thead>
     <tr>
         <th>ID</th>
         <th>Movie title</th>
@@ -21,6 +21,8 @@
         <th>Number of seats</th>
         <th>Editing</th>
     </tr>
+    </thead>
+    <tbody>
     <c:forEach items="${requestScope.listSeances}" var="schedule">
         <tr>
             <td><c:out value="${schedule.id}"/></td>
@@ -29,10 +31,13 @@
             <td><c:out value="${schedule.timeSeance}"/></td>
             <td><c:out value="${schedule.priceSeance}"/></td>
             <td><c:out value="${schedule.numberOfSeats}"/></td>
-            <td><a href="edit_seance?id=<c:out value='${schedule.id}' />">Edit</a></td>
-            <td><a href="delete_seance?id=<c:out value='${schedule.id}' />">Delete</a></td>
+            <td class="table__edit">
+                <a class="hire__title table__button-edit" href="edit_seance?id=<c:out value='${schedule.id}' />">Edit</a>
+                <hr>
+                <a class="hire__title table__button-delete" href="delete_seance?id=<c:out value='${schedule.id}' />">Delete</a>
+            </td>
         </tr>
     </c:forEach>
+    </tbody>
 </table>
-</body>
-</html>
+<%@ include file="../footer.jsp"%>

@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Util {
     public static void close(Statement statement, ResultSet rs) {
@@ -33,5 +36,12 @@ public class Util {
         } catch (SQLException e) {
             System.out.println("Connection close() exception: " + e.getMessage());
         }
+    }
+
+    public static String getCurrentDate() {
+        Date date = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String currentDate = dateFormat.format(date);
+        return currentDate;
     }
 }

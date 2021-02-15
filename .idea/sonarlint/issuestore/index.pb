@@ -1,8 +1,6 @@
 
 I
 src/main/webapp/index.jsp,8/e/8e6d3b70c9f5b02570779b0441540d45eceb0ded
-f
-6src/main/webapp/WEB-INF/view/user_register_success.jsp,d/9/d99c195c65f4ced64bae146e781726981120b871
 ^
 .src/main/webapp/WEB-INF/view/user_register.jsp,1/7/17cc34c68697a8efaeea4ac40755e39c9b95b508
 [
@@ -87,3 +85,19 @@ Y
 )src/main/webapp/WEB-INF/view/buy_form.jsp,5/2/52b9f49c7151b7152dc9060d8f8f1e6a8886cc4b
 |
 Lsrc/main/java/com/finalProject/kuleshov/Cinema/servlet/BuyTicketServlet.java,f/b/fba11c9c5730de0196f1207b44d9075e308ac0bf
+M
+src/main/webapp/css/slick.css,f/7/f771826caea6de3472710fd067354cc825814074
+L
+src/main/webapp/js/script.js,a/4/a48403258fe4818219eb066d53485a1f30081afd
+O
+src/main/webapp/images/logo.svg,0/f/0f3960dbe7a8cda6b2808767874ff81a01ad07bf
+W
+'src/main/webapp/WEB-INF/view/footer.jsp,5/6/56707ab476cbc079e64a507e0123b2a0d7d693b0
+W
+'src/main/webapp/WEB-INF/view/header.jsp,2/8/28a6d4af0b6407217757d73a94a6cdedff8d0e4e
+Q
+!src/main/webapp/images/screen.svg,0/0/0045f65c7fa0c5164ef08b791b7d02e423263a3d
+{
+Ksrc/main/java/com/finalProject/kuleshov/Cinema/servlet/ScheduleServlet.java,5/2/521cbba3cfb3009210fe81bf19808db02441d618
+Y
+)src/main/webapp/WEB-INF/view/schedule.jsp,8/3/836daedd2edcfcf0cfd80855f86ba176ab0fc5a7

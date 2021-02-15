@@ -1,16 +1,11 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1" %>
-<html>
-<head>
-    <title>Cinema</title>
-</head>
-<body>
-<c:if test="${role != 'ADMIN'}" >
+<%@include file="../header.jsp"%>
+<%@ page contentType="text/html" language="java"  pageEncoding="utf-8" %>
+<c:if test="${role != 'ADMIN'}">
     <c:redirect url="/"/>
 </c:if>
-<h3>List of Users</h3>
-<table border="1" cellspacing="0">
+<h1 class="hire__title table__title">List of User</h1>
+<table cellspacing="10" class="table">
+    <thead>
     <tr>
         <th>ID</th>
         <th>First Name</th>
@@ -21,6 +16,8 @@
         <th>Email</th>
         <th>Date of registration</th>
     </tr>
+    </thead>
+    <tbody>
     <c:forEach items="${requestScope.listUsers}" var="currentUserProfile">
         <tr>
             <td><c:out value="${currentUserProfile.id}"/></td>
@@ -33,6 +30,6 @@
             <td><c:out value="${currentUserProfile.date}"/></td>
         </tr>
     </c:forEach>
+    </tbody>
 </table>
-</body>
-</html>
+<%@include file="../footer.jsp"%>

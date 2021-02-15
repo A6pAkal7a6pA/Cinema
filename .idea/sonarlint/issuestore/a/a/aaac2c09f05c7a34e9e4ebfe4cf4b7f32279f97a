@@ -1,19 +1,20 @@
 
-Z	java:S106-"9Replace this use of System.out or System.err by a logger.(¢ÃÌùÿÿÿÿ8…—½Ç÷.
+O
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8‰Õ¾ø.
+e
+java:S1128"CRemove this unused import 'java.util.concurrent.ConcurrentHashMap'.(ÓŠÓøúÿÿÿÿ8¢£Ûâ÷.
+ˆ
+java:S1989+"fHandle the following exceptions that could be thrown by "showSchedule": ServletException, IOException.(Ê³’¡ÿÿÿÿÿ8æÉ‡»ù.
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Àúüé8ˆ£¬…ù.
 f
 java:S1128"JRemove this unused import 'com.finalProject.kuleshov.Cinema.model.Ticket'.(¿ã?8¢£Ûâ÷.
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¿ñùÙıÿÿÿÿ
-e
-java:S1128"CRemove this unused import 'java.util.concurrent.ConcurrentHashMap'.(ÓŠÓøúÿÿÿÿ8¢£Ûâ÷.
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8¢£Ûâ÷.
-u
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Àúüé8…—½Ç÷.
+J	java:S108B")Either remove or fill this block of code.(Ù¼¨õùÿÿÿÿ8æÉ‡»ù.
 z
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Ø¢¢ùûÿÿÿÿ8Ö÷‰É÷.
-ˆ
-java:S1989("fHandle the following exceptions that could be thrown by "showSchedule": ServletException, IOException.(Ê³’¡ÿÿÿÿÿ8…—½Ç÷.
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Ø¢¢ùûÿÿÿÿ8ˆ£¬…ù.
+z
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Ó‡²§øÿÿÿÿ8ˆ£¬…ù.
 L
-java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8¢ÔÛâ÷.
-z
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Ó‡²§øÿÿÿÿ8Æ¦‰É÷.
+java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8¢ÔÛâ÷.
+U	java:S106*"9Replace this use of System.out or System.err by a logger.(¬Úéç8æÉ‡»ù.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¿ñùÙıÿÿÿÿ

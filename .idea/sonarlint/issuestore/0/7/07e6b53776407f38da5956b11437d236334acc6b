@@ -1,4 +1,7 @@
 
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(âïó’
+n
+java:S1192O"QDefine a constant instead of duplicating this literal "from tickets t\n" 3 times.(ú¯Æâ8¨»´ø.
 W
 java:S1118":Add a private constructor to hide the implicit public one.(ï¬ô‡8›¥“Øô.
+]	java:S1257"<This block of commented-out lines of code should be removed.(¶›Çòÿÿÿÿÿ8Ù£ğ¯ù.

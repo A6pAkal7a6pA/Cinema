@@ -1,13 +1,51 @@
 
-U	java:S106\"9Replace this use of System.out or System.err by a logger.(›ªÇâ8¹³÷“÷.
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ãï»ùÿÿÿÿ
-j
-java:S1128"HRemove this unused import 'com.finalProject.kuleshov.Cinema.model.Film'.(ôÒ¿şÿÿÿÿ8ÆÚ¬”÷.
-Z	java:S106J"9Replace this use of System.out or System.err by a logger.(˜Ùúâüÿÿÿÿ8¹³÷“÷.
+i
+java:S1192*"LDefine a constant instead of duplicating this literal "time_seance" 7 times.(‹Ô”³8ÏæÌ¿ø.
 R
-java:S1128
-"0Remove this unused import 'java.time.LocalTime'.(à®øÃùÿÿÿÿ8â÷àÇö.
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(­¶¹¼şÿÿÿÿ8åÛÕ˜÷.
-U	java:S106{"9Replace this use of System.out or System.err by a logger.(™úññ8¹³÷“÷.
-U	java:S106!"9Replace this use of System.out or System.err by a logger.(ŞÀ•8çª”÷.
-Z	java:S106:"9Replace this use of System.out or System.err by a logger.(ùÉßêÿÿÿÿÿ8¹³÷“÷.
+java:S1191"5Use classes from the Java API instead of Sun classes.(ÓÒÒÃ8×ÅÖù.
+{
+java:S1192æ"]Define a constant instead of duplicating this literal "Trouble with showAllSeance: " 4 times.(™úññ8°ÂÕù.
+i
+java:S1192M"LDefine a constant instead of duplicating this literal "free_places" 6 times.(ñõÄ€8°ÂÕù.
+Z	java:S106""9Replace this use of System.out or System.err by a logger.(Û£™¯ûÿÿÿÿ8×ÅÖù.
+U	java:S106h"9Replace this use of System.out or System.err by a logger.(ŞÀ•8°ÂÕù.
+_
+java:S1128	"BRemove this unused import 'sun.jvm.hotspot.code.UncommonTrapBlob'.(üƒÌ8È­÷¯ù.
+V	java:S106ì"9Replace this use of System.out or System.err by a logger.(ÅŞÑİ8°ÂÕù.
+i
+java:S1192K"LDefine a constant instead of duplicating this literal "description" 6 times.(ç¼¾¥8Æøü¾ø.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ãï»ùÿÿÿÿ
+[	java:S106"9Replace this use of System.out or System.err by a logger.(ùÉßêÿÿÿÿÿ8°ÂÕù.
+l
+java:S1192&"JDefine a constant instead of duplicating this literal "film_name" 8 times.(—ŞüÄüÿÿÿÿ8Ó§ø¯ø.
+V	java:S106æ"9Replace this use of System.out or System.err by a logger.(™úññ8°ÂÕù.
+U	java:S106."9Replace this use of System.out or System.err by a logger.(¹ßá¯8°ÂÕù.
+z
+java:S1192«"WDefine a constant instead of duplicating this literal "order by 4 asc, 5 asc " 3 times.(İÕğŒùÿÿÿÿ8°ÂÕù.
+V	java:S106£"9Replace this use of System.out or System.err by a logger.(›ªÇâ8°ÂÕù.
+k
+java:S1192I"IDefine a constant instead of duplicating this literal "duration" 6 times.(Á¤Ü¹ûÿÿÿÿ8ï®¨¸ø.
+e
+java:S1192'"HDefine a constant instead of duplicating this literal "film_id" 8 times.(Õ×ª8Ó§ø¯ø.
+[	java:S106‘"9Replace this use of System.out or System.err by a logger.(˜Ùúâüÿÿÿÿ8°ÂÕù.
+V	java:S106ª"9Replace this use of System.out or System.err by a logger.(™úññ8°ÂÕù.
+Z	java:S106_"9Replace this use of System.out or System.err by a logger.(­¶¹¼şÿÿÿÿ8°ÂÕù.
+h
+java:S1192C"KDefine a constant instead of duplicating this literal "photo_film" 6 times.(§¼¢Ï8°ÂÕù.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(…„èé8÷¾Öù.
+U	java:S106P"9Replace this use of System.out or System.err by a logger.(³§³ˆ8°ÂÕù.
+h
+java:S1192)"LDefine a constant instead of duplicating this literal "date_seance" 8 times.(ö‡š@8Ó§ø¯ø.
+k
+java:S1192J"IDefine a constant instead of duplicating this literal "director" 6 times.(Ï…ŸÍúÿÿÿÿ8ï®¨¸ø.
+k
+java:S1128"NRemove this unused import 'com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput'.(ÓÒÒÃ8×ÅÖù.
+b
+java:S1192G"FDefine a constant instead of duplicating this literal "price" 7 times.(ô©‡08Ó§ø¯ø.
+m
+java:S1192H"PDefine a constant instead of duplicating this literal "number_of_seats" 6 times.(ôó¯¯8ÏæÌ¿ø.
+V	java:S106ˆ"9Replace this use of System.out or System.err by a logger.(™úññ8°ÂÕù.
+V	java:S106Ì"9Replace this use of System.out or System.err by a logger.(™úññ8°ÂÕù.
+U	java:S106+"9Replace this use of System.out or System.err by a logger.(†áøÓ8ŒœÖù.
+U	java:S106 "9Replace this use of System.out or System.err by a logger.(¬œº8Ÿ´°Öù.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(±ÑéÃ8õ¯®Öù.

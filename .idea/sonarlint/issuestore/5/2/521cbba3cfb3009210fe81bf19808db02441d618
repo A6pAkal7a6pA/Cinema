@@ -1,0 +1,9 @@
+
+U	java:S106"9Replace this use of System.out or System.err by a logger.(Íèæö8¥¯ßÕù.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Ğê™üÿÿÿÿ8˜ÄƒÕù.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¿ñùÙıÿÿÿÿ
+Z
+java:S1854"=Remove this useless assignment to local variable "dayOfWeek".(ó¹»Ñ8¥ÜÎÕù.
+Z	java:S106 "9Replace this use of System.out or System.err by a logger.(¨ãÀ§ùÿÿÿÿ8»„ûÕù.
+~
+java:S1989&"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(óÓ—”8ıšÄÓù.

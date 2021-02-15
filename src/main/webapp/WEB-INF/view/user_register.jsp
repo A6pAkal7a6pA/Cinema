@@ -1,47 +1,47 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="ISO-8859-1">
-    <title>Cinema</title>
-</head>
-<body>
-<c:if test="${login != null}" >
-    <c:redirect url="/account"/>
-</c:if>
-<div align="center">
-    <h1>User Register Form</h1>
-    <form action="<%= request.getContextPath() %>/register" method="post">
-        <table>
-            <tr>
-                <td>First Name</td>
-                <td><input type="text" name="firstName"/></td>
-            </tr>
-            <tr>
-                <td>Last Name</td>
-                <td><input type="text" name="lastName"/></td>
-            </tr>
-            <tr>
-                <td>Login</td>
-                <td><input type="text" name="login"/></td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td><input type="password" name="password"/></td>
-            </tr>
-            <tr>
-                <td>Contact </td>
-                <td><input type="text" name="contact"/></td>
-            </tr>
-            <tr>
-                <td>Email </td>
-                <td><input type="text" name="email"/></td>
-            </tr>
-        </table>
-        <button type="submit">Register</button>
-    </form>
-</div>
-</body>
-</html>
+<%@include file="header.jsp"%>
+<%@ page contentType="text/html" language="java"  pageEncoding="utf-8" %>
+    <section class="registration">
+        <div class="registration__body">
+            <div class="registration__title">
+                registration
+            </div>
+            <form action="<%= request.getContextPath() %>/register" method="post" class="registration__form">
+                <ul class="registration__list">
+                    <li class="registration__list-item">
+                        <label for="firstName">first name:</label>
+                        <input type="text" name="firstName" id="firstName" required>
+                    </li>
+                    <li class="registration__list-item">
+                        <label for="lastName">last name:</label>
+                        <input type="text" name="lastName" id="lastName" required>
+                    </li>
+                    <li class="registration__list-item">
+                        <label for="login">login:</label>
+                        <input type="text" name="login" id="login" required>
+                    </li>
+                    <li class="registration__list-item">
+                        <label for="password">password:</label>
+                        <input type="password" name="password" id="password" required>
+                    </li>
+                    <li class="registration__list-item">
+                        <label for="contact">phone number:</label>
+                        <input type="tel" name="contact" id="contact">
+                    </li>
+                    <li class="registration__list-item">
+                        <label for="email">email:</label>
+                        <input type="email" name="email" id="email">
+                    </li>
+                </ul>
+                <div class="registration__block-button-1">
+                    <div class="registration__block-button-2">
+                        <button type="submit" class="registration__button">
+                            create account
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+<%@include file="footer.jsp"%>

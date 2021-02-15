@@ -1,25 +1,30 @@
 
-m	java:S117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕöÆŒ8ãçÆà÷.
-Z	java:S106A"9Replace this use of System.out or System.err by a logger.(ûÆÿÿÿÿÿ8â°Ëè÷.
-Z	java:S106)"9Replace this use of System.out or System.err by a logger.(ËÖòşÿÿÿÿ8”—úà÷.
-‚
-java:S19898"eHandle the following exceptions that could be thrown by "showBuyForm": ServletException, IOException.(Æ­ç¾8µ–ß÷.
-U	java:S1067"9Replace this use of System.out or System.err by a logger.(•¬©²8ˆ°œß÷.
-U	java:S106,"9Replace this use of System.out or System.err by a logger.(ñ–Øÿ8¹Œˆá÷.
 u
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Àúüé8í®şß÷.
+java:S1989-"SHandle the following exception that could be thrown by "sendRedirect": IOException.(Í¢¬™úÿÿÿÿ8ÖÆ³²ø.
+V
+java:S1481@"9Remove this unused "freePlacesBySeanceId" local variable.(ç¸¦Š8ã½°ù.
 O
 java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8ıÏ¯à÷.
-u
-java:S19892"SHandle the following exception that could be thrown by "sendRedirect": IOException.(Í¢¬™úÿÿÿÿ8ï£Íà÷.
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¿ñùÙıÿÿÿÿ
 v
-java:S1989/"YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(†ãî8Ï‘á÷.
+java:S1989*"YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(†ãî8ÖÆ³²ø.
 z
 java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Ó‡²§øÿÿÿÿ8şòŠß÷.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¿ñùÙıÿÿÿÿ
+Z	java:S1068"9Replace this use of System.out or System.err by a logger.(Åà¤Äşÿÿÿÿ8ìüÆ°ù.
+e
+java:S1854@"HRemove this useless assignment to local variable "freePlacesBySeanceId".(ç¸¦Š8ã½°ù.
+X	java:S125:"<This block of commented-out lines of code should be removed.(é¢‡ü8­£î°ù.
+]	java:S125>"<This block of commented-out lines of code should be removed.(‘´º¦şÿÿÿÿ8ã½°ù.
+m	java:S117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕöÆŒ8ãçÆà÷.
+‚
+java:S19893"eHandle the following exceptions that could be thrown by "showBuyForm": ServletException, IOException.(Æ­ç¾8ÖÆ³²ø.
 {
-java:S1989("YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(•­ªĞûÿÿÿÿ8ñ¦ïà÷.
+java:S1989&"YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(•­ªĞûÿÿÿÿ8ñ¦ïà÷.
 z
 java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(§½®·şÿÿÿÿ8Ä¿Ûß÷.
-Z	java:S106'"9Replace this use of System.out or System.err by a logger.(Ê¤ìšÿÿÿÿÿ8ûˆùà÷.
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Àúüé8í®şß÷.
+Z	java:S1067"9Replace this use of System.out or System.err by a logger.(²ÿ’ğşÿÿÿÿ8åƒŠ°ù.
 U	java:S106$"9Replace this use of System.out or System.err by a logger.(êæä¸8ûˆùà÷.
+U	java:S106;"9Replace this use of System.out or System.err by a logger.(ö¡¹ê8¶×Æ°ù.
+U	java:S1062"9Replace this use of System.out or System.err by a logger.(•¬©²8ÖÆ³²ø.
