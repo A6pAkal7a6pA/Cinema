@@ -1,6 +1,6 @@
 package com.finalProject.kuleshov.Cinema.dao;
 
-import com.finalProject.kuleshov.Cinema.dto.Ticket;
+import com.finalProject.kuleshov.Cinema.entity.Ticket;
 
 import java.util.List;
 

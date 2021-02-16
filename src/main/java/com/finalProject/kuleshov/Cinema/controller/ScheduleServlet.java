@@ -2,7 +2,7 @@ package com.finalProject.kuleshov.Cinema.controller;
 
 import com.finalProject.kuleshov.Cinema.dao.SeanceDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLSeanceDao;
-import com.finalProject.kuleshov.Cinema.dto.Seance;
+import com.finalProject.kuleshov.Cinema.entity.Seance;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,8 +31,10 @@ public class ScheduleServlet extends HttpServlet {
         }
 
         List<Seance> seancesWeek = seanceDao.selectScheduleByDay(dayOfWeek);
-
         req.setAttribute("seancesWeek", seancesWeek);
+
+        String currentDay = seanceDao.selectCurrentDay();
+        req.setAttribute("currentDay", currentDay);
 
         req.getRequestDispatcher("/WEB-INF/view/schedule.jsp").forward(req, resp);
     }

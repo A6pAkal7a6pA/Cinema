@@ -2,7 +2,7 @@ package com.finalProject.kuleshov.Cinema.controller.admin;
 
 import com.finalProject.kuleshov.Cinema.dao.FilmDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLFilmDao;
-import com.finalProject.kuleshov.Cinema.dto.Film;
+import com.finalProject.kuleshov.Cinema.entity.Film;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

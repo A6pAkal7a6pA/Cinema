@@ -3,21 +3,20 @@ package com.finalProject.kuleshov.Cinema.dao.mysql;
 import com.finalProject.kuleshov.Cinema.connection.ConnectionPool;
 import com.finalProject.kuleshov.Cinema.constants.SQLConstants;
 import com.finalProject.kuleshov.Cinema.dao.FilmDao;
-import com.finalProject.kuleshov.Cinema.dto.Film;
+import com.finalProject.kuleshov.Cinema.entity.Film;
 import com.finalProject.kuleshov.Cinema.util.Util;
 import org.apache.log4j.Logger;
-import sun.rmi.runtime.Log;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLFilmDao implements FilmDao {
-    Connection connection = null;
     private static final Logger LOG = Logger.getLogger(MySQLFilmDao.class);
 
     @Override
     public List<Film> selectFilmIdName() {
+        Connection connection = null;
         Statement statement = null;
         ResultSet rs = null;
         List<Film> films = new ArrayList<>();
@@ -36,13 +35,14 @@ public class MySQLFilmDao implements FilmDao {
         } catch (SQLException e) {
             LOG.error("Trouble with selectFilmIdName:" + e.getMessage());
         } finally {
-            Util.close(statement, rs);
+            Util.close(statement, rs, connection);
         }
         return films;
     }
 
     @Override
     public void addFilm(Film film) {
+        Connection connection = null;
         PreparedStatement ps = null;
         try {
             connection = ConnectionPool.getInstance().getConnection();
@@ -57,12 +57,13 @@ public class MySQLFilmDao implements FilmDao {
         } catch (SQLException e) {
             LOG.error("Trouble with addFilm: " + e.getMessage());
         } finally {
-            Util.close(ps);
+            Util.close(ps, connection);
         }
     }
 
     @Override
     public boolean updateFilm(Film film) {
+        Connection connection = null;
         boolean result = false;
         PreparedStatement ps = null;
         try {
@@ -78,14 +79,16 @@ public class MySQLFilmDao implements FilmDao {
             LOG.info("updateFilm done");
         } catch (SQLException e) {
             LOG.error("Trouble with updateFilm: " + e.getMessage());
+            Util.rollback(connection);
         } finally {
-            Util.close(ps);
+            Util.close(ps, connection);
         }
         return result;
     }
 
     @Override
     public Film selectFilmById(int id) {
+        Connection connection = null;
         Film film = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -104,14 +107,16 @@ public class MySQLFilmDao implements FilmDao {
             LOG.info("selectFilmById done");
         } catch (SQLException e) {
             LOG.error("Trouble with selectFilmById: " + e.getMessage());
+            Util.rollback(connection);
         } finally {
-            Util.close(ps, rs);
+            Util.close(ps, rs, connection);
         }
         return film;
     }
 
     @Override
     public boolean deleteFilmById(int id) {
+        Connection connection = null;
         boolean result = false;
         PreparedStatement ps = null;
         try {
@@ -122,14 +127,16 @@ public class MySQLFilmDao implements FilmDao {
             LOG.info("deleteFilmById done");
         } catch (SQLException e) {
             LOG.error("Trouble with deleteFilmById: " + e.getMessage());
+            Util.rollback(connection);
         } finally {
-            Util.close(ps);
+            Util.close(ps, connection);
         }
         return result;
     }
 
     @Override
     public List<Film> findAllFilms() {
+        Connection connection = null;
         Statement statement = null;
         ResultSet rs = null;
         List<Film> films = new ArrayList<>();
@@ -151,8 +158,9 @@ public class MySQLFilmDao implements FilmDao {
             LOG.info("findAllFilms done");
         } catch (SQLException e) {
             LOG.error("Trouble with findAllFilms: " + e.getMessage());
+            Util.rollback(connection);
         } finally {
-            Util.close(statement, rs);
+            Util.close(statement, rs, connection);
         }
         return films;
     }

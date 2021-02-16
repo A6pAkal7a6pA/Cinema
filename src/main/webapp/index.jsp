@@ -8,18 +8,10 @@
                 <c:forEach items="${requestScope.covers}" var="seance">
                     <div class="slider-cover__item">
                         <input type="hidden" name="id" value="<c:out value="${seance.id}"/>">
-                        <c:if test="${role == null}">
-                            <a href="register">
-                                <img src="<%=request.getContextPath()%>/images/<c:out value="${seance.img}"/>"
-                                     alt="images">
-                            </a>
-                        </c:if>
-                        <c:if test="${role != null}">
-                            <a href="buy_ticket?id=<c:out value="${seance.id}"/>">
-                                <img src="<%=request.getContextPath()%>/images/<c:out value="${seance.img}"/>"
-                                     alt="images">
-                            </a>
-                        </c:if>
+                        <a href="buy_ticket?id=<c:out value="${seance.id}"/>">
+                            <img src="<%=request.getContextPath()%>/images/<c:out value="${seance.img}"/>"
+                                 alt="images">
+                        </a>
                     </div>
                 </c:forEach>
             </div>
@@ -30,42 +22,52 @@
 <section class="hire">
     <div class="hire__body">
         <div class="hire__title">
-            film sessions
+            <fmt:message key="poster.title" bundle="${bundle}" var="postitle"/>
+            ${postitle}
         </div>
         <div class="hire__subltitle">
-            only a registered user can buy a ticket for a movie
+            <fmt:message key="poster.subtitle" bundle="${bundle}" var="possubt"/>
+            ${possubt}
         </div>
         <div class="hire__main-content">
+
             <div class="hire__sidebar sidebar">
                 <div class="sidebar__body">
                     <div class="sidebar__sort sort-by">
                         <div class="sort-by__body">
                             <div class="sort-by__title">
-                                sort by:
+                                <fmt:message key="poster.sidebar.sort.title" bundle="${bundle}" var="possoti"/>
+                                ${possoti}:
                             </div>
                             <div class="sort-by__content">
                                 <div class="sort-by__item">
                                     <a href="<%=request.getContextPath()%>/?sortRequest=dateTimeSortAsc"
                                        class="sort-by__link">
-                                        Date/time
+                                        <div class="sort-by__title">
+                                            <fmt:message key="poster.sidebar.sort.datetime" bundle="${bundle}" var="possodt"/>
+                                            ${possodt}
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="sort-by__item">
                                     <a href="<%=request.getContextPath()%>/?sortRequest=movieTitleSortAsc"
                                        class="sort-by__link">
-                                        Movie title
+                                        <fmt:message key="poster.sidebar.sort.movietitle" bundle="${bundle}" var="possomot"/>
+                                        ${possomot}
                                     </a>
                                 </div>
                                 <div class="sort-by__item">
                                     <a href="<%=request.getContextPath()%>/?sortRequest=availableSeatsSortAsc"
                                        class="sort-by__link">
-                                        available seats
+                                        <fmt:message key="poster.sidebar.sort.availableseats" bundle="${bundle}" var="possoaval"/>
+                                        ${possoaval}
                                     </a>
                                 </div>
                                 <div class="sort-by__item">
                                     <a href="<%=request.getContextPath()%>/?sortRequest=priceSortAsc"
                                        class="sort-by__link">
-                                        price
+                                        <fmt:message key="poster.sidebar.sort.price" bundle="${bundle}" var="possoprice"/>
+                                        ${possoprice}
                                     </a>
                                 </div>
                             </div>
@@ -73,10 +75,11 @@
                     </div>
                 </div>
             </div>
+
             <div class="hire__content content-hire">
                 <div class="hire__pagination pagination">
                     <div class="pagination__body">
-                        <util:navigation path="<%=request.getContextPath()%>" page="${requestScope.start}"
+                        <util:navigation path="<%=request.getContextPath()%>" page="${requestScope.page}"
                                          maxPage="${requestScope.listPagination.size()}"></util:navigation>
                     </div>
                 </div>
@@ -97,41 +100,47 @@
                                                 value="${schedule.timeSeance}"/></span>
                                     </div>
                                 </div>
-                                <p class="content-hire__price">Cost: <c:out value="${schedule.priceSeance}"/></p>
-                                <p class="content-hire__places">Available: <c:out
-                                        value="${schedule.freePlaces}"/>/<c:out
-                                        value="${schedule.numberOfSeats}"/></p>
-                                <p class="content-hire__duration">Duration: <c:out value="${schedule.duration}"/>
-                                    minutes</p>
-                                <p class="content-hire__duration">Director: <c:out
-                                        value="${schedule.director}"/></p>
+                                <p class="content-hire__price">
+                                    <fmt:message key="poster.sessions.cost" bundle="${bundle}" var="posseco"/>
+                                        ${posseco}: <c:out value="${schedule.priceSeance}"/></p>
+                                <p class="content-hire__places">
+                                    <fmt:message key="poster.sessions.avalible" bundle="${bundle}" var="posseaval"/>
+                                        ${posseaval}:
+                                    <c:out value="${schedule.freePlaces}"/>/<c:out value="${schedule.numberOfSeats}"/></p>
+                                <p class="content-hire__duration">
+                                    <fmt:message key="poster.sessions.duration" bundle="${bundle}" var="possedur"/>
+                                        ${possedur}:
+                                    <c:out value="${schedule.duration}"/>
+                                    <fmt:message key="poster.sessions.minutes" bundle="${bundle}" var="possemin"/>
+                                        ${possemin}
+                                </p>
+                                <p class="content-hire__duration">
+                                    <fmt:message key="poster.sessions.director" bundle="${bundle}" var="possedir"/>
+                                        ${possedir}:
+                                    <c:out value="${schedule.director}"/>
+                                </p>
                                 <p class="content-hire__description">
-                                    <c:out
-                                            value="${schedule.description}"/>
+                                    <c:out value="${schedule.description}"/>
                                 </p>
                                 <input type="hidden" name="filmId" value="<c:out value="${schedule.filmId}"/>">
-                                <c:if test="${role == null}">
-                                    <div class="content-hire__button button">
-                                        <a href="register" class="button__link">choose a place</a>
-                                    </div>
-                                </c:if>
-                                <c:if test="${role != null}">
-                                    <div class="content-hire__button button">
-                                        <a href="buy_ticket?id=<c:out value='${schedule.id}' />" class="button__link">choose
-                                            a place</a>
-                                    </div>
-                                </c:if>
+                                <div class="content-hire__button button">
+                                    <a href="buy_ticket?id=<c:out value='${schedule.id}' />" class="button__link">
+                                        <fmt:message key="poster.sessions.button.choose" bundle="${bundle}" var="possebuch"/>
+                                            ${possebuch}
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </c:forEach>
                 </div>
                 <div class="hire__pagination pagination">
                     <div class="pagination__body">
-                        <util:navigation path="<%=request.getContextPath()%>" page="${requestScope.start}"
+                        <util:navigation path="<%=request.getContextPath()%>" page="${requestScope.page}"
                                          maxPage="${requestScope.listPagination.size()}"></util:navigation>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>

@@ -2,7 +2,7 @@ package com.finalProject.kuleshov.Cinema.tag;
 
 
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLUserDao;
-import com.finalProject.kuleshov.Cinema.dto.User;
+import com.finalProject.kuleshov.Cinema.entity.User;
 import org.apache.log4j.Logger;
 
 import javax.servlet.jsp.JspException;

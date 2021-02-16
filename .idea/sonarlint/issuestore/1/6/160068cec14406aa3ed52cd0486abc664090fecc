@@ -1,23 +1,2 @@
 
-^	java:S125Â"<This block of commented-out lines of code should be removed.(ËóÙİøÿÿÿÿ8ğèëËô.
-Z	java:S106s"9Replace this use of System.out or System.err by a logger.(ãï–Éüÿÿÿÿ8ƒÓ¶öõ.
-g
-java:S11924"JDefine a constant instead of duplicating this literal "firstName" 4 times.(°š™8ë¼¼Ëô.
-k
-java:S11925"IDefine a constant instead of duplicating this literal "lastName" 4 times.(¢ ÃÓùÿÿÿÿ8ë¼¼Ëô.
-U	java:S106("9Replace this use of System.out or System.err by a logger.(Ã³Ñ¸8ÃÀûó.
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ãï»ùÿÿÿÿ8ÃÀûó.
-Ÿ
-java:S1186Ã"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Çµí‘8É„ïËô.
-Z	java:S106X"9Replace this use of System.out or System.err by a logger.(¡¹ô ıÿÿÿÿ8Ğ°ÑËô.
-[	java:S106º"9Replace this use of System.out or System.err by a logger.(§Ğ€¹üÿÿÿÿ8üÒìËô.
-U	java:S106o"9Replace this use of System.out or System.err by a logger.(ê×¼©8õâœöõ.
-c
-java:S11926"FDefine a constant instead of duplicating this literal "login" 3 times.(Ê³ÌŸ8ı•½Îô.
-Z	java:S106 "9Replace this use of System.out or System.err by a logger.(Ã—ü©üÿÿÿÿ8•‚™Ëô.
-U	java:S106;"9Replace this use of System.out or System.err by a logger.(•õ¥­8ë¼¼Ëô.
-U	java:S106"9Replace this use of System.out or System.err by a logger.(¼ØŠÈ8¹†Ëô.
-[	java:S106†"9Replace this use of System.out or System.err by a logger.(ÀÚ—£üÿÿÿÿ8Ü‰áËô.
-j
-java:S11928"HDefine a constant instead of duplicating this literal "contact" 4 times.(Ú ó¿şÿÿÿÿ8ë¼¼Ëô.
-V	java:S106¡"9Replace this use of System.out or System.err by a logger.(îïà8††·Îô.

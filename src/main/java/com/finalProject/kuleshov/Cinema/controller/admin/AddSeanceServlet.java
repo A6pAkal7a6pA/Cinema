@@ -4,9 +4,9 @@ import com.finalProject.kuleshov.Cinema.dao.FilmDao;
 import com.finalProject.kuleshov.Cinema.dao.SeanceDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLFilmDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLSeanceDao;
-import com.finalProject.kuleshov.Cinema.dto.Film;
-import com.finalProject.kuleshov.Cinema.dto.Seance;
-import com.finalProject.kuleshov.Cinema.dto.User;
+import com.finalProject.kuleshov.Cinema.entity.Film;
+import com.finalProject.kuleshov.Cinema.entity.Seance;
+import com.finalProject.kuleshov.Cinema.entity.User;
 import com.finalProject.kuleshov.Cinema.util.Util;
 
 import javax.servlet.RequestDispatcher;
@@ -16,10 +16,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 @WebServlet("/add_new_seance")

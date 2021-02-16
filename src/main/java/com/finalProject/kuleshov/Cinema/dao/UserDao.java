@@ -1,6 +1,6 @@
 package com.finalProject.kuleshov.Cinema.dao;
 
-import com.finalProject.kuleshov.Cinema.dto.User;
+import com.finalProject.kuleshov.Cinema.entity.User;
 
 import java.util.List;
 

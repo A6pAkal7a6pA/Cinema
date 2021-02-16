@@ -3,7 +3,7 @@ package com.finalProject.kuleshov.Cinema.dao.mysql;
 import com.finalProject.kuleshov.Cinema.connection.ConnectionPool;
 import com.finalProject.kuleshov.Cinema.constants.SQLConstants;
 import com.finalProject.kuleshov.Cinema.dao.TicketDao;
-import com.finalProject.kuleshov.Cinema.dto.Ticket;
+import com.finalProject.kuleshov.Cinema.entity.Ticket;
 import com.finalProject.kuleshov.Cinema.util.Util;
 import org.apache.log4j.Logger;
 
@@ -12,11 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLTicketDao implements TicketDao {
-    Connection connection = null;
     private static final Logger LOG = Logger.getLogger(MySQLTicketDao.class);
 
     @Override
     public List<Ticket> findAllUserTickets(int userId) {
+        Connection connection = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         List<Ticket> tickets = new ArrayList<>();
@@ -38,14 +38,16 @@ public class MySQLTicketDao implements TicketDao {
             LOG.info("findAllUserTickets done");
         } catch (SQLException e) {
             LOG.error("Trouble with findAllUserTickets: " + e.getMessage());
+            Util.rollback(connection);
         } finally {
-            Util.close(ps, rs);
+            Util.close(ps, rs,connection);
         }
         return tickets;
     }
 
     @Override
     public int findFreePlacesBySeanceId(int seanceId) {
+        Connection connection = null;
         int result = 0;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -60,14 +62,16 @@ public class MySQLTicketDao implements TicketDao {
             LOG.info("findFreePlacesBySeanceId done");
         } catch (SQLException e) {
             LOG.error("Trouble with findFreePlacesBySeanceId: " + e.getMessage());
+            Util.rollback(connection);
         } finally {
-            Util.close(ps, rs);
+            Util.close(ps, rs, connection);
         }
         return result;
     }
 
     @Override
     public void buyTicket(int userId, int seanceId, int place) {
+        Connection connection = null;
         PreparedStatement ps = null;
         try {
             connection = ConnectionPool.getInstance().getConnection();
@@ -79,13 +83,15 @@ public class MySQLTicketDao implements TicketDao {
             LOG.info("buyTicket done");
         } catch (SQLException e) {
             LOG.error("Trouble with buyTicket: " + e.getMessage());
+            Util.rollback(connection);
         } finally {
-            Util.close(ps);
+            Util.close(ps, connection);
         }
     }
 
     @Override
     public List<Integer> selectOccupiedPlaces(int seanceId) {
+        Connection connection = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         List<Integer> occupiedPlaces = new ArrayList<>();
@@ -100,8 +106,9 @@ public class MySQLTicketDao implements TicketDao {
             LOG.info("selectOccupiedPlaces done");
         } catch (SQLException e) {
             LOG.error("Trouble with selectOccupiedPlaces: " + e.getMessage());
+            Util.rollback(connection);
         } finally {
-            Util.close(ps, rs);
+            Util.close(ps, rs, connection);
         }
         return occupiedPlaces;
     }

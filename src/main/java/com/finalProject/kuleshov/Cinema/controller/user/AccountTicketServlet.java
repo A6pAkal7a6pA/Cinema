@@ -8,10 +8,8 @@ import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLFilmDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLSeanceDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLTicketDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLUserDao;
-import com.finalProject.kuleshov.Cinema.dto.Film;
-import com.finalProject.kuleshov.Cinema.dto.Seance;
-import com.finalProject.kuleshov.Cinema.dto.Ticket;
-import com.finalProject.kuleshov.Cinema.dto.User;
+import com.finalProject.kuleshov.Cinema.entity.Ticket;
+import com.finalProject.kuleshov.Cinema.entity.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

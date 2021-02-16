@@ -1,5 +1,5 @@
 <%@include file="header.jsp" %>
-<%@ page contentType="text/html" language="java"  pageEncoding="utf-8" %>
+<%@ page contentType="text/html" language="java" pageEncoding="utf-8" %>
 <section class="film">
     <div class="film__body">
         <div class="film__image">
@@ -19,14 +19,17 @@
                 </div>
             </div>
             <div class="film__price">
-                Cost: <c:out value="${requestScope.seance.priceSeance}"/>
+                <fmt:message key="user.buyform.cost" bundle="${bundle}" var="ubfcost"/>${ubfcost}: <c:out value="${requestScope.seance.priceSeance}"/>
             </div>
             <div class="film__free-place">
-                Available: <c:out value="${requestScope.seance.freePlaces}"/>/<c:out
-                    value="${requestScope.seance.numberOfSeats}"/>
+                <fmt:message key="user.buyform.available" bundle="${bundle}" var="ubfaval"/>${ubfaval}:
+                <c:out value="${requestScope.seance.freePlaces}"/>/<c:out value="${requestScope.seance.numberOfSeats}"/>
             </div>
             <div class="film__duration">
-                Duration: <c:out value="${requestScope.seance.duration}"/> minutes
+                <fmt:message key="user.buyform.duration" bundle="${bundle}" var="ubfdur"/>${ubfdur}: <c:out value="${requestScope.seance.duration}"/> minutes
+            </div>
+            <div class="film__duration">
+                <fmt:message key="user.buyform.director" bundle="${bundle}" var="ubfdir"/>${ubfdir}: <c:out value="${requestScope.seance.director}"/>
             </div>
             <div class="film__description">
                 <c:out value="${requestScope.seance.description}"/>
@@ -58,10 +61,18 @@
                         <label for="hall_check-<c:out value='${entry.key}' />" class="hall__label"></label>
                     </div>
                 </c:forEach>
-
-                <div class="hall__button button">
-                    <button type="submit" class="hall__button-link button__link">buy ticket</button>
-                </div>
+                <c:if test="${role == null}">
+                    <div class="hall__button button">
+                        <a href="<%=request.getContextPath()%>/register" class="hall__button-link button__link">
+                            <fmt:message key="user.buyform.button" bundle="${bundle}" var="ubfbutt"/>${ubfbutt}
+                        </a>
+                    </div>
+                </c:if>
+                <c:if test="${role == 'USER'}">
+                    <div class="hall__button button">
+                        <button type="submit" class="hall__button-link button__link">buy ticket</button>
+                    </div>
+                </c:if>
             </form>
         </div>
     </div>

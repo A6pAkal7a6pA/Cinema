@@ -1,6 +1,6 @@
 package com.finalProject.kuleshov.Cinema.dao;
 
-import com.finalProject.kuleshov.Cinema.dto.Film;
+import com.finalProject.kuleshov.Cinema.entity.Film;
 
 import java.util.List;
 

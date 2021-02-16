@@ -1,27 +1,0 @@
-
-z
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ç€Î‰ûÿÿÿÿ8èû‘ñõ.
-†
-java:S19893"dHandle the following exceptions that could be thrown by "updateFilm": ServletException, IOException.(Ð¹‚êûÿÿÿÿ8¼ú¤ñõ.
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¿ñùÙýÿÿÿÿ
-Z	java:S1068"9Replace this use of System.out or System.err by a logger.(Ä«Æôÿÿÿÿÿ8ÙèÄñõ.
-u
-java:S1989+"SHandle the following exception that could be thrown by "sendRedirect": IOException.(¢˜ÿ³øÿÿÿÿ8Öéºñõ.
-U	java:S106O"9Replace this use of System.out or System.err by a logger.(Öœ‚…8­žî‚ù.
-U	java:S106e"9Replace this use of System.out or System.err by a logger.(ÃÎåÖ8ü é‚ù.
-U	java:S106_"9Replace this use of System.out or System.err by a logger.(À’±Ê8ü é‚ù.
-Z	java:S106'"9Replace this use of System.out or System.err by a logger.(¶’Œ´ýÿÿÿÿ8ºÃ¶ñõ.
-z
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Ø¢¢ùûÿÿÿÿ8èû‘ñõ.
-|	java:S116"[Rename this field "UPLOAD_DIRECTORY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Žø€þûÿÿÿÿ8å£è‚ù.
-T	java:S106C"9Replace this use of System.out or System.err by a logger.(Åþá8­žî‚ù.
-U	java:S106R"9Replace this use of System.out or System.err by a logger.(Öœ‚…8Îƒÿ‚ù.
-ˆ
-java:S1989)"fHandle the following exceptions that could be thrown by "showEditForm": ServletException, IOException.(•„™Ûúÿÿÿÿ8èì ñõ.
-U	java:S106`"9Replace this use of System.out or System.err by a logger.(Êê×Ú8ü é‚ù.
-U	java:S106A"9Replace this use of System.out or System.err by a logger.(›ƒ¿ä8Ä„ü‚ù.
-Z	java:S106M"9Replace this use of System.out or System.err by a logger.(æ®ýðúÿÿÿÿ8­žî‚ù.
-U	java:S106K"9Replace this use of System.out or System.err by a logger.(èýÚÓ8Ïö˜ƒù.
-C
-java:S1170"!Make this final field static too.(Žø€þûÿÿÿÿ8å£è‚ù.
-Z	java:S106H"9Replace this use of System.out or System.err by a logger.(žÎÌïûÿÿÿÿ8­žî‚ù.

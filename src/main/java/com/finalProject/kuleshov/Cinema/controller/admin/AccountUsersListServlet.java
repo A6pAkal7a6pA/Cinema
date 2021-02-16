@@ -4,7 +4,7 @@ import com.finalProject.kuleshov.Cinema.dao.TicketDao;
 import com.finalProject.kuleshov.Cinema.dao.UserDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLTicketDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLUserDao;
-import com.finalProject.kuleshov.Cinema.dto.User;
+import com.finalProject.kuleshov.Cinema.entity.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

@@ -1,8 +1,0 @@
-
-j
-java:S1128"HRemove this unused import 'com.finalProject.kuleshov.Cinema.model.User'.(¢û¼èûÿÿÿÿ8€í«íö.
-z
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Ø¢¢ùûÿÿÿÿ8Žá£íö.
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¿ñùÙýÿÿÿÿ
-„
-java:S1989"gHandle the following exceptions that could be thrown by "showFilmsList": ServletException, IOException.( »ßö8ãÁ°íö.

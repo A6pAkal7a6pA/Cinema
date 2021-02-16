@@ -4,8 +4,8 @@ import com.finalProject.kuleshov.Cinema.dao.FilmDao;
 import com.finalProject.kuleshov.Cinema.dao.UserDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLFilmDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLUserDao;
-import com.finalProject.kuleshov.Cinema.dto.Film;
-import com.finalProject.kuleshov.Cinema.dto.User;
+import com.finalProject.kuleshov.Cinema.entity.Film;
+import com.finalProject.kuleshov.Cinema.entity.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

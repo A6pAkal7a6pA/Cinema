@@ -3,7 +3,7 @@
 <section class="tickets">
     <div class="tickets__body">
         <div class="tickets__title">
-            my active sessions:
+            <fmt:message key="user.mytickets.title" bundle="${bundle}" var="umttitle"/>${umttitle}
         </div>
         <div class="tickets__content">
 
@@ -11,29 +11,25 @@
                 <div class="tickets__item ticket">
                     <div class="ticket__body">
                         <div class="ticket__title">
-                            ticket ?????? <c:out value="${ticket.id}"/>
+                            <fmt:message key="user.mytickets.ticket.title" bundle="${bundle}" var="umtticktitle"/>${umtticktitle} <c:out value="${ticket.id}"/>
                         </div>
                         <div class="ticket__element">
-                            Movie title: <c:out value="${ticket.filmName}"/>
+                            <fmt:message key="user.mytickets.ticket.movietitle" bundle="${bundle}" var="umttickmt"/>${umttickmt}: <c:out value="${ticket.filmName}"/>
                         </div>
                         <div class="ticket__element">
-                            Date: <c:out value="${ticket.dateSeance}"/>
+                            <fmt:message key="user.mytickets.ticket.date" bundle="${bundle}" var="umttickdate"/>${umttickdate}: <c:out value="${ticket.dateSeance}"/>
                         </div>
                         <div class="ticket__element">
-                            Time: <c:out value="${ticket.timeSeance}"/>
+                            <fmt:message key="user.mytickets.ticket.time" bundle="${bundle}" var="umtticktime"/>${umtticktime}: <c:out value="${ticket.timeSeance}"/>
                         </div>
                         <div class="ticket__element">
-                            Place: <c:out value="${ticket.numberSeat}"/>
+                            <fmt:message key="user.mytickets.ticket.place" bundle="${bundle}" var="umttickplace"/>${umttickplace}: <c:out value="${ticket.numberSeat}"/>
                         </div>
                         <div class="ticket__element">
-                            Price: <c:out value="${ticket.priceSeance}"/>
+                            <fmt:message key="user.mytickets.ticket.price" bundle="${bundle}" var="umttickprice"/>${umttickprice}: <c:out value="${ticket.priceSeance}"/>
                         </div>
                         <div class="ticket__descript">
-                            You can get a ticket right before the screening at the box office of our cinema, booked
-                            tickets are
-                            served without queuing at specially designated box offices. You can also get your ticket any
-                            day before
-                            the date of the session, print it yourself, or use the web version.
+                            <fmt:message key="user.mytickets.ticket.description" bundle="${bundle}" var="umttickdesc"/>${umttickdesc}
                         </div>
                     </div>
                 </div>

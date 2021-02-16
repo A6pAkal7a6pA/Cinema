@@ -1,7 +1,6 @@
 
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(βοσ’
-n
-java:S1192O"QDefine a constant instead of duplicating this literal "from tickets t\n" 3 times.(ϊ―Ζβ8¨»΄ψ.
 W
 java:S1118":Add a private constructor to hide the implicit public one.(ο¬τ‡8›¥“Ψτ.
-]	java:S1257"<This block of commented-out lines of code should be removed.(¶›Ηςÿÿÿÿÿ8Ω£π―ω.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(βοσ’
+
+java:S1192"}Define a constant instead of duplicating this literal "       date_format(s.time_seance, '%k:%i') as time_seance,\n" 3 times.(—ƒφΉ8²Θ•²ϊ.

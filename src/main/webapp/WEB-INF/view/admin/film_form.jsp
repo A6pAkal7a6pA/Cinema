@@ -9,10 +9,10 @@
         <div class="add-edit__content">
             <div class="add-edit__title">
                 <c:if test="${not empty film}">
-                    Edit Film
+                    <fmt:message key="admin.films.form.title.edit" bundle="${bundle}" var="afiformedit"/>${afiformedit}
                 </c:if>
                 <c:if test="${empty film}">
-                    Add New Film
+                    <fmt:message key="admin.films.form.title.add" bundle="${bundle}" var="afiformadd"/>${afiformadd}
                 </c:if>
             </div>
 
@@ -31,28 +31,28 @@
                         </c:if>
                         <li class="add-edit__list-item">
                             <label for="movie" class="add-edit__label">
-                                Movie title:
+                                <fmt:message key="admin.films.movietitle" bundle="${bundle}" var="afimovti"/>${afimovti}:
                             </label>
                             <input type="text" name="title" class="add-edit__input" id="movie" value="<c:out value='${film.name}' />"
                                    required>
                         </li>
                         <li class="add-edit__list-item">
                             <label for="director" class="add-edit__label">
-                                Film director:
+                                <fmt:message key="admin.films.director" bundle="${bundle}" var="afidir"/>${afidir}:
                             </label>
                             <input type="text" name="director" class="add-edit__input" id="director"
                                    value="<c:out value='${film.directedBy}' />" required>
                         </li>
                         <li class="add-edit__list-item">
                             <label for="duration" class="add-edit__label">
-                                Duration:
+                                <fmt:message key="admin.films.duration" bundle="${bundle}" var="afidur"/>${afidur}:
                             </label>
                             <input type="number" class="add-edit__input" id="duration" name="duration"
                                    value="<c:out value='${film.duration}' />" min="0" max="10000" required>
                         </li>
                         <li class="add-edit__list-item">
                             <label for="description" class="add-edit__label">
-                                Description:
+                                <fmt:message key="admin.films.description" bundle="${bundle}" var="afidesc"/>${afidesc}:
                             </label>
                             <textarea name="description" id="description" cols="50" rows="1" wrap="hard" class="add-edit__textarea"
                                       required>
@@ -63,14 +63,16 @@
                             <input type="file" class="add-edit__input inputfile" accept="image/*" name="fileFilm" required id="cover"
                                    data-multiple-caption="{count}">
                             <label for="cover" class="add-edit__label-file">
-                                <span>upload image</span>
+                                <span>
+                                    <fmt:message key="admin.films.form.upload" bundle="${bundle}" var="afiformuplo"/>${afiformuplo}
+                                </span>
                             </label>
                         </li>
                     </ul>
                     <div class="registration__block-button-1">
                         <div class="registration__block-button-2">
                             <button type="submit" class="registration__button">
-                                save
+                                <fmt:message key="admin.films.form.button.save" bundle="${bundle}" var="afiformbuttsave"/>${afiformbuttsave}
                             </button>
                         </div>
                     </div>

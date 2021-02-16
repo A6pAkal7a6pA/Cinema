@@ -23,7 +23,7 @@ public class SQLConstants {
                     "       f.picture                                           as photo_film,\n" +
                     "       f.name                                              as film_name,\n" +
                     "       s.date_seance                                       as date_seance,\n" +
-                    "       s.time_seance                                       as time_seance,\n" +
+                    "       date_format(s.time_seance, '%k:%i') as time_seance,\n" +
                     "       s.price_seance                                      as price,\n" +
                     "       f.duration                                          as duration,\n" +
                     "       f.directedBy                                        as director,\n" +
@@ -47,7 +47,6 @@ public class SQLConstants {
                     "WHERE s.id = ?;";
     public static final String UPDATE_SEANCE_BY_ID =
             "UPDATE seance set id=?, date_seance=?, time_seance=?, price_seance=?, film_id=? WHERE id=?";
-    public static final String SELECT_ALL_SEATS = "SELECT number_seat FROM tickets;";
     public static final String INSERT_TICKET = "INSERT INTO tickets(user_id, seance_id, number_seat) VALUES (?, ?, ?);";
     public static final String SELECT_OCCUPIED_PLACES = "SELECT number_seat FROM tickets WHERE seance_id=?";
 
@@ -59,7 +58,7 @@ public class SQLConstants {
     public static final String SELECT_ALL_TICKETS_USER = "select t.id as id,\n" +
             "       f.name as movie_title,\n" +
             "       s.date_seance as date_seance,\n" +
-            "       s.time_seance as time_seance,\n" +
+            "       date_format(s.time_seance, '%k:%i') as time_seance,\n" +
             "       t.number_seat as place,\n" +
             "       s.price_seance as price\n" +
             "from tickets t\n" +
@@ -71,7 +70,7 @@ public class SQLConstants {
             "       f.picture                                           as photo_film,\n" +
             "       f.name                                              as film_name,\n" +
             "       s.date_seance                                       as date_seance,\n" +
-            "       s.time_seance                                       as time_seance,\n" +
+            "       date_format(s.time_seance, '%k:%i') as time_seance,\n" +
             "       s.price_seance                                      as price,\n" +
             "       f.duration                                          as duration,\n" +
             "       f.directedBy                                        as director,\n" +
@@ -91,7 +90,7 @@ public class SQLConstants {
             "                s.film_id              as film_id,\n" +
             "                dayname(s.date_seance) as day_name,\n" +
             "                s.date_seance          as date_seance,\n" +
-            "                s.time_seance          as time_seance\n" +
+            "                date_format(s.time_seance, '%k:%i') as time_seance\n" +
             "FROM seance s\n" +
             "         join films f on f.id = s.film_id\n" +
             "WHERE YEARWEEK(s.date_seance) = YEARWEEK(NOW())\n" +

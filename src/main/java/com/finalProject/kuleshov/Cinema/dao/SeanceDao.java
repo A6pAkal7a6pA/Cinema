@@ -1,6 +1,6 @@
 package com.finalProject.kuleshov.Cinema.dao;
 
-import com.finalProject.kuleshov.Cinema.dto.Seance;
+import com.finalProject.kuleshov.Cinema.entity.Seance;
 
 import java.util.List;
 
@@ -19,8 +19,6 @@ public interface SeanceDao {
     public boolean deleteSeanceById(int id);
 
     public void addSeance(Seance seance);
-
-    public String sortingOption(String sortRequest);
 
     public List<Seance> showAllSeance();
 

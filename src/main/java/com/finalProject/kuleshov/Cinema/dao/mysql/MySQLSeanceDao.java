@@ -3,7 +3,7 @@ package com.finalProject.kuleshov.Cinema.dao.mysql;
 import com.finalProject.kuleshov.Cinema.connection.ConnectionPool;
 import com.finalProject.kuleshov.Cinema.constants.SQLConstants;
 import com.finalProject.kuleshov.Cinema.dao.SeanceDao;
-import com.finalProject.kuleshov.Cinema.dto.Seance;
+import com.finalProject.kuleshov.Cinema.entity.Seance;
 import com.finalProject.kuleshov.Cinema.util.Util;
 import org.apache.log4j.Logger;
 
@@ -14,10 +14,10 @@ import java.util.List;
 
 public class MySQLSeanceDao implements SeanceDao {
     private static final Logger LOG = Logger.getLogger(MySQLSeanceDao.class);
-    Connection connection = null;
 
     @Override
     public String selectCurrentDay() {
+        Connection connection = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         String result = null;
@@ -31,14 +31,16 @@ public class MySQLSeanceDao implements SeanceDao {
             LOG.info("selectCurrentDay done");
         } catch (SQLException e) {
             LOG.error("Trouble with selectCurrentDay: " + e.getMessage());
+            Util.rollback(connection);
         } finally {
-            Util.close(ps);
+            Util.close(ps, connection);
         }
         return result;
     }
 
     @Override
     public List<Seance> selectScheduleByDay(String day) {
+        Connection connection = null;
         List<Seance> seances = new ArrayList<>();
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -61,14 +63,16 @@ public class MySQLSeanceDao implements SeanceDao {
             LOG.info("selectScheduleByDay done");
         } catch (SQLException e) {
             LOG.error("Trouble with selectScheduleByDay: " + e.getMessage());
+            Util.rollback(connection);
         } finally {
-            Util.close(ps, rs);
+            Util.close(ps, rs, connection);
         }
         return seances;
     }
 
     @Override
     public Seance showSeanceById(int id) {
+        Connection connection = null;
         Seance seance = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -95,14 +99,16 @@ public class MySQLSeanceDao implements SeanceDao {
             LOG.info("showSeanceById done");
         } catch (SQLException e) {
             LOG.error("Trouble with showSeanceById: " + e.getMessage());
+            Util.rollback(connection);
         } finally {
-            Util.close(ps, rs);
+            Util.close(ps, rs, connection);
         }
         return seance;
     }
 
     @Override
     public boolean updateSeance(Seance seance) {
+        Connection connection = null;
         boolean result = false;
         PreparedStatement ps = null;
         try {
@@ -119,14 +125,16 @@ public class MySQLSeanceDao implements SeanceDao {
             LOG.info("updateSeance done");
         } catch (SQLException e) {
             LOG.error("Trouble with updateSeance: " + e.getMessage());
+            Util.rollback(connection);
         } finally {
-            Util.close(ps);
+            Util.close(ps, connection);
         }
         return result;
     }
 
     @Override
     public Seance selectSeanceById(int id) {
+        Connection connection = null;
         Seance seance = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -145,15 +153,17 @@ public class MySQLSeanceDao implements SeanceDao {
             }
             LOG.info("selectSeanceById done");
         } catch (SQLException e) {
-            System.out.println("Trouble with selectSeanceById: " + e.getMessage());
+            LOG.error("Trouble with selectSeanceById: " + e.getMessage());
+            Util.rollback(connection);
         } finally {
-            Util.close(ps, rs);
+            Util.close(ps, rs, connection);
         }
         return seance;
     }
 
     @Override
     public boolean deleteSeanceById(int id) {
+        Connection connection = null;
         boolean result = false;
         PreparedStatement ps = null;
         try {
@@ -164,14 +174,16 @@ public class MySQLSeanceDao implements SeanceDao {
             LOG.info("deleteSeanceById done");
         } catch (SQLException e) {
             LOG.error("Trouble with deleteSeanceById: " + e.getMessage());
+            Util.rollback(connection);
         } finally {
-            Util.close(ps);
+            Util.close(ps, connection);
         }
         return result;
     }
 
     @Override
     public void addSeance(Seance seance) {
+        Connection connection = null;
         PreparedStatement ps = null;
         try {
             connection = ConnectionPool.getInstance().getConnection();
@@ -184,48 +196,15 @@ public class MySQLSeanceDao implements SeanceDao {
             LOG.info("addSeance done");
         } catch (SQLException e) {
             LOG.error("Trouble with addSeance: " + e.getMessage());
+            Util.rollback(connection);
         } finally {
-            Util.close(ps);
-        }
-    }
-
-    @Override
-    public String sortingOption(String sortRequest) {
-        if (sortRequest == null) {
-            return "order by 4 asc, 5 asc ";
-        }
-        String orderByDateTimeAsc = "order by 4 asc, 5 asc ";
-        String orderByMovieTitleAsc = "order by 3 asc ";
-        String orderByAvailableSeatsAsc = "order by free_places asc ";
-        String orderByDateTimeDesc = "order by 4 desc, 5 desc ";
-        String orderByMovieTitleDesc = "order by 3 desc ";
-        String orderByAvailableSeatsDesc = "order by free_places desc ";
-        String orderByPriceAsc = "order by 6 asc ";
-        String orderByPriceDesc = "order by 6 desc ";
-        switch (sortRequest) {
-            case "dateTimeSortAsc":
-                return orderByDateTimeAsc;
-            case "availableSeatsSortAsc":
-                return orderByAvailableSeatsAsc;
-            case "movieTitleSortAsc":
-                return orderByMovieTitleAsc;
-            case "dateTimeSortDesc":
-                return orderByDateTimeDesc;
-            case "availableSeatsSortDesc":
-                return orderByAvailableSeatsDesc;
-            case "movieTitleSortDesc":
-                return orderByMovieTitleDesc;
-            case "priceSortAsc":
-                return orderByPriceAsc;
-            case "priceSortDesc":
-                return orderByPriceDesc;
-            default:
-                return "order by 4 asc, 5 asc ";
+            Util.close(ps, connection);
         }
     }
 
     @Override
     public List<Seance> showAllSeance() {
+        Connection connection = null;
         List<Seance> seances = new ArrayList<>();
         Statement statement = null;
         ResultSet rs = null;
@@ -252,14 +231,16 @@ public class MySQLSeanceDao implements SeanceDao {
             LOG.info("showAllSeance done");
         } catch (SQLException e) {
             LOG.error("Trouble with showAllSeance: " + e.getMessage());
+            Util.rollback(connection);
         } finally {
-            Util.close(statement, rs);
+            Util.close(statement, rs, connection);
         }
         return seances;
     }
 
     @Override
     public List<Seance> showAllSeance(String sortRequest, int start, int total) {
+        Connection connection = null;
         List<Seance> seances = new ArrayList<>();
         Statement statement = null;
         ResultSet rs = null;
@@ -268,7 +249,7 @@ public class MySQLSeanceDao implements SeanceDao {
             statement = connection.createStatement();
             rs = statement.executeQuery(
                     SQLConstants.SELECT_ALL_SEANCES +
-                            sortingOption(sortRequest) + " limit " + (start - 1) + ", " + total);
+                            Util.sortingOption(sortRequest) + " limit " + (start - 1) + ", " + total);
             while (rs.next()) {
                 Seance seance = new Seance();
                 seances.add(seance);
@@ -288,8 +269,9 @@ public class MySQLSeanceDao implements SeanceDao {
             LOG.info("showAllSeance done");
         } catch (SQLException e) {
             LOG.error("Trouble with showAllSeance: " + e.getMessage());
+            Util.rollback(connection);
         } finally {
-            Util.close(statement, rs);
+            Util.close(statement, rs, connection);
         }
         return seances;
     }

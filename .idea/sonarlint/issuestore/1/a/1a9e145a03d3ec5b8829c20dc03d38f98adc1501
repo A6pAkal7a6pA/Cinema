@@ -1,5 +1,6 @@
 
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÒÂ¸ùÿÿÿÿ
-Z	java:S106""9Replace this use of System.out or System.err by a logger.(º¹ú‘üÿÿÿÿ8ÇæÎ÷õ.
 d
-java:S1128"GRemove this unused import 'com.finalProject.kuleshov.Cinema.util.Util'.(°£ª8ƒ‘©øõ.
+java:S1128"GRemove this unused import 'com.finalProject.kuleshov.Cinema.util.Util'.(°£ª8ƒ‘©øõ.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÒÂ¸ùÿÿÿÿ
+v
+java:S1128"TRemove this unused import 'com.finalProject.kuleshov.Cinema.dao.mysql.MySQLUserDao'.(»¬ˆ‹ÿÿÿÿÿ8äÚÓ´ú.

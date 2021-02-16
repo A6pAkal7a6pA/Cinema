@@ -3,18 +3,18 @@
 <c:if test="${role != 'ADMIN'}">
     <c:redirect url="/"/>
 </c:if>
-<h1 class="hire__title table__title">List of User</h1>
+<h1 class="hire__title table__title"><fmt:message key="admin.users.title" bundle="${bundle}" var="austitle"/>${austitle}</h1>
 <table cellspacing="10" class="table">
     <thead>
     <tr>
         <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Login</th>
-        <th>Contact Number</th>
-        <th>Role</th>
-        <th>Email</th>
-        <th>Date of registration</th>
+        <th><fmt:message key="admin.users.firstname" bundle="${bundle}" var="ausfname"/>${ausfname}</th>
+        <th><fmt:message key="admin.users.lastname" bundle="${bundle}" var="auslname"/>${auslname}</th>
+        <th><fmt:message key="admin.users.login" bundle="${bundle}" var="auslogin"/>${auslogin}</th>
+        <th><fmt:message key="admin.users.phone" bundle="${bundle}" var="ausphone"/>${ausphone}</th>
+        <th><fmt:message key="admin.users.role" bundle="${bundle}" var="ausrole"/>${ausrole}</th>
+        <th><fmt:message key="admin.users.email" bundle="${bundle}" var="ausemail"/>${ausemail}</th>
+        <th><fmt:message key="admin.users.date" bundle="${bundle}" var="ausdate"/>${ausdate}</th>
     </tr>
     </thead>
     <tbody>

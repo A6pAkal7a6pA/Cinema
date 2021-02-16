@@ -9,10 +9,10 @@
         <div class="add-edit__content">
             <div class="add-edit__title">
                 <c:if test="${not empty seance}">
-                    Edit Seance
+                    <fmt:message key="admin.seances.form.title.edit" bundle="${bundle}" var="aseformedit"/>${aseformedit}
                 </c:if>
                 <c:if test="${empty seance}">
-                    Add New Seance
+                    <fmt:message key="admin.seances.form.title.add" bundle="${bundle}" var="aseformadd"/>${aseformadd}
                 </c:if>
             </div>
 
@@ -31,7 +31,7 @@
                         </c:if>
                         <li class="add-edit__list-item">
                             <label for="movie" class="add-edit__label">
-                                Movie title:
+                                <fmt:message key="admin.seances.movietitle" bundle="${bundle}" var="asemovtit"/>${asemovtit}:
                             </label>
                             <select name="filmSeanceId" class="add-edit__input" id="movie">
                                 <c:forEach items="${requestScope.selectFilmIdName}" var="filmIdName">
@@ -43,7 +43,7 @@
                         </li>
                         <li class="add-edit__list-item">
                             <label for="dateSeance" class="add-edit__label">
-                                Date of seance:
+                                <fmt:message key="admin.seances.date" bundle="${bundle}" var="asedate"/>${asedate}:
                             </label>
                             <input type="date" name="dateSeance" min="${requestScope.currentDate}"
                                    class="add-edit__input" id="dateSeance"
@@ -52,7 +52,7 @@
 
                         <li class="add-edit__list-item">
                             <label for="timeSeance" class="add-edit__label">
-                                Time of seance:
+                                <fmt:message key="admin.seances.time" bundle="${bundle}" var="asetime"/>${asetime}:
                             </label>
                             <input type="time" name="timeSeance" class="add-edit__input" id="timeSeance"
                                    value="<c:out value='${seance.timeSeance}' />" required>
@@ -60,7 +60,7 @@
 
                         <li class="add-edit__list-item">
                             <label for="priceSeance" class="add-edit__label">
-                                Cost:
+                                <fmt:message key="admin.seances.price" bundle="${bundle}" var="aseprice"/>${aseprice}:
                             </label>
                             <input type="number" name="priceSeance" class="add-edit__input" id="priceSeance"
                                    value="<c:out value='${seance.priceSeance}' />" required>
@@ -69,7 +69,7 @@
                     <div class="registration__block-button-1">
                         <div class="registration__block-button-2">
                             <button type="submit" class="registration__button">
-                                save
+                                <fmt:message key="admin.seances.form.button.save" bundle="${bundle}" var="aseformsave"/>${aseformsave}
                             </button>
                         </div>
                     </div>

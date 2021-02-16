@@ -1,3 +1,38 @@
+let select = function () {
+    let selectHeader = document.querySelectorAll('.lang-select__header');
+    let selectItem = document.querySelectorAll('.lang-select__item');
+    let menuBtn = $('.lang-select');
+    selectHeader.forEach(item => {
+        item.addEventListener('click', selectToggle)
+    });
+
+    selectItem.forEach(item => {
+        item.addEventListener('click', selectChoose)
+    });
+
+    function selectToggle() {
+        this.parentElement.classList.toggle('is-active');
+    }
+
+    function selectChoose() {
+
+        let text = this.innerHTML,
+            select = this.closest('.lang-select'),
+            currentText = select.querySelector('.lang-select__current');
+        currentText.innerHTML = text;
+        select.classList.remove('is-active');
+    }
+    $(document).click(function (e) {
+        if (!menuBtn.is(e.target) && menuBtn.has(e.target).length === 0) {
+            menuBtn.removeClass('is-active');
+        };
+    });
+
+};
+
+select();
+
+
 $('.slider-cover__body').slick({
     arrows: false,
     dots: false,
@@ -22,7 +57,6 @@ $(".hall__label").hover(
 
 
 $('.schedule-head__item .schedule-head__link').each(function () {
-    console.log(window.location.href)
     var location = window.location.href;
 
     var link = this.href;
@@ -33,10 +67,8 @@ $('.schedule-head__item .schedule-head__link').each(function () {
 
 
 var input = document.querySelector('.inputfile');
-console.log(input);
-console.log(input.nextElementSibling);
-var label = input.nextElementSibling,
-    labelVal = label.innerHTML;
+var label = input.nextElementSibling;
+var labelVal = label.innerHTML;
 input.addEventListener('change', function (e) {
     var fileName = "";
     if (this.files && this.files.length > 1) {
@@ -50,3 +82,5 @@ input.addEventListener('change', function (e) {
         label.innerHTML = labelVal;
     }
 });
+
+

@@ -6,8 +6,8 @@ import com.finalProject.kuleshov.Cinema.dao.TicketDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLFilmDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLSeanceDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLTicketDao;
-import com.finalProject.kuleshov.Cinema.dto.Film;
-import com.finalProject.kuleshov.Cinema.dto.Seance;
+import com.finalProject.kuleshov.Cinema.entity.Film;
+import com.finalProject.kuleshov.Cinema.entity.Seance;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
 
-@WebServlet("")
+@WebServlet(urlPatterns = {""})
 public class MainPageServlet extends HttpServlet {
     TicketDao ticketDao = null;
     SeanceDao seanceDao = null;
@@ -40,7 +40,6 @@ public class MainPageServlet extends HttpServlet {
         showSchedule(req, resp);
     }
 
-
     private void showSchedule(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Film> selectFilmIdName = filmDao.selectFilmIdName();
 
@@ -55,7 +54,7 @@ public class MainPageServlet extends HttpServlet {
         if (page != null) {
             pageId = Integer.parseInt(page);
         }
-        req.setAttribute("start", pageId);
+        req.setAttribute("page", pageId);
         int total = 4;
 
 

@@ -2,7 +2,7 @@ package com.finalProject.kuleshov.Cinema.filter;
 
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLFilmDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLUserDao;
-import com.finalProject.kuleshov.Cinema.dto.User;
+import com.finalProject.kuleshov.Cinema.entity.User;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

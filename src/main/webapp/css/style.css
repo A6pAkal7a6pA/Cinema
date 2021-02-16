@@ -198,6 +198,78 @@ a {
   height: 35px;
 }
 
+.lang-select {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.lang-select__header {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.lang-select__header span {
+  margin: 0;
+  font-size: 25px;
+}
+
+.lang-select__current {
+  cursor: pointer;
+  outline: none;
+  padding-right: 5px;
+}
+
+.lang-select .fas {
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.lang-select .fa-caret-up {
+  display: none;
+}
+
+.lang-select.is-active .fa-caret-down {
+  display: none;
+}
+
+.lang-select.is-active .fa-caret-up {
+  display: block;
+}
+
+.lang-select__body {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  top: 30px;
+  left: 0px;
+}
+
+.lang-select__item {
+  margin: 5px 0;
+}
+
+.lang-select__item-link {
+  color: #11f1ff;
+  font-size: 25px;
+}
+
+.lang-select__item-link:hover {
+  color: #e785ff;
+}
+
+.lang-select.is-active .lang-select__body {
+  display: block;
+}
+
 .admin-menu__wrapper {
   display: flex;
   align-items: center;
@@ -1163,7 +1235,7 @@ a {
 
 .ticket__descript {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 5px;
   font-size: 12px;
   line-height: 23px;
   color: #ffffff;

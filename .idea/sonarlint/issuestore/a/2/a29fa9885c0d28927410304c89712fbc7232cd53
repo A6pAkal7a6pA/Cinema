@@ -1,0 +1,11 @@
+
+c
+java:S1192="FDefine a constant instead of duplicating this literal "login" 3 times.(Ê³ÌŸ8ı•½Îô.
+k
+java:S1192<"IDefine a constant instead of duplicating this literal "lastName" 4 times.(¢ ÃÓùÿÿÿÿ8ë¼¼Ëô.
+]	java:S125"<This block of commented-out lines of code should be removed.(ıß³Àûÿÿÿÿ8á¤Â°ú.
+g
+java:S1192;"JDefine a constant instead of duplicating this literal "firstName" 4 times.(°š™8ë¼¼Ëô.
+j
+java:S1192?"HDefine a constant instead of duplicating this literal "contact" 4 times.(Ú ó¿şÿÿÿÿ8ë¼¼Ëô.
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(…õ£Ãşÿÿÿÿ8ÃÀûó.

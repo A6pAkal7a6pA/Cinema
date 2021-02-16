@@ -12,7 +12,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class ConnectionPool {
-    private static final Logger LOG = Logger.getLogger(MySQLUserDao.class);
+    private static final Logger LOG = Logger.getLogger(ConnectionPool.class);
     private ConnectionPool() {
 
     }
