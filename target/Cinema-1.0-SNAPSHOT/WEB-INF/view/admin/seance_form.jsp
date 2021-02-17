@@ -54,7 +54,7 @@
                             <label for="timeSeance" class="add-edit__label">
                                 <fmt:message key="admin.seances.time" bundle="${bundle}" var="asetime"/>${asetime}:
                             </label>
-                            <input type="time" name="timeSeance" class="add-edit__input" id="timeSeance"
+                            <input type="time" name="timeSeance" class="add-edit__input" min="09:00" max="22:00" id="timeSeance"
                                    value="<c:out value='${seance.timeSeance}' />" required>
                         </li>
 

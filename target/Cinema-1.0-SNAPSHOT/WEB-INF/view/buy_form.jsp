@@ -38,6 +38,13 @@
     </div>
 </section>
 
+<c:forEach items="${requestScope.allSeancesThisFilm}" var="thisFilm">
+    <c:out value="${thisFilm.dayName}"/>
+    <c:out value="${thisFilm.date}"/>
+    <c:out value="${thisFilm.timeSeance}"/>
+    <br>
+</c:forEach>
+
 <section class="hall">
     <div class="hall__body">
         <div class="hall__screen">

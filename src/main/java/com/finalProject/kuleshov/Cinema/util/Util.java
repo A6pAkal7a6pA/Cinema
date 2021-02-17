@@ -57,6 +57,13 @@ public class Util {
             LOG.error("Trouble with rollback: " + e.getMessage());
         }
     }
+    public static void setAutocommit(Connection con, boolean autocommit) {
+        try {
+            con.setAutoCommit(autocommit);
+        } catch (SQLException e) {
+            LOG.error("Trouble with setAutocommit(): " + e.getMessage());
+        }
+    }
 
         public static String getCurrentDate () {
             Date date = new Date();

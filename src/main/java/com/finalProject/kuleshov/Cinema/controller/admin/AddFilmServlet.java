@@ -6,6 +6,7 @@ import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLFilmDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLUserDao;
 import com.finalProject.kuleshov.Cinema.entity.Film;
 import com.finalProject.kuleshov.Cinema.entity.User;
+import sun.rmi.rmic.Constants;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,25 +23,34 @@ import java.io.IOException;
 @MultipartConfig(fileSizeThreshold = 1024 * 1024,
         maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5)
 public class AddFilmServlet extends HttpServlet {
-    FilmDao filmDao = null;
-    UserDao userDao = null;
+    private FilmDao filmDao = null;
     private final String UPLOAD_DIRECTORY = "images";
 
     @Override
     public void init() throws ServletException {
         filmDao = new MySQLFilmDao();
-        userDao = new MySQLUserDao();
     }
 
+//    private String getFileName(Part part) {
+//        System.out.println(part.getHeader("content-disposition"));
+//        for (String content : part.getHeader("content-disposition").split(";")) {
+//            if (content.trim().startsWith("filename"))
+//                return content.substring(content.indexOf("=") + 2, content.length() - 1);
+//        }
+//        return "";
+//    }
+
     private String getFileName(Part part) {
+        System.out.println(part.getHeader(("content-disposition")));
         for (String content : part.getHeader("content-disposition").split(";")) {
+            System.out.println(content);
             if (!content.trim().startsWith("filename")) {
                 continue;
             }
             part.getSubmittedFileName();
             return content.substring(content.indexOf("=") + 2, content.length() - 1);
         }
-        return "";
+        return "432442";
     }
 
 
@@ -59,24 +69,28 @@ public class AddFilmServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String uploadPath = request.getServletContext().getRealPath("") + UPLOAD_DIRECTORY;
+        String uploadPath = request.getServletContext().getRealPath("")  + UPLOAD_DIRECTORY;
         File uploadDir = new File(uploadPath);
         if (!uploadDir.exists()) {
             uploadDir.mkdir();
         }
+        System.out.println(uploadDir.exists());
+        System.out.println("uploadPath: " + uploadPath);
 
         String fileName = "";
         for (Part part : request.getParts()) {
+            System.out.println("part: " + part.getName());
             fileName = getFileName(part);
             part.write(uploadPath + File.separator + fileName);
         }
+
+        System.out.println("fileName: " + fileName);
 
         String name = request.getParameter("title");
         String directedBy = request.getParameter("director");
         String description = request.getParameter("description");
         int duration = Integer.parseInt(request.getParameter("duration"));
         Film newFilm = new Film(name, directedBy, description, duration, fileName);
-
         filmDao.addFilm(newFilm);
 
         response.sendRedirect(request.getContextPath() + "/films_list");

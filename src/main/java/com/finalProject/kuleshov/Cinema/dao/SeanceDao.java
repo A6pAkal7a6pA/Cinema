@@ -23,4 +23,6 @@ public interface SeanceDao {
     public List<Seance> showAllSeance();
 
     public List<Seance> showAllSeance(String sortRequest, int start, int total);
+
+    public List<Seance> findAllSeanceByFilmId(int filmId);
 }

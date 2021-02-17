@@ -15,7 +15,7 @@ import java.util.List;
 
 @WebServlet("/films_list")
 public class AccountFilmsListServlet extends HttpServlet {
-    FilmDao filmDao = null;
+    private FilmDao filmDao = null;
 
     @Override
     public void init() throws ServletException {

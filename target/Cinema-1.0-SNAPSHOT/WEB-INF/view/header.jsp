@@ -38,7 +38,6 @@
                 <ul class="menu__list">
                     <li class="menu__list-item">
                         <a href="<%=request.getContextPath()%>/" class="menu__list-link">
-                            <fmt:bundle basename="header"/>
                             <fmt:message key="header.poster.ref" bundle="${bundle}" var="poster"/>
                             ${poster}
 

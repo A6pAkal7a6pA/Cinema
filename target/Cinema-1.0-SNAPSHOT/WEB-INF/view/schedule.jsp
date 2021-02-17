@@ -44,7 +44,7 @@
                 <div class="schedule__item">
                     <input type="hidden" value="<c:out value="${seanceWeek.id}"/>">
                     <span class="schedule__time"><c:out value="${seanceWeek.timeSeance}"/></span>
-                    <a href="buy_ticket?id=<c:out value="${seance.id}"/>" class="schedule__film-name"><c:out value="${seanceWeek.filmName}"/></a>
+                    <a href="buy_ticket?id=<c:out value="${seanceWeek.id}"/>" class="schedule__film-name"><c:out value="${seanceWeek.filmName}"/></a>
                     <a href="buy_ticket?id=<c:out value="${seanceWeek.id}"/>" class="schedule__choose">
                         <fmt:message key="schedule.table.choose" bundle="${bundle}" var="schchoose"/>${schchoose}
                     </a>

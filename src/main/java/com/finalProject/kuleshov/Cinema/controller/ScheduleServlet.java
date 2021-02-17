@@ -14,7 +14,7 @@ import java.util.List;
 
 @WebServlet("/schedule")
 public class ScheduleServlet extends HttpServlet {
-    SeanceDao seanceDao = null;
+    private SeanceDao seanceDao = null;
     @Override
     public void init() throws ServletException {
         seanceDao = new MySQLSeanceDao();

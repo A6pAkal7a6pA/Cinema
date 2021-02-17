@@ -17,8 +17,8 @@ import java.util.List;
 
 @WebServlet("/users_list")
 public class AccountUsersListServlet extends HttpServlet {
-    UserDao userDao = null;
-    TicketDao ticketDao = null;
+    private UserDao userDao = null;
+    private TicketDao ticketDao = null;
 
     @Override
     public void init() throws ServletException {

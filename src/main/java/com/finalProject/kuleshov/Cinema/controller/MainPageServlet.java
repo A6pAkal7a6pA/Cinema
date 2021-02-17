@@ -20,9 +20,9 @@ import java.util.*;
 
 @WebServlet(urlPatterns = {""})
 public class MainPageServlet extends HttpServlet {
-    TicketDao ticketDao = null;
-    SeanceDao seanceDao = null;
-    FilmDao filmDao = null;
+    private TicketDao ticketDao = null;
+    private SeanceDao seanceDao = null;
+    private FilmDao filmDao = null;
     private static final Logger LOG = Logger.getLogger(MainPageServlet.class);
 
     @Override

@@ -17,12 +17,12 @@
             </div>
 
             <c:if test="${not empty film}">
-            <form action="edit_film" class="add-edit__form" method="post"
+            <form action="<%=request.getContextPath()%>/edit_film" class="add-edit__form" method="post"
                   enctype="multipart/form-data">
                 </c:if>
 
                 <c:if test="${empty film}">
-                <form action="add_new_film" class="add-edit__form" method="post" enctype="multipart/form-data">
+                <form action="<%=request.getContextPath()%>/add_new_film" class="add-edit__form" method="post" enctype="multipart/form-data">
                     </c:if>
 
                     <ul class="add-edit__list">
@@ -33,15 +33,14 @@
                             <label for="movie" class="add-edit__label">
                                 <fmt:message key="admin.films.movietitle" bundle="${bundle}" var="afimovti"/>${afimovti}:
                             </label>
-                            <input type="text" name="title" class="add-edit__input" id="movie" value="<c:out value='${film.name}' />"
-                                   required>
+                            <input type="text" name="title" class="add-edit__input" id="movie" value="<c:out value='${film.name}' />" required/>
                         </li>
                         <li class="add-edit__list-item">
                             <label for="director" class="add-edit__label">
                                 <fmt:message key="admin.films.director" bundle="${bundle}" var="afidir"/>${afidir}:
                             </label>
                             <input type="text" name="director" class="add-edit__input" id="director"
-                                   value="<c:out value='${film.directedBy}' />" required>
+                                   value="<c:out value='${film.directedBy}' />" required/>
                         </li>
                         <li class="add-edit__list-item">
                             <label for="duration" class="add-edit__label">
@@ -61,7 +60,7 @@
                         </li>
                         <li class="add-edit__list-item">
                             <input type="file" class="add-edit__input inputfile" accept="image/*" name="fileFilm" required id="cover"
-                                   data-multiple-caption="{count}">
+                                  data-multiple-caption="{count}">
                             <label for="cover" class="add-edit__label-file">
                                 <span>
                                     <fmt:message key="admin.films.form.upload" bundle="${bundle}" var="afiformuplo"/>${afiformuplo}

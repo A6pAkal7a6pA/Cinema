@@ -24,8 +24,8 @@ import static java.lang.Integer.parseInt;
 @MultipartConfig(fileSizeThreshold = 1024 * 1024,
         maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5)
 public class EditFilmServlet extends HttpServlet {
-    FilmDao filmDao = null;
-    UserDao userDao= null;
+    private FilmDao filmDao = null;
+    private UserDao userDao= null;
     private final String UPLOAD_DIRECTORY = "images";
 
     @Override
@@ -92,6 +92,6 @@ public class EditFilmServlet extends HttpServlet {
             part.getSubmittedFileName();
             return content.substring(content.indexOf("=") + 2, content.length() - 1);
         }
-        return "";
+        return "42342432";
     }
 }

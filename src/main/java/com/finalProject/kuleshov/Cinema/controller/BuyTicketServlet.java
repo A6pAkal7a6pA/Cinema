@@ -21,9 +21,9 @@ import static java.lang.Integer.parseInt;
 
 @WebServlet("/buy_ticket")
 public class BuyTicketServlet extends HttpServlet {
-    SeanceDao seanceDao = null;
-    TicketDao ticketDao = null;
-    Map<Integer, String> mapPlaces = null;
+    private SeanceDao seanceDao = null;
+    private TicketDao ticketDao = null;
+    private Map<Integer, String> mapPlaces = null;
 
     @Override
     public void init() throws ServletException {
@@ -54,6 +54,8 @@ public class BuyTicketServlet extends HttpServlet {
         int id = parseInt(request.getParameter("id"));
 
         Seance seance = seanceDao.showSeanceById(id);
+        int filmId = seance.getFilmId();
+        List<Seance> allSeanceByFilmId = seanceDao.findAllSeanceByFilmId(filmId);
         List<Integer> list = ticketDao.selectOccupiedPlaces(id);
 
         mapPlaces = new ConcurrentHashMap<>();
@@ -69,6 +71,7 @@ public class BuyTicketServlet extends HttpServlet {
 
         request.setAttribute("mapPlaces", mapPlaces);
         request.setAttribute("seance", seance);
+        request.setAttribute("allSeancesThisFilm", allSeanceByFilmId);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/buy_form.jsp");
         dispatcher.forward(request, response);

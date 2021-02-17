@@ -20,8 +20,8 @@ import java.util.List;
 
 @WebServlet("/add_new_seance")
 public class AddSeanceServlet extends HttpServlet {
-    FilmDao filmDao = null;
-    SeanceDao seanceDao = null;
+    private FilmDao filmDao = null;
+    private SeanceDao seanceDao = null;
 
     @Override
     public void init() throws ServletException {

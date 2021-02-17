@@ -43,30 +43,32 @@
                                 <div class="sort-by__item">
                                     <a href="<%=request.getContextPath()%>/?sortRequest=dateTimeSortAsc"
                                        class="sort-by__link">
-                                        <div class="sort-by__title">
-                                            <fmt:message key="poster.sidebar.sort.datetime" bundle="${bundle}" var="possodt"/>
-                                            ${possodt}
-                                        </div>
+                                        <fmt:message key="poster.sidebar.sort.datetime" bundle="${bundle}"
+                                                     var="possodt"/>
+                                        ${possodt}
                                     </a>
                                 </div>
                                 <div class="sort-by__item">
                                     <a href="<%=request.getContextPath()%>/?sortRequest=movieTitleSortAsc"
                                        class="sort-by__link">
-                                        <fmt:message key="poster.sidebar.sort.movietitle" bundle="${bundle}" var="possomot"/>
+                                        <fmt:message key="poster.sidebar.sort.movietitle" bundle="${bundle}"
+                                                     var="possomot"/>
                                         ${possomot}
                                     </a>
                                 </div>
                                 <div class="sort-by__item">
                                     <a href="<%=request.getContextPath()%>/?sortRequest=availableSeatsSortAsc"
                                        class="sort-by__link">
-                                        <fmt:message key="poster.sidebar.sort.availableseats" bundle="${bundle}" var="possoaval"/>
+                                        <fmt:message key="poster.sidebar.sort.availableseats" bundle="${bundle}"
+                                                     var="possoaval"/>
                                         ${possoaval}
                                     </a>
                                 </div>
                                 <div class="sort-by__item">
                                     <a href="<%=request.getContextPath()%>/?sortRequest=priceSortAsc"
                                        class="sort-by__link">
-                                        <fmt:message key="poster.sidebar.sort.price" bundle="${bundle}" var="possoprice"/>
+                                        <fmt:message key="poster.sidebar.sort.price" bundle="${bundle}"
+                                                     var="possoprice"/>
                                         ${possoprice}
                                     </a>
                                 </div>
@@ -92,7 +94,7 @@
                             </div>
                             <div class="content-hire__main">
                                 <div class="content-hire__main-title">
-                                    <a class="content-hire__main-title-link" href="#"><c:out
+                                    <a class="content-hire__main-title-link" href="buy_ticket?id=<c:out value='${schedule.id}' />"><c:out
                                             value="${schedule.filmName}"/></a>
                                     <div class="content-hire__datetime">
                                         <span class="content-hire__date"><c:out value="${schedule.date}"/></span>
@@ -106,7 +108,8 @@
                                 <p class="content-hire__places">
                                     <fmt:message key="poster.sessions.avalible" bundle="${bundle}" var="posseaval"/>
                                         ${posseaval}:
-                                    <c:out value="${schedule.freePlaces}"/>/<c:out value="${schedule.numberOfSeats}"/></p>
+                                    <c:out value="${schedule.freePlaces}"/>/<c:out
+                                        value="${schedule.numberOfSeats}"/></p>
                                 <p class="content-hire__duration">
                                     <fmt:message key="poster.sessions.duration" bundle="${bundle}" var="possedur"/>
                                         ${possedur}:
@@ -125,7 +128,8 @@
                                 <input type="hidden" name="filmId" value="<c:out value="${schedule.filmId}"/>">
                                 <div class="content-hire__button button">
                                     <a href="buy_ticket?id=<c:out value='${schedule.id}' />" class="button__link">
-                                        <fmt:message key="poster.sessions.button.choose" bundle="${bundle}" var="possebuch"/>
+                                        <fmt:message key="poster.sessions.button.choose" bundle="${bundle}"
+                                                     var="possebuch"/>
                                             ${possebuch}
                                     </a>
                                 </div>

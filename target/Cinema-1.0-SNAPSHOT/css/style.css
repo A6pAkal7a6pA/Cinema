@@ -193,6 +193,14 @@ a {
   color: #fbf8f8;
 }
 
+.menu__list-link.active {
+  border-bottom: 1px solid #fbf8f8;
+}
+
+.menu__list-link:hover {
+  color: #E785FF;
+}
+
 .menu__list-link img {
   width: 35px;
   height: 35px;
@@ -226,6 +234,10 @@ a {
   cursor: pointer;
   outline: none;
   padding-right: 5px;
+}
+
+.lang-select__header:hover {
+  color: #E785FF;
 }
 
 .lang-select .fas {

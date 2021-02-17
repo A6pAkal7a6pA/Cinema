@@ -23,10 +23,10 @@ import java.util.List;
 
 @WebServlet("/my_ticket")
 public class AccountTicketServlet extends HttpServlet {
-    FilmDao filmDao = null;
-    UserDao userDao = null;
-    SeanceDao scheduleDao = null;
-    TicketDao ticketDao = null;
+    private FilmDao filmDao = null;
+    private UserDao userDao = null;
+    private SeanceDao scheduleDao = null;
+    private TicketDao ticketDao = null;
 
     @Override
     public void init() throws ServletException {

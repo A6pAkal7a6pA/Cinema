@@ -19,9 +19,9 @@ import static java.lang.Integer.parseInt;
 
 @WebServlet("/delete_seance")
 public class DeleteSeanceServlet extends HttpServlet {
-    FilmDao filmDao = null;
-    UserDao userDao= null;
-    SeanceDao seanceDao = null;
+    private FilmDao filmDao = null;
+    private UserDao userDao= null;
+    private SeanceDao seanceDao = null;
 
     @Override
     public void init() throws ServletException {

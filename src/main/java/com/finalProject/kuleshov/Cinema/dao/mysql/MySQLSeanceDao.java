@@ -16,6 +16,38 @@ public class MySQLSeanceDao implements SeanceDao {
     private static final Logger LOG = Logger.getLogger(MySQLSeanceDao.class);
 
     @Override
+    public List<Seance> findAllSeanceByFilmId(int filmId) {
+        Connection connection = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        List<Seance> seances = new ArrayList<>();
+        Seance seance = null;
+        try {
+            connection = ConnectionPool.getInstance().getConnection();
+            ps = connection.prepareStatement(SQLConstants.SELECT_ALL_SEANCES_BY_FILM_ID);
+            ps.setInt(1, filmId);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                seance = new Seance();
+                seances.add(seance);
+                seance.setId(rs.getInt("id"));
+                seance.setFilmName(rs.getString("film_name"));
+                seance.setFilmId(rs.getInt("film_id"));
+                seance.setDayName(rs.getString("day_name"));
+                seance.setDate(rs.getString("date_seance"));
+                seance.setTimeSeance(rs.getString("time_seance"));
+            }
+            LOG.info("findAllSeanceByFilmId done");
+        } catch (SQLException e) {
+            LOG.error("Trouble with findAllSeanceByFilmId: " + e.getMessage());
+            Util.rollback(connection);
+        } finally {
+            Util.close(ps, rs, connection);
+        }
+        return seances;
+    }
+
+    @Override
     public String selectCurrentDay() {
         Connection connection = null;
         PreparedStatement ps = null;
@@ -211,7 +243,7 @@ public class MySQLSeanceDao implements SeanceDao {
         try {
             connection = ConnectionPool.getInstance().getConnection();
             statement = connection.createStatement();
-            rs = statement.executeQuery(SQLConstants.SELECT_ALL_SEANCES);
+            rs = statement.executeQuery(SQLConstants.SELECT_ALL_SEANCES_ADM);
             while (rs.next()) {
                 Seance seance = new Seance();
                 seances.add(seance);
