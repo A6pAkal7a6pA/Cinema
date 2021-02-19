@@ -25,7 +25,7 @@
                     </li>
                     <li class="registration__list-item">
                         <label for="contact"><fmt:message key="signup.phone" bundle="${bundle}" var="suphone"/>${suphone}:</label>
-                        <input type="tel" name="contact" id="contact">
+                        <input type="tel" name="contact" id="contact" class="input__phone">
                     </li>
                     <li class="registration__list-item">
                         <label for="email"><fmt:message key="signup.email" bundle="${bundle}" var="suemail"/>${suemail}:</label>
@@ -43,5 +43,9 @@
             </form>
         </div>
     </section>
+
+
+
+
 
 <%@include file="footer.jsp"%>

@@ -14,5 +14,7 @@ public interface TicketDao {
 
     public List<Integer> selectOccupiedPlaces(int seanceId);
 
+    public boolean buyTicket(List<Ticket> tickets);
+
 
 }

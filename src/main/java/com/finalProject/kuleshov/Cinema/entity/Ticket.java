@@ -21,19 +21,10 @@ public class Ticket implements Serializable {
     private int duration;
     private String director;
     private String description;
+    private int userId;
+    private int seanceId;
 
     public Ticket() {
-    }
-
-    public Ticket(int id, String filmName, String fistNameUser, String lastNameUser, String dateSeance, String timeSeance, double priceSeance, int numberSeat) {
-        this.id = id;
-        this.filmName = filmName;
-        this.fistNameUser = fistNameUser;
-        this.lastNameUser = lastNameUser;
-        this.dateSeance = dateSeance;
-        this.timeSeance = timeSeance;
-        this.priceSeance = priceSeance;
-        this.numberSeat = numberSeat;
     }
 
     public int getId() {
@@ -148,6 +139,21 @@ public class Ticket implements Serializable {
         this.description = description;
     }
 
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public int getSeanceId() {
+        return seanceId;
+    }
+
+    public void setSeanceId(int seanceId) {
+        this.seanceId = seanceId;
+    }
 
     @Override
     public String toString() {

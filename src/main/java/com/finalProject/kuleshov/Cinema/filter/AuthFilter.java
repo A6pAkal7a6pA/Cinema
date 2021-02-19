@@ -3,6 +3,7 @@ package com.finalProject.kuleshov.Cinema.filter;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLFilmDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLUserDao;
 import com.finalProject.kuleshov.Cinema.entity.User;
+import com.finalProject.kuleshov.Cinema.util.Util;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -17,6 +18,8 @@ public class AuthFilter implements Filter {
     MySQLUserDao userDao = null;
     MySQLFilmDao filmDao = null;
     private String contextPath;
+    private String message = "";
+    String hashPassword = "";
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -38,17 +41,19 @@ public class AuthFilter implements Filter {
         final String login = request.getParameter("login");
         final String password = request.getParameter("password");
 
-        user = new User();
-        user.setLogin(login);
-        user.setPassword(password);
-
+        if (login != null && password != null) {
+            hashPassword = Util.hash(password, "MD5");
+        }
+            user = new User();
+            user.setLogin(login);
+            user.setPassword(hashPassword);
 
         if (session != null && session.getAttribute("login") != null && session.getAttribute("password") != null) {
             final User.ROLE role = (User.ROLE) session.getAttribute("role");
-
-            moveToMenu(request, response, role);
+//            moveToMenu(request, response, role);
+            response.sendRedirect(request.getContextPath() + "/");
         } else if (userDao.checkUser(user)) {
-            final User.ROLE role = userDao.getRoleByLoginPassword(login, password);
+            final User.ROLE role = userDao.getRoleByLoginPassword(login, hashPassword);
             User user = userDao.selectUserByLogin(login);
             request.getSession().setAttribute("id", user.getId());
             request.getSession().setAttribute("firstName", user.getFirstName());
@@ -56,9 +61,9 @@ public class AuthFilter implements Filter {
             request.getSession().setAttribute("login", login);
             request.getSession().setAttribute("role", role);
 
-            moveToMenu(request, response, role);
+            response.sendRedirect(request.getContextPath() + "/");
         } else {
-            moveToMenu(request, response, User.ROLE.UNKNOWN);
+            request.getRequestDispatcher("/WEB-INF/view/user_login.jsp").forward(request, response);
         }
 
         System.out.println("end doFilter Auth");
@@ -69,7 +74,7 @@ public class AuthFilter implements Filter {
         System.out.println(role);
         if (role.equals(User.ROLE.ADMIN)) {
 //            req.getRequestDispatcher("/WEB-INF/view/admin_menu.jsp").forward(req, res);
-            res.sendRedirect(req.getContextPath() + "/");
+
         } else if (role.equals(User.ROLE.USER)) {
 //            req.getRequestDispatcher("/WEB-INF/view/user_menu.jsp").forward(req, res);
             res.sendRedirect(req.getContextPath() + "/");

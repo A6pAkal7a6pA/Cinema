@@ -308,4 +308,9 @@ public class MySQLSeanceDao implements SeanceDao {
         return seances;
     }
 
+    public static void main(String[] args) {
+
+        System.out.println(Util.hash("ivanov", "MD5"));
+    }
+
 }

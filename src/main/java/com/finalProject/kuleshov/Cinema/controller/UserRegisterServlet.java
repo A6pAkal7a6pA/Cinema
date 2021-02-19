@@ -3,6 +3,7 @@ package com.finalProject.kuleshov.Cinema.controller;
 import com.finalProject.kuleshov.Cinema.dao.UserDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLUserDao;
 import com.finalProject.kuleshov.Cinema.entity.User;
+import com.finalProject.kuleshov.Cinema.util.Util;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 @WebServlet("/register")
 public class UserRegisterServlet extends HttpServlet {
@@ -43,7 +45,7 @@ public class UserRegisterServlet extends HttpServlet {
         user.setFirstName(firstName);
         user.setLastName(lastName);
         user.setLogin(login);
-        user.setPassword(password);
+        user.setPassword(Util.hash(password, "MD5"));
         user.setContact(contact);
         user.setRole(User.ROLE.USER);
         user.setEmail(email);

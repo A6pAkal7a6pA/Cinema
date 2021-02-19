@@ -5,7 +5,7 @@
         crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/129ede24b4.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
+<script src="js/jquery.maskedinput.min.js"></script>
 <script>
     <%@include file="../../js/script.js"%>
 </script>

@@ -5,6 +5,8 @@ import org.apache.log4j.Logger;
 import org.omg.CORBA.portable.ApplicationException;
 import sun.rmi.runtime.Log;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -105,4 +107,20 @@ public class Util {
                     return "order by 4 asc, 5 asc ";
             }
         }
+
+    public static String hash(String input, String algorithm)  {
+        StringBuilder sb = new StringBuilder();
+        MessageDigest messageDigest = null;
+        try {
+            messageDigest = MessageDigest.getInstance(algorithm);
+            byte[] bytes = messageDigest.digest(input.getBytes());
+            for (byte b : bytes) {
+                sb.append(String.format("%02X", b));
+            }
+        } catch (NoSuchAlgorithmException e) {
+            LOG.error("Trouble with hash: " + e.getMessage());
+        }
+
+        return sb.toString();
+    }
     }

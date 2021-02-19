@@ -19,17 +19,20 @@
                 </div>
             </div>
             <div class="film__price">
-                <fmt:message key="user.buyform.cost" bundle="${bundle}" var="ubfcost"/>${ubfcost}: <c:out value="${requestScope.seance.priceSeance}"/>
+                <fmt:message key="user.buyform.cost" bundle="${bundle}" var="ubfcost"/>${ubfcost}: <c:out
+                    value="${requestScope.seance.priceSeance}"/>
             </div>
             <div class="film__free-place">
                 <fmt:message key="user.buyform.available" bundle="${bundle}" var="ubfaval"/>${ubfaval}:
                 <c:out value="${requestScope.seance.freePlaces}"/>/<c:out value="${requestScope.seance.numberOfSeats}"/>
             </div>
             <div class="film__duration">
-                <fmt:message key="user.buyform.duration" bundle="${bundle}" var="ubfdur"/>${ubfdur}: <c:out value="${requestScope.seance.duration}"/> minutes
+                <fmt:message key="user.buyform.duration" bundle="${bundle}" var="ubfdur"/>${ubfdur}: <c:out
+                    value="${requestScope.seance.duration}"/> minutes
             </div>
             <div class="film__duration">
-                <fmt:message key="user.buyform.director" bundle="${bundle}" var="ubfdir"/>${ubfdir}: <c:out value="${requestScope.seance.director}"/>
+                <fmt:message key="user.buyform.director" bundle="${bundle}" var="ubfdir"/>${ubfdir}: <c:out
+                    value="${requestScope.seance.director}"/>
             </div>
             <div class="film__description">
                 <c:out value="${requestScope.seance.description}"/>
@@ -38,12 +41,25 @@
     </div>
 </section>
 
-<c:forEach items="${requestScope.allSeancesThisFilm}" var="thisFilm">
-    <c:out value="${thisFilm.dayName}"/>
-    <c:out value="${thisFilm.date}"/>
-    <c:out value="${thisFilm.timeSeance}"/>
-    <br>
-</c:forEach>
+<%--<c:forEach items="${requestScope.allSeancesThisFilm}" var="thisFilm">--%>
+<%--    <c:out value="${thisFilm.dayName}"/>--%>
+<%--    <c:out value="${thisFilm.date}"/>--%>
+<%--    <c:out value="${thisFilm.timeSeance}"/>--%>
+<%--    <br>--%>
+<%--</c:forEach>--%>
+
+<c:choose>
+    <c:when test="${requestScope.message == ''}">
+
+    </c:when>
+    <c:otherwise>
+        <h2 class="block-message-error">
+      <span class="message-error">
+              ${requestScope.message}
+      </span>
+        </h2>
+    </c:otherwise>
+</c:choose>
 
 <section class="hall">
     <div class="hall__body">

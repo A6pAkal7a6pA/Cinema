@@ -5,6 +5,7 @@ import com.finalProject.kuleshov.Cinema.dao.TicketDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLSeanceDao;
 import com.finalProject.kuleshov.Cinema.dao.mysql.MySQLTicketDao;
 import com.finalProject.kuleshov.Cinema.entity.Seance;
+import com.finalProject.kuleshov.Cinema.entity.Ticket;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -24,6 +26,7 @@ public class BuyTicketServlet extends HttpServlet {
     private SeanceDao seanceDao = null;
     private TicketDao ticketDao = null;
     private Map<Integer, String> mapPlaces = null;
+    private String message = "";
 
     @Override
     public void init() throws ServletException {
@@ -37,10 +40,31 @@ public class BuyTicketServlet extends HttpServlet {
         String[] hall_checks = req.getParameterValues("hall_check");
         int idSeance = parseInt(req.getParameter("id"));
         int idUser = (int) req.getSession().getAttribute("id");
+        List<Ticket> tickets = new ArrayList<>();
+        Ticket ticket = null;
+//        if (hall_checks == null) {
+//            message = "Please choose place";
+//            req.setAttribute("message", message);
+//            this.doGet(req, resp);
+//            return;
+//        }
 
         for (String place : hall_checks) {
-            ticketDao.buyTicket(idUser, idSeance, Integer.parseInt(place));
+            System.out.println("place: " + place);
+            ticket = new Ticket();
+            ticket.setUserId(idUser);
+            ticket.setSeanceId(idSeance);
+            ticket.setNumberSeat(Integer.parseInt(place));
+            tickets.add(ticket);
+//            ticketDao.buyTicket(idUser, idSeance, Integer.parseInt(place));
         }
+
+        ticketDao.buyTicket(tickets);
+//       if (b == false) {
+//           message = "This place is already taken";
+//           this.doGet(req, resp);
+//           return;
+//       }
 
         resp.sendRedirect(req.getContextPath() + "/my_ticket");
     }
@@ -52,7 +76,6 @@ public class BuyTicketServlet extends HttpServlet {
 
     private void showBuyForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = parseInt(request.getParameter("id"));
-
         Seance seance = seanceDao.showSeanceById(id);
         int filmId = seance.getFilmId();
         List<Seance> allSeanceByFilmId = seanceDao.findAllSeanceByFilmId(filmId);
@@ -68,6 +91,7 @@ public class BuyTicketServlet extends HttpServlet {
                 }
             }
         }
+//        request.setAttribute("message", message);
 
         request.setAttribute("mapPlaces", mapPlaces);
         request.setAttribute("seance", seance);

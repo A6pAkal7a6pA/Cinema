@@ -40,7 +40,7 @@ public class MySQLTicketDao implements TicketDao {
             LOG.error("Trouble with findAllUserTickets: " + e.getMessage());
             Util.rollback(connection);
         } finally {
-            Util.close(ps, rs,connection);
+            Util.close(ps, rs, connection);
         }
         return tickets;
     }
@@ -88,6 +88,37 @@ public class MySQLTicketDao implements TicketDao {
             Util.close(ps, connection);
         }
     }
+
+    @Override
+    public boolean buyTicket(List<Ticket> tickets) {
+        boolean result = false;
+        Connection connection = null;
+        PreparedStatement ps = null;
+        try {
+            connection = ConnectionPool.getInstance().getConnection();
+            Util.setAutocommit(connection, false);
+            for (Ticket ticket : tickets) {
+                ps = connection.prepareStatement(SQLConstants.INSERT_TICKET);
+                ps.setInt(1, ticket.getUserId());
+                ps.setInt(2, ticket.getSeanceId());
+                ps.setInt(3, ticket.getNumberSeat());
+                ps.executeUpdate();
+                result = true;
+            }
+            connection.commit();
+
+            LOG.info("buyTicket done");
+        } catch (SQLException e) {
+            LOG.error("Trouble with buyTicket: " + e.getMessage());
+            Util.rollback(connection);
+            return false;
+        } finally {
+            Util.setAutocommit(connection, true);
+            Util.close(ps, connection);
+        }
+        return result;
+    }
+
 
     @Override
     public List<Integer> selectOccupiedPlaces(int seanceId) {
