@@ -16,6 +16,32 @@ import static com.finalProject.kuleshov.cinema.constants.Constants.*;
 public class MySQLTicketDao implements TicketDao {
     private static final Logger LOG = Logger.getLogger(MySQLTicketDao.class);
 
+    @Override
+    public Ticket findOccupiedPlacesForYear() {
+        Connection connection = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Ticket ticket = null;
+
+        try {
+            connection = ConnectionPool.getInstance().getConnection();
+            ps = connection.prepareStatement(SQLConstants.FIND_ALL_OCCUPIED_PLACES);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                ticket = new Ticket();
+                ticket.setAllOccupiedPlaces(rs.getInt("occupied_places"));
+                ticket.setFirstHalfDay(rs.getInt("before_half_day"));
+                ticket.setSecondHalfDay(rs.getInt("after_half_day"));
+            }
+        } catch (SQLException e) {
+            LOG.error("Trouble with findOccupiedPlacesForYear: " + e.getMessage());
+            Util.rollback(connection);
+        } finally {
+            Util.close(ps, rs, connection);
+        }
+        return ticket;
+    }
+
     public List<Ticket> findAmountForPeriod(String period) {
         Connection connection = null;
         PreparedStatement ps = null;
@@ -33,10 +59,10 @@ public class MySQLTicketDao implements TicketDao {
                 ticket.setSumPrice(rs.getInt(SUM_PRICE));
             }
         } catch (SQLException e) {
-            LOG.error("Trouble with movieByPopularity: " + e.getMessage());
+            LOG.error("Trouble with findAmountForPeriod: " + e.getMessage());
             Util.rollback(connection);
         } finally {
-            Util.close(ps, connection);
+            Util.close(ps, rs, connection);
         }
         return tickets;
     }
@@ -63,10 +89,10 @@ public class MySQLTicketDao implements TicketDao {
                 ticket.setSumPrice(rs.getInt(SUM_PRICE));
             }
         } catch (SQLException e) {
-            LOG.error("Trouble with movieByPopularity: " + e.getMessage());
+            LOG.error("Trouble with findAllMovieByPopularity: " + e.getMessage());
             Util.rollback(connection);
         } finally {
-            Util.close(ps, connection);
+            Util.close(ps, rs, connection);
         }
         return tickets;
     }

@@ -1,0 +1,8 @@
+
+n
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(â†Áê
+
+java:S1989 "iHandle the following exceptions that could be thrown by "showProfileUser": ServletException, IOException.( ÍÒ¿
+s
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‘×œşÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(­·â…şÿÿÿÿ

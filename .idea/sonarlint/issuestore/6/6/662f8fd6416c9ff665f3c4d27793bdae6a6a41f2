@@ -1,0 +1,16 @@
+
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(¬°ä™8 ÿËíö.
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ç›Â8¶ñÛíö.
+Y
+java:S1128"<Remove this unused import 'javax.servlet.RequestDispatcher'.(Ëöò¼8¸¢§öû.
+u
+java:S1989-"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ß¤£Øüÿÿÿÿ8¾ıÖû.
+v
+java:S1989$"YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(®Ä§¾8æ—­öû.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ş À‹
+~
+java:S1989'"\Handle the following exception that could be thrown by "parseDouble": NumberFormatException.(†¾†•øÿÿÿÿ8¾ıÖû.
+ƒ
+java:S1989:"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(“„ßÃøÿÿÿÿ8¼Ó§öû.

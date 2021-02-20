@@ -33,9 +33,12 @@ public class StatisticServlet extends HttpServlet {
         }
         List<Ticket> allMovieByPopularity = ticketDao.findAllMovieByPopularity(periodFilms);
         List<Ticket> amountForPeriod = ticketDao.findAmountForPeriod(periodAmount);
+        Ticket occupiedPlacesForYear = ticketDao.findOccupiedPlacesForYear();
+
 
         req.setAttribute("filmsByPopularity", allMovieByPopularity);
         req.setAttribute("amountForPeriod", amountForPeriod);
+        req.setAttribute("occupiedPlaces", occupiedPlacesForYear);
 
         req.getRequestDispatcher("/WEB-INF/view/admin/statistics.jsp").forward(req, resp);
     }

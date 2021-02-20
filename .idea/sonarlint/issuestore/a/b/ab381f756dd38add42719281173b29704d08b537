@@ -1,0 +1,12 @@
+
+\
+java:S1128"?Remove this unused import 'javax.servlet.annotation.WebFilter'.(ï¸Ýô8 þ‹‚ü.
+v
+java:S1989"YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(½›¹Ë8›Á§‚ü.
+p
+java:S1989"SHandle the following exception that could be thrown by "sendRedirect": IOException.(²²Ò“8›Á§‚ü.
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Àúüé8Ù·Ÿ‚ü.
+k
+java:S1128"IRemove this unused import 'com.finalProject.kuleshov.cinema.entity.User'.(ŽÂ¥Çþÿÿÿÿ8»—¤‚ü.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(­·â…þÿÿÿÿ

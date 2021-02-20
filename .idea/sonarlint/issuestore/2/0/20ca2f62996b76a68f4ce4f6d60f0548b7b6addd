@@ -1,28 +1,0 @@
-
-Z	java:S1065"9Replace this use of System.out or System.err by a logger.(¼ÃÙëýÿÿÿÿ8­Â«‰û.
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(»Î„Æýÿÿÿÿ
-‚
-java:S1989J"eHandle the following exceptions that could be thrown by "showBuyForm": ServletException, IOException.(Æ­ç¾8­Â«‰û.
-n
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(â†Áê
-X	java:S125?"<This block of commented-out lines of code should be removed.(ƒéÙ—8É™š‹û.
-]	java:S125^"<This block of commented-out lines of code should be removed.(Æ›‡˜øÿÿÿÿ8­Â«‰û.
-n
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(¬°ä™
-t
-java:S1989)"YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(•­ªÐûÿÿÿÿ
-]	java:S125-"<This block of commented-out lines of code should be removed.(Ã¶¥Šþÿÿÿÿ8õéš‹û.
-z
-java:S1450"XRemove the "mapPlaces" field and declare it as a local variable in the relevant methods.(ÿöŠÿÿÿÿÿ8ËÄÚþú.
-u
-java:S1989E"SHandle the following exception that could be thrown by "sendRedirect": IOException.(Œ¦Ÿ“þÿÿÿÿ8­Â«‰û.
-f	java:S117("QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕöÆŒ
-v
-java:S19899"YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(é“Ãç8­Â«‰û.
-]	java:S125;"<This block of commented-out lines of code should be removed.(¬êâüÿÿÿÿ8­Â«‰û.
-H
-java:S1068"+Remove this unused "message" private field.(Éè¯8õéš‹û.
-u
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Éè¯8°Ÿ¼ˆû.
-s
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ÿöŠÿÿÿÿÿ

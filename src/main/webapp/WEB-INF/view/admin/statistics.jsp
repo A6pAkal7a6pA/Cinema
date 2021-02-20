@@ -13,8 +13,9 @@
     Movie title: <c:out value="${filmByPopularity.filmName}"/>
     Bought tickets: <c:out value="${filmByPopularity.purchasedPlaces}"/>
     Amount of revenue: <c:out value="${filmByPopularity.sumPrice}"/>
+    <br>
 </c:forEach>
-
+<br>
 
 <a href="statistics?periodAmount=day">Day</a>
 <a href="statistics?periodAmount=week">Week</a>
@@ -23,6 +24,11 @@
 <c:forEach items="${requestScope.amountForPeriod}" var="sumForPeriod">
     Date seance: <c:out value="${sumForPeriod.dateSeance}"/>
     Amount price: <c:out value="${sumForPeriod.sumPrice}"/>
+    <br>
 </c:forEach>
+
+All occupied places<c:out value="${requestScope.occupiedPlaces.allOccupiedPlaces}"/>
+First half occupied places<c:out value="${requestScope.occupiedPlaces.firstHalfDay}"/>
+Second half occupied places<c:out value="${requestScope.occupiedPlaces.secondHalfDay}"/>
 
 <%@ include file="../footer.jsp" %>

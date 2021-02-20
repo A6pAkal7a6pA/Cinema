@@ -7,6 +7,12 @@ import java.util.List;
 public interface TicketDao {
 
     /**
+     * find all occupied places by fist half a day or second half a day
+     * @return
+     */
+    Ticket findOccupiedPlacesForYear();
+
+    /**
      * find amount per seances for the period
      * @param period
      * @return
