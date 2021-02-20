@@ -1,22 +1,26 @@
 
-†
-java:S1989)"iHandle the following exceptions that could be thrown by "showProfileUser": ServletException, IOException.( ÍÒ¿8ëİÊõõ.
+z
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‘×œşÿÿÿÿ8ª÷×ïõ.
+H
+java:S1068"+Remove this unused "filmDao" private field.(ç›Â8ßœâİú.
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ç›Â8ª÷×ïõ.
 “
 java:S11309"wRemove the declaration of thrown exception 'javax.servlet.ServletException', as it cannot be thrown from method's body.(€ü»@8Ù‰«¬ú.
-c
-java:S1128"FRemove this unused import 'com.finalProject.kuleshov.Cinema.dto.Film'.(©‡€8€ì¦¬ú.
-ˆ
-java:S11309"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(€ü»@8Ù‰«¬ú.
-z
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‡ßıÒıÿÿÿÿ8–Úà¼ö.
-j
-java:S1128"HRemove this unused import 'com.finalProject.kuleshov.Cinema.dto.Seance'.(ü£ùúÿÿÿÿÿ8€ì¦¬ú.
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÑƒÙ
-z
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Ø¢¢ùûÿÿÿÿ8ª÷×ïõ.
 u
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Àúüé8Í€˜µø.
-z
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ç€Î‰ûÿÿÿÿ8ª÷×ïõ.
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ôâ ¹8–Úà¼ö.
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(â†Áê8Í€˜µø.
+†
+java:S1989)"iHandle the following exceptions that could be thrown by "showProfileUser": ServletException, IOException.( ÍÒ¿8ëİÊõõ.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÑƒÙ
+w
+java:S1450"ZRemove the "scheduleDao" field and declare it as a local variable in the relevant methods.(ôâ ¹8ßœâİú.
+L
+java:S1068"/Remove this unused "scheduleDao" private field.(ôâ ¹8ßœâİú.
 G
 java:S11729"+Remove this unused method parameter "resp".(€ü»@8•·”µø.
+ˆ
+java:S11309"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(€ü»@8Ù‰«¬ú.
+s
+java:S1450"VRemove the "filmDao" field and declare it as a local variable in the relevant methods.(ç›Â8ßœâİú.

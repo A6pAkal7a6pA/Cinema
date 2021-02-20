@@ -1,17 +1,17 @@
 
-R
-java:S1191"5Use classes from the Java API instead of Sun classes.(ÛÖ ¢8»š‰°ú.
-M
-java:S1128"0Remove this unused import 'sun.rmi.runtime.Log'.(ÛÖ ¢8»š‰°ú.
-…
-java:S1488@"cImmediately return this expression instead of assigning it to the temporary variable "currentDate".(¤°ŒÉüÿÿÿÿ8âÈà®ú.
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ƒ¹¹›øÿÿÿÿ
-y
-java:S1192F"WDefine a constant instead of duplicating this literal "order by 4 asc, 5 asc " 3 times.(ÝÕðŒùÿÿÿÿ8¦¨–±ú.
-v
-java:S1128"TRemove this unused import 'com.finalProject.kuleshov.Cinema.dao.mysql.MySQLUserDao'.(»¬ˆ‹ÿÿÿÿÿ8åþÿ¯ú.
-N	java:S106*"9Replace this use of System.out or System.err by a logger.(¦ÒŽÅ
 W
-java:S1118":Add a private constructor to hide the implicit public one.(×¼­Æ8åâ–±ú.
+java:S1118":Add a private constructor to hide the implicit public one.(×¼­Æ8åâ–±ú.
+…
+java:S1488I"cImmediately return this expression instead of assigning it to the temporary variable "currentDate".(¤°ŒÉüÿÿÿÿ8âÈà®ú.
+N	java:S106,"9Replace this use of System.out or System.err by a logger.(¦ÒŽÅ
+y
+java:S1192O"WDefine a constant instead of duplicating this literal "order by 4 asc, 5 asc " 3 times.(ÝÕðŒùÿÿÿÿ8¦¨–±ú.
 e
 java:S1128"HRemove this unused import 'org.omg.CORBA.portable.ApplicationException'.(ÓŸë¹8†¶÷¶ú.
+R
+java:S1191"5Use classes from the Java API instead of Sun classes.(ÛÖ ¢8»š‰°ú.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ƒ¹¹›øÿÿÿÿ
+v
+java:S1128"TRemove this unused import 'com.finalProject.kuleshov.Cinema.dao.mysql.MySQLUserDao'.(»¬ˆ‹ÿÿÿÿÿ8åþÿ¯ú.
+M
+java:S1128"0Remove this unused import 'sun.rmi.runtime.Log'.(ÛÖ ¢8»š‰°ú.

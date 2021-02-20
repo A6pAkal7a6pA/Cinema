@@ -48,18 +48,13 @@
 <%--    <br>--%>
 <%--</c:forEach>--%>
 
-<c:choose>
-    <c:when test="${requestScope.message == ''}">
-
-    </c:when>
-    <c:otherwise>
+    <c:if test="${not empty requestScope.message }">
         <h2 class="block-message-error">
       <span class="message-error">
               ${requestScope.message}
       </span>
         </h2>
-    </c:otherwise>
-</c:choose>
+    </c:if>
 
 <section class="hall">
     <div class="hall__body">
@@ -72,7 +67,7 @@
                 <c:if test="${not empty seance}">
                     <input type="hidden" value="<c:out value='${seance.id}' />" name="id"/>
                 </c:if>
-
+                <div id="hint"></div>
                 <c:forEach items="${requestScope.mapPlaces}" var="entry">
                     <div class="hall__item">
                             <%--                        <input type="checkbox" name="hall_check" value="<c:out value='${entry.key}' />" <c:out--%>
@@ -81,7 +76,7 @@
                                value="<c:out value='${entry.key}' />" id="hall_check-<c:out value='${entry.key}' />"
                             <c:out
                                     value="${entry.value}"/>>
-                        <label for="hall_check-<c:out value='${entry.key}' />" class="hall__label"></label>
+                        <label for="hall_check-<c:out value='${entry.key}' />" class="hall__label" data-hint="Place <c:out value='${entry.key}' />" id="<c:out value='${entry.key}' />"></label>
                     </div>
                 </c:forEach>
                 <c:if test="${role == null}">

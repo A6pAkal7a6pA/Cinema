@@ -42,7 +42,7 @@
                             <div class="sort-by__content">
                                 <div class="sort-by__item">
                                     <a href="<%=request.getContextPath()%>/?sortRequest=dateTimeSortAsc"
-                                       class="sort-by__link">
+                                       class="sort-by__link active">
                                         <fmt:message key="poster.sidebar.sort.datetime" bundle="${bundle}"
                                                      var="possodt"/>
                                         ${possodt}
@@ -57,7 +57,7 @@
                                     </a>
                                 </div>
                                 <div class="sort-by__item">
-                                    <a href="<%=request.getContextPath()%>/?sortRequest=availableSeatsSortAsc"
+                                    <a href="<%=request.getContextPath()%>/?sortRequest=availableSeatsSortDesc"
                                        class="sort-by__link">
                                         <fmt:message key="poster.sidebar.sort.availableseats" bundle="${bundle}"
                                                      var="possoaval"/>
@@ -94,7 +94,8 @@
                             </div>
                             <div class="content-hire__main">
                                 <div class="content-hire__main-title">
-                                    <a class="content-hire__main-title-link" href="buy_ticket?id=<c:out value='${schedule.id}' />"><c:out
+                                    <a class="content-hire__main-title-link"
+                                       href="buy_ticket?id=<c:out value='${schedule.id}' />"><c:out
                                             value="${schedule.filmName}"/></a>
                                     <div class="content-hire__datetime">
                                         <span class="content-hire__date"><c:out value="${schedule.date}"/></span>

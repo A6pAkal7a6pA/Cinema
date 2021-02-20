@@ -17,12 +17,12 @@
             </div>
 
             <c:if test="${not empty film}">
-            <form action="<%=request.getContextPath()%>/edit_film" class="add-edit__form" method="post"
+            <form action="<%=request.getContextPath()%>/edit_film" class="add-edit__form edit" method="post"
                   enctype="multipart/form-data">
                 </c:if>
 
                 <c:if test="${empty film}">
-                <form action="<%=request.getContextPath()%>/add_new_film" class="add-edit__form" method="post" enctype="multipart/form-data">
+                <form action="<%=request.getContextPath()%>/add_new_film" class="add-edit__form edit" method="post" enctype="multipart/form-data">
                     </c:if>
 
                     <ul class="add-edit__list">

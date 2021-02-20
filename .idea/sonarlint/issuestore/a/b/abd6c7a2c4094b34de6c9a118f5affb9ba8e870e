@@ -1,21 +1,34 @@
 
-|	java:S116"[Rename this field "UPLOAD_DIRECTORY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø€şûÿÿÿÿ8Âƒ©ğö.
-‡
-java:S19895"eHandle the following exceptions that could be thrown by "showNewForm": ServletException, IOException.(é«ŒÏøÿÿÿÿ8’ˆšğõ.
-z
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ç€Î‰ûÿÿÿÿ8”í­ğõ.
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(×ãî§
+„
+java:S1989Q"bHandle the following exceptions that could be thrown by "getParts": IOException, ServletException.(Ğ½íÁúÿÿÿÿ8ûåÓõö.
 {
-java:S1989M"YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(„Í¹íøÿÿÿÿ8©øïñö.
+java:S1989\"YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(„Í¹íøÿÿÿÿ8©øïñö.
+‡
+java:S1989?"eHandle the following exceptions that could be thrown by "showNewForm": ServletException, IOException.(é«ŒÏøÿÿÿÿ8’ˆšğõ.
+U	java:S106W"9Replace this use of System.out or System.err by a logger.(Öœ‚…8à„ªáú.
+Z	java:S106M"9Replace this use of System.out or System.err by a logger.(ÎÌïûÿÿÿÿ8•¬Ìâú.
+p
+java:S1989`"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ÿÇÉæ8 Ñ³ğõ.
+v
+java:S1128"TRemove this unused import 'com.finalProject.kuleshov.Cinema.dao.mysql.MySQLUserDao'.(»¬ˆ‹ÿÿÿÿÿ8…˜œáú.
+U	java:S106,"9Replace this use of System.out or System.err by a logger.( Ğæ¸8Î¼‘âú.
+Z	java:S106R"9Replace this use of System.out or System.err by a logger.(æ®ığúÿÿÿÿ8°„Óáú.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(×ãî§
+P
+java:S1128	"3Remove this unused import 'sun.rmi.rmic.Constants'.(ªÃ—Ç8¥ø€âú.
 C
 java:S1170"!Make this final field static too.(ø€şûÿÿÿÿ8Âƒ©ğö.
+U	java:S106."9Replace this use of System.out or System.err by a logger.(ù§é8Î¼‘âú.
+R
+java:S1191	"5Use classes from the Java API instead of Sun classes.(ªÃ—Ç8©Â€âú.
+Z	java:S106N"9Replace this use of System.out or System.err by a logger.(ğ‡…’ùÿÿÿÿ8÷§áú.
+|	java:S116"[Rename this field "UPLOAD_DIRECTORY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø€şûÿÿÿÿ8Âƒ©ğö.
 o
-java:S19897"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ô»éo8³šğõ.
-z
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Ø¢¢ùûÿÿÿÿ8”í­ğõ.
-p
-java:S1989R"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ÿÇÉæ8 Ñ³ğõ.
-„
-java:S1989E"bHandle the following exceptions that could be thrown by "getParts": IOException, ServletException.(Ğ½íÁúÿÿÿÿ8ûåÓõö.
+java:S1989A"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ô»éo8³šğõ.
+f
+java:S1128"IRemove this unused import 'com.finalProject.kuleshov.Cinema.dao.UserDao'.(àµâï8Óú›áú.
+X	java:S125""<This block of commented-out lines of code should be removed.(Ë€–Š8„ş‘âú.
 i
-java:S1989G"LHandle the following exception that could be thrown by "write": IOException.(¶¹ÇÔ8œ‹÷.
+java:S1989T"LHandle the following exception that could be thrown by "write": IOException.(¶¹ÇÔ8œ‹÷.
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ç›Â8”í­ğõ.

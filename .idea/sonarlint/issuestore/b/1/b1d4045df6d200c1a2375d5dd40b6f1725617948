@@ -1,25 +1,28 @@
 
-i
-java:S1192="LDefine a constant instead of duplicating this literal "time_seance" 4 times.(‹Ô”³8ÏæÌ¿ø.
-k
-java:S1192^"IDefine a constant instead of duplicating this literal "director" 3 times.(Ï…ŸÍúÿÿÿÿ8ï®¨¸ø.
 m
-java:S1192\"PDefine a constant instead of duplicating this literal "number_of_seats" 3 times.(ôó¯¯8ÏæÌ¿ø.
+java:S1192|"PDefine a constant instead of duplicating this literal "number_of_seats" 3 times.(ôó¯¯8ÏæÌ¿ø.
 i
-java:S1192a"LDefine a constant instead of duplicating this literal "free_places" 3 times.(ñõÄ€8ˆå“±ú.
-e
-java:S1192:"HDefine a constant instead of duplicating this literal "film_id" 5 times.(Õ×ª8Ó§ø¯ø.
-b
-java:S1192["FDefine a constant instead of duplicating this literal "price" 4 times.(ô©‡08Ó§ø¯ø.
-h
-java:S1192<"LDefine a constant instead of duplicating this literal "date_seance" 5 times.(ö‡š@8Ó§ø¯ø.
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(…õ£Ãşÿÿÿÿ
-Z	java:S106v"9Replace this use of System.out or System.err by a logger.(­¶¹¼şÿÿÿÿ8ˆå“±ú.
-i
-java:S1192_"LDefine a constant instead of duplicating this literal "description" 3 times.(ç¼¾¥8ˆå“±ú.
+java:S1192&"LDefine a constant instead of duplicating this literal "time_seance" 5 times.(‹Ô”³8ÏæÌ¿ø.
+[	java:S106–"9Replace this use of System.out or System.err by a logger.(­¶¹¼şÿÿÿÿ8íå²şú.
 l
-java:S11929"JDefine a constant instead of duplicating this literal "film_name" 5 times.(—ŞüÄüÿÿÿÿ8Ó§ø¯ø.
-h
-java:S1192W"KDefine a constant instead of duplicating this literal "photo_film" 3 times.(§¼¢Ï8ˆå“±ú.
+java:S1192""JDefine a constant instead of duplicating this literal "film_name" 6 times.(—ŞüÄüÿÿÿÿ8Ó§ø¯ø.
+b
+java:S1192{"FDefine a constant instead of duplicating this literal "price" 4 times.(ô©‡08Ó§ø¯ø.
+j
+java:S1192"LDefine a constant instead of duplicating this literal "free_places" 3 times.(ñõÄ€8íå²şú.
 k
-java:S1192]"IDefine a constant instead of duplicating this literal "duration" 3 times.(Á¤Ü¹ûÿÿÿÿ8ï®¨¸ø.
+java:S1192~"IDefine a constant instead of duplicating this literal "director" 3 times.(Ï…ŸÍúÿÿÿÿ8ï®¨¸ø.
+i
+java:S1192"LDefine a constant instead of duplicating this literal "description" 3 times.(ç¼¾¥8íå²şú.
+h
+java:S1192w"KDefine a constant instead of duplicating this literal "photo_film" 3 times.(§¼¢Ï8íå²şú.
+e
+java:S1192#"HDefine a constant instead of duplicating this literal "film_id" 6 times.(Õ×ª8Ó§ø¯ø.
+h
+java:S1192%"LDefine a constant instead of duplicating this literal "date_seance" 6 times.(ö‡š@8Ó§ø¯ø.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(…õ£Ãşÿÿÿÿ
+k
+java:S1192}"IDefine a constant instead of duplicating this literal "duration" 3 times.(Á¤Ü¹ûÿÿÿÿ8ï®¨¸ø.
+f
+java:S1192$"IDefine a constant instead of duplicating this literal "day_name" 3 times.(¯ê®¤8¤ìÓşú.
+[	java:S106¹"9Replace this use of System.out or System.err by a logger.(ç°Œşıÿÿÿÿ8É—ïËû.

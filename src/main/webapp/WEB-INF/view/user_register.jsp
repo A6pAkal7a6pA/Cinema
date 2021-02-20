@@ -2,6 +2,13 @@
 <%@ page contentType="text/html" language="java"  pageEncoding="utf-8" %>
     <section class="registration">
         <div class="registration__body">
+            <c:if test="${not empty requestScope.message }">
+                <h2 class="block-message-error">
+      <span class="message-error">
+              ${requestScope.message}
+      </span>
+                </h2>
+            </c:if>
             <div class="registration__title">
                 <fmt:message key="signup.title" bundle="${bundle}" var="sut"/>${sut}
             </div>
@@ -9,19 +16,19 @@
                 <ul class="registration__list">
                     <li class="registration__list-item">
                         <label for="firstName"><fmt:message key="signup.firstname" bundle="${bundle}" var="sufn"/>${sufn}:</label>
-                        <input type="text" name="firstName" id="firstName" required>
+                        <input type="text" name="firstName" minlength="2" id="firstName" required>
                     </li>
                     <li class="registration__list-item">
                         <label for="lastName"><fmt:message key="signup.lastname" bundle="${bundle}" var="suln"/>${suln}:</label>
-                        <input type="text" name="lastName" id="lastName" required>
+                        <input type="text" name="lastName" minlength="2" id="lastName" required>
                     </li>
                     <li class="registration__list-item">
                         <label for="login"><fmt:message key="signup.login" bundle="${bundle}" var="sulog"/>${sulog}:</label>
-                        <input type="text" name="login" id="login" required>
+                        <input type="text" name="login" minlength="4" maxlength="16" id="login" required>
                     </li>
                     <li class="registration__list-item">
                         <label for="password"><fmt:message key="signup.password" bundle="${bundle}" var="supass"/>${supass}:</label>
-                        <input type="password" name="password" id="password" required>
+                        <input type="password" name="password" id="password" minlength="4" required>
                     </li>
                     <li class="registration__list-item">
                         <label for="contact"><fmt:message key="signup.phone" bundle="${bundle}" var="suphone"/>${suphone}:</label>

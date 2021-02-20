@@ -1,8 +1,12 @@
 
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(×ãî§
 u
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Àúüé8ı¤ò´ø.
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(â†Áê8ı¤ò´ø.
 ‰
 java:S1989"gHandle the following exceptions that could be thrown by "showUsersList": ServletException, IOException.(¸È”ãøÿÿÿÿ8ı›”íö.
 z
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ç€Î‰ûÿÿÿÿ8­çíö.
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‘×œşÿÿÿÿ8­çíö.
+u
+java:S1450"XRemove the "ticketDao" field and declare it as a local variable in the relevant methods.(â†Áê8»—äİú.
+J
+java:S1068"-Remove this unused "ticketDao" private field.(â†Áê8»—äİú.

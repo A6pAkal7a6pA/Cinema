@@ -1,13 +1,17 @@
 
-J	java:S108=")Either remove or fill this block of code.(Ù¼¨õùÿÿÿÿ8ä§Ðµú.
-u
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Àúüé8ÈÀ­µú.
-ˆ
-java:S1989("fHandle the following exceptions that could be thrown by "showSchedule": ServletException, IOException.(Ê³’¡ÿÿÿÿÿ8ä§Ðµú.
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(»Î„Æýÿÿÿÿ
-z
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Ó‡²§øÿÿÿÿ8ÈÀ­µú.
-z
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Ø¢¢ùûÿÿÿÿ8ÈÀ­µú.
 D
 java:S1068"'Remove this unused "LOG" private field.(ñ¢…¿8ÈÀ­µú.
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Žç›Â8ÈÀ­µú.
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(¬°ä™8ÈÀ­µú.
+J
+java:S1068"-Remove this unused "ticketDao" private field.(â†Áê8ê¶ßÝú.
+u
+java:S1450"XRemove the "ticketDao" field and declare it as a local variable in the relevant methods.(â†Áê8ê¶ßÝú.
+J	java:S108=")Either remove or fill this block of code.(Ù¼¨õùÿÿÿÿ8ä§Ðµú.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(»Î„Æýÿÿÿÿ
+ˆ
+java:S1989("fHandle the following exceptions that could be thrown by "showSchedule": ServletException, IOException.(Ê³’¡ÿÿÿÿÿ8ä§Ðµú.
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(â†Áê8ÈÀ­µú.

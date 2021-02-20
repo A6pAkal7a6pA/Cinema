@@ -17,11 +17,11 @@
             </div>
 
             <c:if test="${not empty seance}">
-            <form action="edit_seance" class="add-edit__form" method="post">
+            <form action="edit_seance" class="add-edit__form edit" method="post">
                 </c:if>
 
                 <c:if test="${empty seance}">
-                <form action="add_new_seance" class="add-edit__form" method="post">
+                <form action="add_new_seance" class="add-edit__form add" method="post">
                     </c:if>
 
 
