@@ -1,36 +1,36 @@
 
-
-java:S1192)"dDefine a constant instead of duplicating this literal "              on f.id = s.film_id\n" 3 times.(åÚ±Î8åäÿú.
-´
-java:S1192$"‘Define a constant instead of duplicating this literal "       s.number_of_seats                                   as number_of_seats,\n" 3 times.(ÛÖÃåşÿÿÿÿ8åäÿú.
 °
 java:S1192"Define a constant instead of duplicating this literal "       s.date_seance                                       as date_seance,\n" 3 times.(«––¨ıÿÿÿÿ8åäÿú.
+š
+java:S1192"}Define a constant instead of duplicating this literal "       date_format(s.time_seance, '%k:%i') as time_seance,\n" 3 times.(—ƒö¹8åäÿú.
+¨
+java:S1192!"ŠDefine a constant instead of duplicating this literal "       f.directedBy                                        as director,\n" 3 times.(×Ò÷8åäÿú.
 «
 java:S1192""Define a constant instead of duplicating this literal "       f.description                                       as description,\n" 3 times.(ŸœÁ’8åäÿú.
-t
-java:S1192("XDefine a constant instead of duplicating this literal "         join films f\n" 3 times.(Š²…k8åäÿú.
-©
-java:S1192"‹Define a constant instead of duplicating this literal "       f.name                                              as film_name,\n" 3 times.(·Ãà8åäÿú.
-’
-java:S1192*"uDefine a constant instead of duplicating this literal "         left join tickets t on s.id = t.seance_id\n" 3 times.(õÂó»8åäÿú.
 §
 java:S1192"„Define a constant instead of duplicating this literal "select s.id                                                as id,\n" 3 times.(‘çèûşÿÿÿÿ8åäÿú.
+¦
+java:S1192#"‰Define a constant instead of duplicating this literal "       s.film_id                                           as film_id,\n" 3 times.(ì°Ÿ+8åäÿú.
+¤
+java:S1192"‡Define a constant instead of duplicating this literal "       s.price_seance                                      as price,\n" 3 times.(Ñù¸8åäÿú.
+r
+java:S1192'"PDefine a constant instead of duplicating this literal "from seance s\n" 4 times.(Ï½’úÿÿÿÿ8åäÿú.
+t
+java:S1192("XDefine a constant instead of duplicating this literal "         join films f\n" 3 times.(Š²…k8åäÿú.
+ª
+java:S1192"ŒDefine a constant instead of duplicating this literal "       f.picture                                           as photo_film,\n" 3 times.(ÚÅÿ×8åäÿú.
 ¨
 java:S1192 "ŠDefine a constant instead of duplicating this literal "       f.duration                                          as duration,\n" 3 times.(œ™›¦8åäÿú.
 ˆ
 java:S1192r"lDefine a constant instead of duplicating this literal "         join films f on f.id = s.film_id\n" 3 times.(ùƒ48Ú£ƒü.
-¦
-java:S1192#"‰Define a constant instead of duplicating this literal "       s.film_id                                           as film_id,\n" 3 times.(ì°Ÿ+8åäÿú.
-¨
-java:S1192!"ŠDefine a constant instead of duplicating this literal "       f.directedBy                                        as director,\n" 3 times.(×Ò÷8åäÿú.
+’
+java:S1192*"uDefine a constant instead of duplicating this literal "         left join tickets t on s.id = t.seance_id\n" 3 times.(õÂó»8åäÿú.
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‹³Ÿñüÿÿÿÿ
+
+java:S1192)"dDefine a constant instead of duplicating this literal "              on f.id = s.film_id\n" 3 times.(åÚ±Î8åäÿú.
+´
+java:S1192$"‘Define a constant instead of duplicating this literal "       s.number_of_seats                                   as number_of_seats,\n" 3 times.(ÛÖÃåşÿÿÿÿ8åäÿú.
 ©
 java:S1192%"ŒDefine a constant instead of duplicating this literal "       s.number_of_seats - (count(distinct t.number_seat)) as free_places\n" 3 times.(×ıŠ"8åäÿú.
-š
-java:S1192"}Define a constant instead of duplicating this literal "       date_format(s.time_seance, '%k:%i') as time_seance,\n" 3 times.(—ƒö¹8åäÿú.
-r
-java:S1192'"PDefine a constant instead of duplicating this literal "from seance s\n" 4 times.(Ï½’úÿÿÿÿ8åäÿú.
-¤
-java:S1192"‡Define a constant instead of duplicating this literal "       s.price_seance                                      as price,\n" 3 times.(Ñù¸8åäÿú.
-ª
-java:S1192"ŒDefine a constant instead of duplicating this literal "       f.picture                                           as photo_film,\n" 3 times.(ÚÅÿ×8åäÿú.
+©
+java:S1192"‹Define a constant instead of duplicating this literal "       f.name                                              as film_name,\n" 3 times.(·Ãà8åäÿú.

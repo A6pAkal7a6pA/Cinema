@@ -32,14 +32,6 @@ public class Seance implements Serializable {
         this.priceSeance = priceSeance;
     }
 
-    public Seance(String date, int filmId, String filmName, String timeSeance, double priceSeance) {
-        this.date = date;
-        this.filmId = filmId;
-        this.filmName = filmName;
-        this.timeSeance = timeSeance;
-        this.priceSeance = priceSeance;
-    }
-
     public Seance(int id, int filmId, String date, String timeSeance, double priceSeance) {
         this.id = id;
         this.date = date;

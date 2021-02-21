@@ -104,7 +104,8 @@ public class MySQLFilmDao implements FilmDao {
                 String director = rs.getString(DIRECTED_BY);
                 String description = rs.getString(DESCRIPTION);
                 int duration = rs.getInt(DURATION);
-                film = new Film(id, name, director, description, duration);
+                String picture = rs.getString(PICTURE);
+                film = new Film(id, name, director, description, duration, picture);
             }
             LOG.info("selectFilmById done");
         } catch (SQLException e) {

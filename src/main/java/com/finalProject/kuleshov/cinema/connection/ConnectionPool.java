@@ -29,7 +29,8 @@ public class ConnectionPool {
         Connection connection = null;
         try {
             context = new InitialContext();
-            DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/cinemaPool");
+            Context envContext = (Context) context.lookup("java:/comp/env");
+            DataSource ds = (DataSource) envContext.lookup("jdbc/cinemaPool");
             connection = ds.getConnection();
         } catch (NamingException | SQLException e) {
             LOG.error("Trouble with getConnection: " + e.getMessage());

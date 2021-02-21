@@ -22,8 +22,4 @@ public class Validator {
         return s.matches(regex);
     }
 
-
-    public static void main(String[] args) {
-        System.out.println(isValidEmail("smary@i.ua"));
-    }
 }

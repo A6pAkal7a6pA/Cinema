@@ -12,13 +12,13 @@ public interface UserDao {
      */
     int registerUser(User user);
 
-    /**
-     * login user
-     * @param login
-     * @param password
-     * @return
-     */
-    User logIn(String login, String password);
+//    /**
+//     * login user
+//     * @param login
+//     * @param password
+//     * @return
+//     */
+//    User logIn(String login, String password);
 
     /**
      * find all users
@@ -46,7 +46,7 @@ public interface UserDao {
      * @param password
      * @return
      */
-    User.ROLE getRoleByLoginPassword(String login, String password);
+    User.ROLE getRoleByLogin(String login);
 
     /**
      * find user by id

@@ -34,9 +34,11 @@ public class StatisticServlet extends HttpServlet {
         List<Ticket> allMovieByPopularity = ticketDao.findAllMovieByPopularity(periodFilms);
         List<Ticket> amountForPeriod = ticketDao.findAmountForPeriod(periodAmount);
         Ticket occupiedPlacesForYear = ticketDao.findOccupiedPlacesForYear();
+        Ticket totalAmountByPeriod = ticketDao.findTotalAmountByPeriod(periodFilms);
 
 
         req.setAttribute("filmsByPopularity", allMovieByPopularity);
+        req.setAttribute("totalAmount", totalAmountByPeriod);
         req.setAttribute("amountForPeriod", amountForPeriod);
         req.setAttribute("occupiedPlaces", occupiedPlacesForYear);
 

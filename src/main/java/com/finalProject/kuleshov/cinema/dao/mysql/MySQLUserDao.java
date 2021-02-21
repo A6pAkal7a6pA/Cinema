@@ -43,37 +43,6 @@ public class MySQLUserDao implements UserDao {
     }
 
     @Override
-    public User logIn(String login, String password) {
-        Connection connection = null;
-        PreparedStatement ps = null;
-        User user = null;
-        ResultSet rs = null;
-        try {
-            connection = ConnectionPool.getInstance().getConnection();
-            ps = connection.prepareStatement(SQLConstants.SELECT_ALL_USERS_BY_LOGIN_PASSWORD);
-            ps.setString(1, login);
-            ps.setString(2, password);
-            rs = ps.executeQuery();
-            if (rs.next()) {
-                user = new User();
-                user.setId(rs.getInt(ID));
-                user.setFirstName(rs.getString(FIRST_NAME));
-                user.setLastName(rs.getString(LAST_NAME));
-                user.setLogin(rs.getString(LOGIN));
-                user.setPassword(rs.getString(PASSWORD));
-                user.setContact(rs.getString(CONTACT));
-            }
-            LOG.info("logIn done");
-        } catch (SQLException e) {
-            LOG.error("Trouble with logIn: " + e.getMessage());
-            Util.rollback(connection);
-        } finally {
-            Util.close(ps, rs, connection);
-        }
-        return user;
-    }
-
-    @Override
     public List<User> findAllUsers() {
         Connection connection = null;
         Statement statement = null;
@@ -145,7 +114,7 @@ public class MySQLUserDao implements UserDao {
         ResultSet rs = null;
         try {
             connection = ConnectionPool.getInstance().getConnection();
-            ps = connection.prepareStatement(SQLConstants.SELECT_ALL_USERS_BY_LOGIN_PASSWORD);
+            ps = connection.prepareStatement(SQLConstants.SELECT_USER_BY_LOGIN_PASSWORD);
             ps.setString(1, user.getLogin());
             ps.setString(2, user.getPassword());
             rs = ps.executeQuery();
@@ -161,7 +130,7 @@ public class MySQLUserDao implements UserDao {
     }
 
     @Override
-    public User.ROLE getRoleByLoginPassword(String login, String password) {
+    public User.ROLE getRoleByLogin(String login) {
         Connection connection = null;
         User.ROLE result = User.ROLE.UNKNOWN;
         PreparedStatement ps = null;
@@ -169,9 +138,8 @@ public class MySQLUserDao implements UserDao {
         User user = null;
         try {
             connection = ConnectionPool.getInstance().getConnection();
-            ps = connection.prepareStatement(SQLConstants.SELECT_ROLE_BY_LOGIN_PASSWORD);
+            ps = connection.prepareStatement(SQLConstants.SELECT_ROLE_BY_LOGIN);
             ps.setString(1, login);
-            ps.setString(2, password);
             rs = ps.executeQuery();
             if (rs.next()) {
                 user = new User();
@@ -207,7 +175,7 @@ public class MySQLUserDao implements UserDao {
                 user.setLogin(rs.getString(LOGIN));
                 user.setContact(rs.getString(CONTACT));
                 user.setEmail(rs.getString(EMAIL));
-                user.setDate(rs.getDate(REG_DATE));
+                user.setDate(rs.getDate(REG_DATE_USER));
             }
             LOG.info("findUserById done");
         } catch (SQLException e) {

@@ -47,7 +47,7 @@ public class AuthFilter implements Filter {
             final User.ROLE role = (User.ROLE) session.getAttribute("role");
             moveToMenu(request, response, role);
         } else if (userDao.checkUser(user)) {
-            final User.ROLE role = userDao.getRoleByLoginPassword(login, hashPassword);
+            final User.ROLE role = userDao.getRoleByLogin(login);
             user = userDao.selectUserByLogin(login);
             request.getSession().setAttribute("id", user.getId());
             request.getSession().setAttribute("firstName", user.getFirstName());

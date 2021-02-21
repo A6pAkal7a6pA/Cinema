@@ -17,6 +17,29 @@ public class MySQLTicketDao implements TicketDao {
     private static final Logger LOG = Logger.getLogger(MySQLTicketDao.class);
 
     @Override
+    public Ticket findTotalAmountByPeriod(String period) {
+        Connection connection = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Ticket ticket = null;
+        try {
+            connection = ConnectionPool.getInstance().getConnection();
+            ps = connection.prepareStatement(SQLConstants.FIND_TOTAL_AMOUNT_BY_PERIOD + "where " + period + "(s.date_seance) = " + period + "(now());");
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                ticket = new Ticket();
+                ticket.setSumPrice(rs.getInt("sum_price"));
+            }
+        } catch (SQLException e) {
+            LOG.error("Trouble with findTotalAmountByPeriod: " + e.getMessage());
+            Util.rollback(connection);
+        } finally {
+            Util.close(ps, rs, connection);
+        }
+        return ticket;
+    }
+
+    @Override
     public Ticket findOccupiedPlacesForYear() {
         Connection connection = null;
         PreparedStatement ps = null;
@@ -42,6 +65,7 @@ public class MySQLTicketDao implements TicketDao {
         return ticket;
     }
 
+    @Override
     public List<Ticket> findAmountForPeriod(String period) {
         Connection connection = null;
         PreparedStatement ps = null;

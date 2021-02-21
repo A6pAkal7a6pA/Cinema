@@ -7,6 +7,13 @@ import java.util.List;
 public interface TicketDao {
 
     /**
+     * find total amount by period
+     * @param period
+     * @return
+     */
+    Ticket findTotalAmountByPeriod(String period);
+
+    /**
      * find all occupied places by fist half a day or second half a day
      * @return
      */

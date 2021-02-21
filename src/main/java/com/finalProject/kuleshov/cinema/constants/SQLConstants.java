@@ -7,13 +7,13 @@ public class SQLConstants {
 
     public static final String INSERT_USER =
             "INSERT INTO users (id, firstName, lastName, login, password, contact, email) VALUES (?, ?, ?, ?, ?, ?, ?);";
-    public static final String SELECT_ALL_USERS_BY_LOGIN_PASSWORD =
+    public static final String SELECT_USER_BY_LOGIN_PASSWORD =
             "SELECT * FROM users WHERE login=? AND password=?";
     public static final String SELECT_ALL_USER = "SELECT * FROM users order by reg_date_user desc";
     public static final String SELECT_USER_BY_LOGIN =
             "SELECT id, firstName, lastName, contact, email, reg_date_user FROM users WHERE login=?";
-    public static final String SELECT_ROLE_BY_LOGIN_PASSWORD =
-            "SELECT role FROM users WHERE login=? AND password=?";
+    public static final String SELECT_ROLE_BY_LOGIN =
+            "SELECT role FROM users WHERE login=?";
     public static final String INSERT_FILM =
             "INSERT INTO films (name, directedBy, description, duration, picture) VALUES (?, ?, ?, ?, ?)";
     public static final String SELECT_ALL_FILMS = "select * from films order by reg_date desc;";
@@ -136,7 +136,7 @@ public class SQLConstants {
             "from tickets t\n" +
             "         join seance s on s.id = t.seance_id\n" +
             "         join films f on f.id = s.film_id\n";
-    public static final String FIND_SUM_PER_SEANCE = "select date_format(s.date_seance, '%Y \uF8FF %M \uF8FF %d') as date_seance,\n" +
+    public static final String FIND_SUM_PER_SEANCE = "select date_format(s.date_seance, '%Y, %M, %d') as date_seance,\n" +
             "       sum(s.price_seance) as sum_price\n" +
             "\n" +
             "from seance s ";
@@ -146,4 +146,5 @@ public class SQLConstants {
             "from seance s\n" +
             "         join tickets t on s.id = t.seance_id\n" +
             "where year(s.date_seance) = year(now());";
+    public static final String FIND_TOTAL_AMOUNT_BY_PERIOD = "select sum(s.price_seance) as sum_price from seance s ";
 }
