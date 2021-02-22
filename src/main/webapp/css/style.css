@@ -1439,13 +1439,13 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     color: #ffffff;
 }
 
-ticket__return {
+.ticket__return {
     text-align: right;
 
 }
 
-ticket__return a {
-    color: #910ff8;
+.ticket__return a {
+    color: #E785FF;
 }
 
 .stat-control {
