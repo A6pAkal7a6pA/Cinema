@@ -69,6 +69,7 @@ public class MainPageServlet extends HttpServlet {
         req.setAttribute("maxPage", listPagination.size());
 
         List<Seance> seanceList = seanceDao.showAllSeance(sort, pageId, total);
+        System.out.println(seanceList.size());
         req.setAttribute("listSeances", seanceList);
 
 

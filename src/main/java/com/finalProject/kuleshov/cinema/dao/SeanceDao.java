@@ -55,10 +55,10 @@ public interface SeanceDao {
     void addSeance(Seance seance);
 
     /**
-     * find all seances
+     * find all seances for admin
      * @return
      */
-    List<Seance> showAllSeance();
+    List<Seance> showAllSeanceForAMD();
 
     /**
      * find all seances for pagination and sorting
@@ -68,6 +68,12 @@ public interface SeanceDao {
      * @return
      */
     List<Seance> showAllSeance(String sortRequest, int start, int total);
+
+    /**
+     * find all seances for User
+     * @return
+     */
+    List<Seance> showAllSeance();
 
     /**
      * find all seances by filmId

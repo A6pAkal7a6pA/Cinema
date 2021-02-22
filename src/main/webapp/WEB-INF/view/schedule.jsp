@@ -1,5 +1,8 @@
 <%@include file="header.jsp" %>
 <%@ page contentType="text/html" language="java" pageEncoding="utf-8" %>
+<jsp:useBean id="today" class="java.util.Date"/>
+
+
 <section class="schedule">
     <div class="schedule__body">
         <div class="schedule__head schedule-head">
@@ -44,10 +47,21 @@
                 <div class="schedule__item">
                     <input type="hidden" value="<c:out value="${seanceWeek.id}"/>">
                     <span class="schedule__time"><c:out value="${seanceWeek.timeSeance}"/></span>
-                    <a href="buy_ticket?id=<c:out value="${seanceWeek.id}"/>" class="schedule__film-name"><c:out value="${seanceWeek.filmName}"/></a>
-                    <a href="buy_ticket?id=<c:out value="${seanceWeek.id}"/>" class="schedule__choose">
-                        <fmt:message key="schedule.table.choose" bundle="${bundle}" var="schchoose"/>${schchoose}
-                    </a>
+                    <c:set var="seanceDate" value="${seanceWeek.date.concat(' ').concat(seanceWeek.timeSeance)}"/>
+                    <fmt:parseDate value="${seanceDate}" var="sean" pattern="yyyy-MM-dd HH:mm"/>
+                    <c:choose>
+                    <c:when test="${today.time gt sean.time}">
+                    <a href="<%=request.getContextPath()%>/error_past" class="schedule__film-name"><c:out value="${seanceWeek.filmName}"/></a>
+                    <a href="<%=request.getContextPath()%>/error_past" class="schedule__choose">
+                        </c:when>
+                        <c:otherwise>
+                        <a href="buy_ticket?id=<c:out value="${seanceWeek.id}"/>" class="schedule__film-name"><c:out
+                                value="${seanceWeek.filmName}"/></a>
+                        <a href="buy_ticket?id=<c:out value="${seanceWeek.id}"/>" class="schedule__choose">
+                            </c:otherwise>
+                            </c:choose>
+                            <fmt:message key="schedule.table.choose" bundle="${bundle}" var="schchoose"/>${schchoose}
+                        </a>
                 </div>
             </c:forEach>
         </div>

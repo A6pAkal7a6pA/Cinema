@@ -1262,7 +1262,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .add-edit__content {
     position: relative;
-    padding: 50px 55px;
+    padding: 0px 55px;
     max-width: 640px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1437,6 +1437,15 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     font-size: 12px;
     line-height: 23px;
     color: #ffffff;
+}
+
+ticket__return {
+    text-align: right;
+
+}
+
+ticket__return a {
+    color: #910ff8;
 }
 
 .stat-control {

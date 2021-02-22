@@ -27,7 +27,7 @@ public class SQLConstants {
                     "       f.picture                                           as photo_film,\n" +
                     "       f.name                                              as film_name,\n" +
                     "       s.date_seance                                       as date_seance,\n" +
-                    "       date_format(s.time_seance, '%k:%i') as time_seance,\n" +
+                    "       date_format(s.time_seance, '%k:%i')                 as time_seance,\n" +
                     "       s.price_seance                                      as price,\n" +
                     "       f.duration                                          as duration,\n" +
                     "       f.directedBy                                        as director,\n" +
@@ -35,12 +35,12 @@ public class SQLConstants {
                     "       s.film_id                                           as film_id,\n" +
                     "       s.number_of_seats                                   as number_of_seats,\n" +
                     "       s.number_of_seats - (count(distinct t.number_seat)) as free_places\n" +
-                    "\n" +
                     "from seance s\n" +
                     "         join films f\n" +
                     "              on f.id = s.film_id\n" +
-                    "         left join tickets t on s.id = t.seance_id\n" +
-                    "where s.date_seance >= curdate()\n" +
+                    "         left join tickets t\n" +
+                    "                   on s.id = t.seance_id\n" +
+                    "where concat(s.date_seance, ' ', s.time_seance) >= current_timestamp\n" +
                     "group by s.id ";
     public static final String SELECT_ALL_SEANCES_ADM =
             "select s.id                                                as id,\n" +

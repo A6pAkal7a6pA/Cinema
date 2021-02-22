@@ -4,14 +4,6 @@
 <c:set var="language"
        value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}"
        scope="session"/>
-<%--<c:choose>--%>
-<%--    <c:when test="${locale == 'ru'}">--%>
-<%--        <fmt:setLocale value="ru"/>--%>
-<%--    </c:when>--%>
-<%--    <c:otherwise>--%>
-<%--        <fmt:setLocale value="en"/>--%>
-<%--    </c:otherwise>--%>
-<%--</c:choose>--%>
 <fmt:setLocale value="${language}"/>
 <fmt:setBundle basename="local" var="bundle"/>
 <!DOCTYPE html>
@@ -107,52 +99,42 @@
                             </div>
                             <div class="lang-select__body">
                                 <div class="lang-select__item">
+                                    <c:if test="${not empty requestScope.seance.id}">
+                                        <a href="?language=en&id=<c:out value="${requestScope.seance.id}"/>"
+                                    </c:if>
+                                    <c:if test="${empty requestScope.seance.id}">
                                     <a href="?language=en"
+                                    </c:if>
                                        class="lang-select__item-link">
-                                        <c:if test="${language == 'en' || language == null}">
-                                            english
-                                        </c:if>
-                                        <c:if test="${language == 'ru'}">
-                                            английский
-                                        </c:if>
+<%--                                        <c:if test="${language == 'en' || language == null}">--%>
+<%--                                            english--%>
+<%--                                        </c:if>--%>
+<%--                                        <c:if test="${language == 'ru'}">--%>
+<%--                                            английский--%>
+<%--                                        </c:if>--%>
+    <fmt:message key="header.local_button.name.en" bundle="${bundle}"/>
                                     </a>
                                 </div>
                                 <div class="lang-select__item">
+                                    <c:if test="${not empty requestScope.seance.id}">
+                                        <a href="?language=ru&id=<c:out value="${requestScope.seance.id}"/>"
+                                    </c:if>
+
+                                    <c:if test="${empty requestScope.seance.id}">
                                     <a href="?language=ru"
+                                    </c:if>
                                        class="lang-select__item-link">
-                                        <c:if test="${language == 'en' || language == null}">
-                                            russian
-                                        </c:if>
-                                        <c:if test="${language == 'ru'}">
-                                            русский
-                                        </c:if>
+<%--                                        <c:if test="${language == 'en' || language == null}">--%>
+<%--                                            russian--%>
+<%--                                        </c:if>--%>
+<%--                                        <c:if test="${language == 'ru'}">--%>
+<%--                                            русский--%>
+<%--                                        </c:if>--%>
+    <fmt:message key="header.local_button.name.ru" bundle="${bundle}"/>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <%--                        <a href="<%=request.getContextPath()%>/change_lang?language=en" class="menu__list-link">--%>
-                        <%--                            english--%>
-                        <%--                        </a>--%>
-                        <%--                        <a href="<%=request.getContextPath()%>/change_lang?language=ru" class="menu__list-link">--%>
-                        <%--                            russian--%>
-                        <%--                        </a>--%>
-                        <%--                            <div class="custom-select-wrapper">--%>
-                        <%--                                <div class="custom-select "onchange="submit()">--%>
-                        <%--                                    <div class="custom-select__trigger"><span>english</span>--%>
-                        <%--                                        <div class="arrow"></div>--%>
-                        <%--                                    </div>--%>
-                        <%--                                    <div class="custom-options">--%>
-                        <%--                                        <span class="custom-option "--%>
-                        <%--                                              data-value="ru" ${language == 'ru' ? class="selected" : ''}>russian</span>--%>
-                        <%--                                        <span class="custom-option"--%>
-                        <%--                                              data-value="en" ${language == 'en' ? class="selected" : ''}>english</span>--%>
-                        <%--                                    </div>--%>
-                        <%--                                </div>--%>
-                        <%--                            </div>--%>
-                        <%--                                                        <select name="language" id="" onchange="submit()">--%>
-                        <%--                                                            <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>--%>
-                        <%--                                                            <option value="ru" ${language == 'ru' ? 'selected' : ''}>Russian</option>--%>
-                        <%--                                                        </select>--%>
                     </li>
                     <c:if test="${role == null}">
                         <li class="menu__list-item">

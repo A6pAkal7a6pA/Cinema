@@ -130,7 +130,7 @@ $('.hall__label[data-hint]').on({
 
 let select = function () {
     let selectHeader = document.querySelectorAll('.lang-select__header');
-    let selectItem = document.querySelectorAll('.lang-select__item');
+    let selectItem = document.querySelectorAll('.lang-select__item-link');
     let menuBtn = $('.lang-select');
     selectHeader.forEach(item => {
         item.addEventListener('click', selectToggle)

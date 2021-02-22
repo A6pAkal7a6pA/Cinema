@@ -34,7 +34,7 @@
                             <fmt:message key="user.mytickets.ticket.price" bundle="${bundle}" var="umttickprice"/>${umttickprice}
                             : <c:out value="${ticket.priceSeance}"/>
                         </div>
-                        <div class="ticket__element">
+                        <div class="ticket__element ticket__return">
                             <a href="delete_ticket?id=<c:out value="${ticket.id}"/>">Return this ticket</a>
                         </div>
                         <div class="ticket__descript">

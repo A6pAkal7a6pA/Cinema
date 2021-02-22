@@ -232,7 +232,7 @@ public class MySQLSeanceDao implements SeanceDao {
     }
 
     @Override
-    public List<Seance> showAllSeance() {
+    public List<Seance> showAllSeanceForAMD() {
         Connection connection = null;
         List<Seance> seances = new ArrayList<>();
         Statement statement = null;
@@ -317,6 +317,42 @@ public class MySQLSeanceDao implements SeanceDao {
             rs = statement.executeQuery(
                     SQLConstants.SELECT_ALL_SEANCES +
                             Util.sortingOption(sortRequest) + " limit " + (start - 1) + ", " + total);
+            while (rs.next()) {
+                Seance seance = new Seance();
+                seances.add(seance);
+                seance.setId(rs.getInt(ID));
+                seance.setImg(rs.getString(PHOTO_FILM));
+                seance.setFilmName(rs.getString(FILM_NAME));
+                seance.setDate(rs.getString(DATE_SEANCE));
+                seance.setTimeSeance(rs.getString(TIME_SEANCE));
+                seance.setPriceSeance(rs.getDouble(PRICE));
+                seance.setNumberOfSeats(rs.getInt(NUMBER_OF_SEATS));
+                seance.setDuration(rs.getInt(DURATION));
+                seance.setDirector(rs.getString(DIRECTOR));
+                seance.setDescription(rs.getString(DESCRIPTION));
+                seance.setFilmId(rs.getInt(FILM_ID));
+                seance.setFreePlaces(rs.getInt(FREE_PLACES));
+            }
+            LOG.info("showAllSeance done");
+        } catch (SQLException e) {
+            LOG.error("Trouble with showAllSeance: " + e.getMessage());
+        } finally {
+            Util.close(statement, rs, connection);
+        }
+        return seances;
+    }
+
+    @Override
+    public List<Seance> showAllSeance() {
+        Connection connection = null;
+        List<Seance> seances = new ArrayList<>();
+        Statement statement = null;
+        ResultSet rs = null;
+        try {
+            connection = ConnectionPool.getInstance().getConnection();
+            statement = connection.createStatement();
+            rs = statement.executeQuery(
+                    SQLConstants.SELECT_ALL_SEANCES);
             while (rs.next()) {
                 Seance seance = new Seance();
                 seances.add(seance);

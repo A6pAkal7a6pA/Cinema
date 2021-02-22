@@ -8,7 +8,6 @@ import com.finalProject.kuleshov.cinema.entity.Film;
 import com.finalProject.kuleshov.cinema.entity.Seance;
 import com.finalProject.kuleshov.cinema.util.Util;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,7 +46,7 @@ public class AccountSeancesListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Seance> seanceList = seanceDao.showAllSeance();
+        List<Seance> seanceList = seanceDao.showAllSeanceForAMD();
         List<Film> selectFilmIdName = filmDao.selectFilmIdName();
 
         req.setAttribute("selectFilmIdName", selectFilmIdName);

@@ -1,7 +1,6 @@
 package com.finalProject.kuleshov.cinema.dao.mysql;
 
 import com.finalProject.kuleshov.cinema.entity.Seance;
-import com.finalProject.kuleshov.cinema.util.Util;
 import com.mysql.cj.jdbc.MysqlConnectionPoolDataSource;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.naming.java.javaURLContextFactory;
@@ -15,9 +14,6 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 import java.util.*;
-import java.util.function.BinaryOperator;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
@@ -126,32 +122,15 @@ public class MySQLSeanceDaoTest {
         assertTrue(actual);
     }
 
-//    @Test
-//    public void showAllSeanceForCoversShouldReturnCurrentDateTest() throws Exception {
-//        Collection<Seance> seances = new MySQLSeanceDao().showAllSeanceForCovers();
-//        String expected = Util.getCurrentDate();
-//        Seance seance = seanc
-//        assertEquals(expected, seance.getDate());
-//    }
+    @Test
+    public void shouldSeancesForAMDLargerThanForUser() throws Exception {
+        List<Seance> seancesForADM = new MySQLSeanceDao().showAllSeanceForAMD();
+        List<Seance> seancesForUser = new MySQLSeanceDao().showAllSeance();
 
-//    @Test
-//    public void showAllSeanceForCovefsdfsrsShouldReturnCurrentDateTest() throws Exception {
-//        List<Seance> seances = new MySQLSeanceDao().showAllSeanceForCovers();
-//
-//        Collection<Seance> seanceCollection = seances.stream()
-//                .collect(Collectors.toMap(
-//                        Seance::getFilmId, Function.identity(),
-//                        BinaryOperator.maxBy(Comparator.comparing(Seance::getFilmId))
-//                )).values();
-//
-//        for (Seance s : seanceCollection) {
-//            System.out.println(s.getFilmId());
-//        }
-//
-//        System.out.println(seanceCollection);
-//
-//
-//    }
+        assertTrue(seancesForADM.size() > seancesForUser.size());
+    }
+
+
 
 
 }

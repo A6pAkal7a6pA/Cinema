@@ -6,6 +6,7 @@ import com.finalProject.kuleshov.cinema.dao.mysql.MySQLSeanceDao;
 import com.finalProject.kuleshov.cinema.dao.mysql.MySQLTicketDao;
 import com.finalProject.kuleshov.cinema.entity.Seance;
 import com.finalProject.kuleshov.cinema.entity.Ticket;
+import com.finalProject.kuleshov.cinema.util.Util;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -69,6 +70,7 @@ public class BuyTicketServlet extends HttpServlet {
 
     private void showBuyForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = parseInt(request.getParameter("id"));
+        request.setAttribute("currentDate", Util.getCurrentDate());
         Seance seance = seanceDao.showSeanceById(id);
         String[] hall_checks = request.getParameterValues("hall_check");
         int filmId = seance.getFilmId();

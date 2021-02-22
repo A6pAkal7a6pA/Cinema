@@ -1,5 +1,6 @@
 <%@include file="header.jsp" %>
-<%@ page contentType="text/html" language="java" pageEncoding="utf-8" %>
+<%@ page contentType="text/html" language="java" pageEncoding="utf-8"%>
+<jsp:useBean id="today" class="java.util.Date" />
 <section class="film">
     <div class="film__body">
         <div class="film__image">
@@ -40,13 +41,6 @@
         </div>
     </div>
 </section>
-
-<%--<c:forEach items="${requestScope.allSeancesThisFilm}" var="thisFilm">--%>
-<%--    <c:out value="${thisFilm.dayName}"/>--%>
-<%--    <c:out value="${thisFilm.date}"/>--%>
-<%--    <c:out value="${thisFilm.timeSeance}"/>--%>
-<%--    <br>--%>
-<%--</c:forEach>--%>
 
     <c:if test="${not empty requestScope.message }">
         <h2 class="block-message-error">
