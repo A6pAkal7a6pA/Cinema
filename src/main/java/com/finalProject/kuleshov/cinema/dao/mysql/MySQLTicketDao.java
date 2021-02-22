@@ -32,7 +32,6 @@ public class MySQLTicketDao implements TicketDao {
             }
         } catch (SQLException e) {
             LOG.error("Trouble with findTotalAmountByPeriod: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, rs, connection);
         }
@@ -58,7 +57,6 @@ public class MySQLTicketDao implements TicketDao {
             }
         } catch (SQLException e) {
             LOG.error("Trouble with findOccupiedPlacesForYear: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, rs, connection);
         }
@@ -84,7 +82,6 @@ public class MySQLTicketDao implements TicketDao {
             }
         } catch (SQLException e) {
             LOG.error("Trouble with findAmountForPeriod: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, rs, connection);
         }
@@ -104,7 +101,6 @@ public class MySQLTicketDao implements TicketDao {
                     "group by film_name " +
                     "order by purchased desc, sum_price desc;");
             rs = ps.executeQuery();
-            System.out.println(rs);
             while (rs.next()) {
                 ticket = new Ticket();
                 tickets.add(ticket);
@@ -114,7 +110,6 @@ public class MySQLTicketDao implements TicketDao {
             }
         } catch (SQLException e) {
             LOG.error("Trouble with findAllMovieByPopularity: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, rs, connection);
         }
@@ -134,7 +129,6 @@ public class MySQLTicketDao implements TicketDao {
             LOG.info("deleteTicketById done");
         } catch (SQLException e) {
             LOG.error("Trouble with deleteTicketById: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, connection);
         }
@@ -165,7 +159,6 @@ public class MySQLTicketDao implements TicketDao {
             LOG.info("findAllUserTickets done");
         } catch (SQLException e) {
             LOG.error("Trouble with findAllUserTickets: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, rs, connection);
         }
@@ -196,7 +189,6 @@ public class MySQLTicketDao implements TicketDao {
             Util.rollback(connection);
             return false;
         } finally {
-            Util.setAutocommit(connection, true);
             Util.close(ps, connection);
         }
         return result;
@@ -220,7 +212,6 @@ public class MySQLTicketDao implements TicketDao {
             LOG.info("selectOccupiedPlaces done");
         } catch (SQLException e) {
             LOG.error("Trouble with selectOccupiedPlaces: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, rs, connection);
         }

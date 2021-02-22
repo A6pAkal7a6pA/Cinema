@@ -43,6 +43,74 @@
 //     }
 // });
 
+// let stat_select_amount = function () {
+//     let selectHeader = document.querySelectorAll('.select-stat-amount__header');
+//     let selectItem = document.querySelectorAll('.select-stat-amount__item');
+//     let menuBtn = $('.select-stat');
+//     selectHeader.forEach(item => {
+//         item.addEventListener('click', selectToggle)
+//     });
+//
+//     selectItem.forEach(item => {
+//         item.addEventListener('click', selectChoose)
+//     });
+//
+//     function selectToggle() {
+//         this.parentElement.classList.toggle('is-active');
+//     }
+//
+//     function selectChoose() {
+//
+//         let text = this.innerHTML,
+//             select = this.closest('.select-stat'),
+//             currentText = select.querySelector('.select-stat-amount__current');
+//         currentText.innerHTML = text;
+//         select.classList.remove('is-active');
+//     }
+//     $(document).click(function (e) {
+//         if (!menuBtn.is(e.target) && menuBtn.has(e.target).length === 0) {
+//             menuBtn.removeClass('is-active');
+//         };
+//     });
+//
+// };
+
+// stat_select_amount();
+
+let stat_select = function () {
+    let selectHeader = document.querySelectorAll('.select-stat__header');
+    let selectItem = document.querySelectorAll('.select-stat__item');
+    let menuBtn = $('.select-stat');
+    selectHeader.forEach(item => {
+        item.addEventListener('click', selectToggle)
+    });
+
+    selectItem.forEach(item => {
+        item.addEventListener('click', selectChoose)
+    });
+
+    function selectToggle() {
+        this.parentElement.classList.toggle('is-active');
+    }
+
+    function selectChoose() {
+
+        let text = this.innerHTML,
+            select = this.closest('.select-stat'),
+            currentText = select.querySelector('.select-stat__current');
+        currentText.innerHTML = text;
+        select.classList.remove('is-active');
+    }
+    $(document).click(function (e) {
+        if (!menuBtn.is(e.target) && menuBtn.has(e.target).length === 0) {
+            menuBtn.removeClass('is-active');
+        };
+    });
+
+};
+
+stat_select();
+
 $('.add-edit__title').click(function (event) {
     $(this).toggleClass("active")
 });

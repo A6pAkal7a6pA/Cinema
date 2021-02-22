@@ -1,7 +1,9 @@
 package com.finalProject.kuleshov.cinema.dao.mysql;
 
+import com.finalProject.kuleshov.cinema.constants.SQLConstants;
 import com.finalProject.kuleshov.cinema.entity.Seance;
 import com.finalProject.kuleshov.cinema.entity.Ticket;
+import com.finalProject.kuleshov.cinema.entity.User;
 import com.mysql.cj.jdbc.MysqlConnectionPoolDataSource;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.naming.java.javaURLContextFactory;
@@ -107,6 +109,44 @@ public class MySQLTicketDaoTest {
     public void findAmountForPeriodTest() throws Exception {
         List<Ticket> day = new MySQLTicketDao().findAmountForPeriod("day");
         assertNotNull(day);
+    }
+
+    @Test
+    public void cannotBuyTicketWhichAlreadyBought() throws Exception {
+        User userOne = new MySQLUserDao().findUserById(3);
+        User userTwo = new MySQLUserDao().findUserById(16);
+        List<Ticket> userOneTickets = new ArrayList<>();
+        List<Ticket> userTwoTickets = new ArrayList<>();
+
+        Ticket ticketOne = new Ticket();
+        ticketOne.setUserId(userOne.getId());
+        ticketOne.setSeanceId(13);
+        ticketOne.setNumberSeat(4);
+        userOneTickets.add(ticketOne);
+
+        Ticket ticketThree = new Ticket();
+        ticketThree.setUserId(userTwo.getId());
+        ticketThree.setSeanceId(13);
+        ticketThree.setNumberSeat(5);
+        userTwoTickets.add(ticketThree);
+
+        Ticket ticketTwo = new Ticket();
+        ticketTwo.setUserId(userOne.getId());
+        ticketTwo.setSeanceId(13);
+        ticketTwo.setNumberSeat(5);
+        userOneTickets.add(ticketTwo);
+
+
+
+        boolean actualTwo = new MySQLTicketDao().buyTicket(userTwoTickets);
+        assertTrue(actualTwo);
+        boolean actualOne = new MySQLTicketDao().buyTicket(userOneTickets);
+        assertFalse(actualOne);
+
+        List<Ticket> allUserTickets = new MySQLTicketDao().findAllUserTickets(userTwo.getId());
+        System.out.println(allUserTickets.get(allUserTickets.size() - 1).getId());
+        new MySQLTicketDao().deleteTicketById(allUserTickets.get(allUserTickets.size() - 1).getId());
+
     }
 
 }

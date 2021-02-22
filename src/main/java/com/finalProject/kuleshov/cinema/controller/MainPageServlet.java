@@ -71,10 +71,9 @@ public class MainPageServlet extends HttpServlet {
         List<Seance> seanceList = seanceDao.showAllSeance(sort, pageId, total);
         req.setAttribute("listSeances", seanceList);
 
-        String currentDay = seanceDao.selectCurrentDay();
-        req.setAttribute("currentDay", currentDay);
 
-        List<Seance> seances = seanceDao.showAllSeance();
+
+        Collection<Seance> seances = seanceDao.showAllSeanceForCovers();
         req.setAttribute("covers", seances);
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }

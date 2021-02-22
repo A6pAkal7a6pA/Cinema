@@ -62,6 +62,15 @@ public class SQLConstants {
                     "         left join tickets t on s.id = t.seance_id\n" +
                     "group by s.id " +
                     " order by s.date_seance desc, s.time_seance desc";
+    public static final String SELECT_SEANCES_FOR_COVERS = "select  f.picture as picture,\n" +
+            "                f.name as film_name,\n" +
+            "                s.date_seance as date_seance,\n" +
+            "                s.id as id,\n" +
+            "                s.film_id as film_id\n" +
+            "from seance s\n" +
+            "         join films f on f.id = s.film_id\n" +
+            "where date_seance >= current_date\n" +
+            "order by s.date_seance";
     public static final String SELECT_FILM_ID_NAME = "SELECT id, name FROM films";
     public static final String INSERT_SEANCE = "insert into seance (film_id, date_seance, time_seance, price_seance) VALUES (?, ?, ?, ?);";
     public static final String SELECT_SEANCE_BY_ID =

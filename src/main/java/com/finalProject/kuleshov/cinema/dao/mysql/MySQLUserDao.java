@@ -35,7 +35,6 @@ public class MySQLUserDao implements UserDao {
             LOG.info("registerUser done");
         } catch (SQLException e) {
             LOG.error("Trouble with registerUser: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, connection);
         }
@@ -68,7 +67,6 @@ public class MySQLUserDao implements UserDao {
             LOG.info("findAllUsers done");
         } catch (SQLException e) {
             LOG.error("Trouble with findAllUser: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(statement, rs, connection);
         }
@@ -99,7 +97,6 @@ public class MySQLUserDao implements UserDao {
             LOG.info("selectUserByLogin done");
         } catch (SQLException e) {
             LOG.error("Trouble with selectUserByLogin: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, rs, connection);
         }
@@ -122,7 +119,6 @@ public class MySQLUserDao implements UserDao {
             LOG.info("checkUser done");
         } catch (SQLException e) {
             LOG.error("Trouble with checkUser: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, rs, connection);
         }
@@ -149,7 +145,6 @@ public class MySQLUserDao implements UserDao {
             LOG.info("getRoleByLoginPassword done");
         } catch (SQLException e) {
             LOG.error("Trouble with getRoleByLoginPassword: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, rs, connection);
         }
@@ -180,7 +175,6 @@ public class MySQLUserDao implements UserDao {
             LOG.info("findUserById done");
         } catch (SQLException e) {
             LOG.error("Trouble with findUserById: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, rs, connection);
         }

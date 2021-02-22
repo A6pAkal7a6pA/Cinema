@@ -1439,6 +1439,89 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     color: #ffffff;
 }
 
+.stat-control {
+    max-width: 715px;
+    margin: 30px auto 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.stat-total {
+    margin-right: 75px;
+}
+
+.stat-total__amount {
+    font-size: 18px;
+}
+
+.stat-period {
+    max-width: 1000px;
+}
+
+.select-stat {
+    position: relative;
+    text-align: center;
+}
+
+.select-stat__header {
+    text-align: center;
+}
+
+.select-stat__current {
+    font-size: 18px;
+    line-height: 18px;
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.select-stat__current span {
+    font-size: 20px;
+    line-height: 18px;
+    color: #fff;
+}
+
+.select-stat__body {
+    text-align: center;
+    padding: 1px 15px;
+    position: absolute;
+    top: 29px;
+    left: -30px;
+    border: 1px solid #5a0c6d;
+    display: none;
+}
+
+.select-stat.is-active .select-stat__body {
+    display: block;
+}
+
+.select-stat__item {
+    margin: 10px 0;
+    border-bottom: 1px solid #5a0c6d;
+}
+
+.select-stat__link {
+    font-size: 18px;
+    color: #fff;
+}
+
+.select-stat__link:hover {
+    color: #5a0c6d;
+}
+
 
 .error {
     width: 100%;

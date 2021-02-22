@@ -2,6 +2,7 @@ package com.finalProject.kuleshov.cinema.dao;
 
 import com.finalProject.kuleshov.cinema.entity.Seance;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface SeanceDao {
@@ -74,4 +75,10 @@ public interface SeanceDao {
      * @return
      */
     List<Seance> findAllSeanceByFilmId(int filmId);
+
+    /**
+     * find all seances for covers-slider on main page
+     * @return
+     */
+    List<Seance> showAllSeanceForCovers();
 }

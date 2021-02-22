@@ -3,13 +3,16 @@ package com.finalProject.kuleshov.cinema.dao.mysql;
 import com.finalProject.kuleshov.cinema.connection.ConnectionPool;
 import com.finalProject.kuleshov.cinema.constants.SQLConstants;
 import com.finalProject.kuleshov.cinema.dao.SeanceDao;
+import com.finalProject.kuleshov.cinema.entity.Film;
 import com.finalProject.kuleshov.cinema.entity.Seance;
 import com.finalProject.kuleshov.cinema.util.Util;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static com.finalProject.kuleshov.cinema.constants.Constants.*;
 
@@ -43,7 +46,6 @@ public class MySQLSeanceDao implements SeanceDao {
             LOG.info("findAllSeanceByFilmId done");
         } catch (SQLException e) {
             LOG.error("Trouble with findAllSeanceByFilmId: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, rs, connection);
         }
@@ -66,7 +68,6 @@ public class MySQLSeanceDao implements SeanceDao {
             LOG.info("selectCurrentDay done");
         } catch (SQLException e) {
             LOG.error("Trouble with selectCurrentDay: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, connection);
         }
@@ -98,7 +99,6 @@ public class MySQLSeanceDao implements SeanceDao {
             LOG.info("selectScheduleByDay done");
         } catch (SQLException e) {
             LOG.error("Trouble with selectScheduleByDay: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, rs, connection);
         }
@@ -134,7 +134,6 @@ public class MySQLSeanceDao implements SeanceDao {
             LOG.info("showSeanceById done");
         } catch (SQLException e) {
             LOG.error("Trouble with showSeanceById: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, rs, connection);
         }
@@ -159,7 +158,6 @@ public class MySQLSeanceDao implements SeanceDao {
             LOG.info("updateSeance done");
         } catch (SQLException e) {
             LOG.error("Trouble with updateSeance: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, connection);
         }
@@ -188,7 +186,6 @@ public class MySQLSeanceDao implements SeanceDao {
             LOG.info("selectSeanceById done");
         } catch (SQLException e) {
             LOG.error("Trouble with selectSeanceById: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, rs, connection);
         }
@@ -208,7 +205,6 @@ public class MySQLSeanceDao implements SeanceDao {
             LOG.info("deleteSeanceById done");
         } catch (SQLException e) {
             LOG.error("Trouble with deleteSeanceById: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, connection);
         }
@@ -230,7 +226,6 @@ public class MySQLSeanceDao implements SeanceDao {
             LOG.info("addSeance done");
         } catch (SQLException e) {
             LOG.error("Trouble with addSeance: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, connection);
         }
@@ -265,11 +260,49 @@ public class MySQLSeanceDao implements SeanceDao {
             LOG.info("showAllSeance done");
         } catch (SQLException e) {
             LOG.error("Trouble with showAllSeance: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(statement, rs, connection);
         }
         return seances;
+    }
+
+    @Override
+    public List<Seance> showAllSeanceForCovers() {
+        Connection connection = null;
+        List<Seance> seances = new ArrayList<>();
+        List<Seance> result = null;
+        Statement statement = null;
+        ResultSet rs = null;
+
+        try {
+            connection = ConnectionPool.getInstance().getConnection();
+            Util.setAutocommit(connection, false);
+            statement = connection.createStatement();
+            rs = statement.executeQuery(SQLConstants.SELECT_SEANCES_FOR_COVERS);
+            while (rs.next()) {
+                Seance seance = new Seance();
+                seances.add(seance);
+                seance.setId(rs.getInt(ID));
+                seance.setImg(rs.getString(PICTURE));
+                seance.setFilmName(rs.getString(FILM_NAME));
+                seance.setDate(rs.getString(DATE_SEANCE));
+                seance.setFilmId(rs.getInt(FILM_ID));
+            }
+            Collection<Seance> tmp = seances.stream()
+                    .collect(Collectors.toMap(
+                            Seance::getFilmId, Function.identity(),
+                            BinaryOperator.maxBy(Comparator.comparing(Seance::getFilmId))
+                    )).values();
+            result = new ArrayList<>(tmp);
+            connection.commit();
+            LOG.info("showAllSeanceForCovers done");
+        } catch (SQLException e) {
+            LOG.error("Trouble with showAllSeanceForCovers: " + e.getMessage());
+            Util.rollback(connection);
+        } finally {
+            Util.close(statement, rs, connection);
+        }
+        return result;
     }
 
     @Override
@@ -303,7 +336,6 @@ public class MySQLSeanceDao implements SeanceDao {
             LOG.info("showAllSeance done");
         } catch (SQLException e) {
             LOG.error("Trouble with showAllSeance: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(statement, rs, connection);
         }

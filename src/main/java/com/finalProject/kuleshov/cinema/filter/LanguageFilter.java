@@ -1,5 +1,7 @@
 package com.finalProject.kuleshov.cinema.filter;
 
+import com.finalProject.kuleshov.cinema.dao.mysql.MySQLSeanceDao;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +25,10 @@ public class LanguageFilter implements Filter {
         if (session.getAttribute("language") != null) {
             language = (String) session.getAttribute("language");
         }
+
+        String currentDay = new MySQLSeanceDao().selectCurrentDay();
+        req.setAttribute("currentDay", currentDay);
+
         session.setAttribute("language", language);
 
         filterChain.doFilter(servletRequest, servletResponse);

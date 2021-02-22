@@ -5,12 +5,52 @@
 </c:if>
 
 <h1 class="hire__title table__title">Films by popularity</h1>
-<a href="statistics?periodFilms=day">Day</a>
-<a href="statistics?periodFilms=week">Week</a>
-<a href="statistics?periodFilms=month">Month</a>
-<a href="statistics?periodFilms=year">Year</a>
-<br>
-Total amount: <c:out value="${requestScope.totalAmount.sumPrice}"/>
+<%--<a href="statistics?periodFilms=day">Day</a>--%>
+<%--<a href="statistics?periodFilms=week">Week</a>--%>
+<%--<a href="statistics?periodFilms=month">Month</a>--%>
+<%--<a href="statistics?periodFilms=year">Year</a>--%>
+<%--<br>--%>
+<%--Total amount: <c:out value="${requestScope.totalAmount.sumPrice}"/>--%>
+
+<div class="stat-control">
+    <div class="stat-period">
+        <div class="stat-period__select select-stat">
+            <div class="select-stat__header">
+        <span class="select-stat__current">
+          <span class="far fa-clock"></span>
+        </span>
+            </div>
+            <div class="select-stat__body">
+                <div class="select-stat__item">
+                    <a href="statistics?periodFilms=day" class="select-stat__link">
+                        Day
+                    </a>
+                </div>
+                <div class="select-stat__item">
+                    <a href="statistics?periodFilms=week" class="select-stat__link">
+                        Week
+                    </a>
+                </div>
+                <div class="select-stat__item">
+                    <a href="statistics?periodFilms=month" class="select-stat__link">
+                        Month
+                    </a>
+                </div>
+                <div class="select-stat__item">
+                    <a href="statistics?periodFilms=year" class="select-stat__link">
+                        Year
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="stat-total">
+        <div class="stat-total__body">
+            Total amount:
+            <span class="stat-total__amount"><c:out value="${requestScope.totalAmount.sumPrice}"/></span>
+        </div>
+    </div>
+</div>
 
 <table cellspacing="10" class="table">
     <thead>
@@ -32,7 +72,37 @@ Total amount: <c:out value="${requestScope.totalAmount.sumPrice}"/>
 </table>
 
 <h1 class="hire__title table__title">Amount by period</h1>
-
+<div class="stat-period">
+    <div class="stat-period__select select-stat">
+        <div class="select-stat__header">
+        <span class="select-stat__current">
+          <span class="far fa-clock"></span>
+        </span>
+        </div>
+        <div class="select-stat__body">
+            <div class="select-stat__item">
+                <a href="statistics?periodAmount=day" class="select-stat__link">
+                    Day
+                </a>
+            </div>
+            <div class="select-stat__item">
+                <a href="statistics?periodAmount=week" class="select-stat__link">
+                    Week
+                </a>
+            </div>
+            <div class="select-stat__item">
+                <a href="statistics?periodAmount=month" class="select-stat__link">
+                    Month
+                </a>
+            </div>
+            <div class="select-stat__item">
+                <a href="statistics?periodAmount=year" class="select-stat__link">
+                    Year
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 <a href="statistics?periodAmount=day">Day</a>
 <a href="statistics?periodAmount=week">Week</a>
 <a href="statistics?periodAmount=month">Month</a>

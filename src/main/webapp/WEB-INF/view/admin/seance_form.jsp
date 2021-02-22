@@ -63,7 +63,7 @@
                                 <fmt:message key="admin.seances.price" bundle="${bundle}" var="aseprice"/>${aseprice}:
                             </label>
                             <input type="number" name="priceSeance" class="add-edit__input" id="priceSeance"
-                                   value="<c:out value='${seance.priceSeance}' />" required>
+                                   value="<c:out value='${seance.priceSeance}' />" min="50" step="10" required>
                         </li>
                     </ul>
                     <div class="registration__block-button-1">

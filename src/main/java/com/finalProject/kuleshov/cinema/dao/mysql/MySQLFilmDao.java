@@ -81,7 +81,6 @@ public class MySQLFilmDao implements FilmDao {
             LOG.info("updateFilm done");
         } catch (SQLException e) {
             LOG.error("Trouble with updateFilm: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, connection);
         }
@@ -110,7 +109,6 @@ public class MySQLFilmDao implements FilmDao {
             LOG.info("selectFilmById done");
         } catch (SQLException e) {
             LOG.error("Trouble with selectFilmById: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, rs, connection);
         }
@@ -130,7 +128,6 @@ public class MySQLFilmDao implements FilmDao {
             LOG.info("deleteFilmById done");
         } catch (SQLException e) {
             LOG.error("Trouble with deleteFilmById: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(ps, connection);
         }
@@ -161,7 +158,6 @@ public class MySQLFilmDao implements FilmDao {
             LOG.info("findAllFilms done");
         } catch (SQLException e) {
             LOG.error("Trouble with findAllFilms: " + e.getMessage());
-            Util.rollback(connection);
         } finally {
             Util.close(statement, rs, connection);
         }

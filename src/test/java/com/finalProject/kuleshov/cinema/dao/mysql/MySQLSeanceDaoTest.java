@@ -1,7 +1,7 @@
 package com.finalProject.kuleshov.cinema.dao.mysql;
 
-import com.finalProject.kuleshov.cinema.entity.Film;
 import com.finalProject.kuleshov.cinema.entity.Seance;
+import com.finalProject.kuleshov.cinema.util.Util;
 import com.mysql.cj.jdbc.MysqlConnectionPoolDataSource;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.naming.java.javaURLContextFactory;
@@ -9,14 +9,15 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import sun.util.resources.LocaleData;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import java.time.LocalDate;
 import java.util.*;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
@@ -124,6 +125,33 @@ public class MySQLSeanceDaoTest {
         boolean actual = new MySQLSeanceDao().deleteSeanceById(max);
         assertTrue(actual);
     }
+
+//    @Test
+//    public void showAllSeanceForCoversShouldReturnCurrentDateTest() throws Exception {
+//        Collection<Seance> seances = new MySQLSeanceDao().showAllSeanceForCovers();
+//        String expected = Util.getCurrentDate();
+//        Seance seance = seanc
+//        assertEquals(expected, seance.getDate());
+//    }
+
+//    @Test
+//    public void showAllSeanceForCovefsdfsrsShouldReturnCurrentDateTest() throws Exception {
+//        List<Seance> seances = new MySQLSeanceDao().showAllSeanceForCovers();
+//
+//        Collection<Seance> seanceCollection = seances.stream()
+//                .collect(Collectors.toMap(
+//                        Seance::getFilmId, Function.identity(),
+//                        BinaryOperator.maxBy(Comparator.comparing(Seance::getFilmId))
+//                )).values();
+//
+//        for (Seance s : seanceCollection) {
+//            System.out.println(s.getFilmId());
+//        }
+//
+//        System.out.println(seanceCollection);
+//
+//
+//    }
 
 
 }
