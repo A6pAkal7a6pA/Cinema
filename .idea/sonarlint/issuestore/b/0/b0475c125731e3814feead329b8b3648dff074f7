@@ -1,8 +1,8 @@
 
-n
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(¬°ä™
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(þ À‹
 ˆ
 java:S1989"fHandle the following exceptions that could be thrown by "deleteSeance": ServletException, IOException.(ÃäÈƒúÿÿÿÿ8í£»öû.
+n
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(¬°ä™
 ™
 java:S1130"wRemove the declaration of thrown exception 'javax.servlet.ServletException', as it cannot be thrown from method's body.(³Ó©ùÿÿÿÿÿ8æøœ‚ü.

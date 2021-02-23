@@ -1,2 +1,8 @@
 
+f
+java:S1128"IRemove this unused import 'com.finalProject.kuleshov.cinema.entity.Film'.(á‚‚û8ĞÇŒÏü.
+€
+java:S1192†"]Define a constant instead of duplicating this literal "Trouble with showAllSeance: " 3 times.(éè‚îûÿÿÿÿ8±ß¹Òü.
+q
+java:S1192„"SDefine a constant instead of duplicating this literal "showAllSeance done" 3 times.(ÀĞ‡ä8±ß¹Òü.
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(“°Õè

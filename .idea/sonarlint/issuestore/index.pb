@@ -35,8 +35,6 @@ a
 1src/main/webapp/WEB-INF/view/admin/users_list.jsp,c/a/ca6249471c5719606bb02a12e8b7a22051df8a4c
 _
 /src/main/webapp/WEB-INF/view/user/user_menu.jsp,5/9/590f48fdfb13d8aa07aae66f5fc337ff799fbb95
-a
-1src/main/webapp/WEB-INF/view/admin/admin_menu.jsp,f/3/f3c0fb17862074719d37a7d072892714b720e3cf
 `
 0src/main/webapp/WEB-INF/view/admin/film_form.jsp,6/9/69ccead8014349920d7bf1b9eccab98606a44d41
 a
@@ -90,8 +88,6 @@ Xsrc/main/java/com/finalProject/kuleshov/Cinema/controller/user/AccountTicketSer
 Ssrc/main/java/com/finalProject/kuleshov/Cinema/controller/admin/AddFilmServlet.java,a/b/abd6c7a2c4094b34de6c9a118f5affb9ba8e870e
 Ü
 Vsrc/main/java/com/finalProject/kuleshov/Cinema/controller/admin/DeleteFilmServlet.java,1/8/187da24f9bd5003e3c3ebb5550d548e508ce84ce
-m
-=src/main/java/com/finalProject/kuleshov/Cinema/tag/MyTag.java,e/1/e1ad3ad14a40fe4b519cf57aa7e4df4c5eaf8568
 Ö
 Usrc/main/java/com/finalProject/kuleshov/Cinema/controller/admin/AddSeanceServlet.java,4/2/42e7f90d0db6e9c6e50efdb777f4487828ba5b6c
 Ñ
@@ -124,8 +120,6 @@ Q
 !src/main/webapp/images/Vector.svg,8/7/871a57a7ef6f945f6854c8c30e83104cc1a1bb8a
 ~
 Nsrc/test/java/com/finalProject/kuleshov/Cinema/dao/mysql/MySQLUserDaoTest.java,3/9/39baae86fde54b1c1bb2231d88519b4c5384c86a
-Ç
-Rsrc/test/java/com/finalProject/kuleshov/Cinema/controller/MainPageServletTest.java,c/0/c0d9d08af71cc13d0ad30b5b23a1abc0bf4848ae
 \
 ,src/main/webapp/js/jquery.maskedinput.min.js,a/c/ac2f1e3dd09bdcc8fcc2d0982a7e0ab19f4660c5
 y
@@ -161,8 +155,6 @@ Lsrc/main/java/com/finalProject/kuleshov/cinema/controller/LogoutServlet.java,0
 ~
 Nsrc/main/java/com/finalProject/kuleshov/cinema/controller/ScheduleServlet.java,a/e/ae168de31bae1ca6c9b146c4cbe5393f3a30b350
 m
-=src/main/java/com/finalProject/kuleshov/cinema/tag/MyTag.java,4/0/403ef5b262f54d8f0477d24669a867aac48e03c9
-m
 =src/main/java/com/finalProject/kuleshov/cinema/util/Util.java,7/2/726fc1fb30e23c46c4e614857b77f3652f9a868e
 }
 Msrc/main/java/com/finalProject/kuleshov/cinema/connection/ConnectionPool.java,f/0/f06999c441b498da9349a07e6f8c7f9e4e7f8b7a
@@ -182,8 +174,6 @@ Lsrc/main/java/com/finalProject/kuleshov/cinema/dao/mysql/MySQLSeanceDao.java,4
 Nsrc/test/java/com/finalProject/kuleshov/cinema/dao/mysql/MySQLUserDaoTest.java,d/6/d62b856666fe8f5bf068808bb4c6a65c43d520f9
 ~
 Nsrc/test/java/com/finalProject/kuleshov/cinema/dao/mysql/MySQLFilmDaoTest.java,b/a/ba4f5c0807812d6197504463863d92a864f3ab1c
-Ç
-Rsrc/test/java/com/finalProject/kuleshov/cinema/controller/MainPageServletTest.java,f/9/f9ebd8187ca1bb04c698cf877a77076f4f7f3740
 Ü
 Vsrc/main/java/com/finalProject/kuleshov/cinema/controller/admin/DeleteFilmServlet.java,2/0/20256aba13c55aaf24d67678219c068ee7a62563
 Ñ
@@ -214,3 +204,31 @@ w
 Gsrc/main/java/com/finalProject/kuleshov/cinema/constants/Constants.java,c/3/c3821c3473e980551870582426b24b547235f7ca
 q
 Asrc/main/java/com/finalProject/kuleshov/cinema/entity/Ticket.java,a/e/aec0b5b36550dad8ebefd403d0d79d5529e1b1cf
+v
+Fsrc/test/java/com/finalProject/kuleshov/cinema/util/ValidatorTest.java,1/7/17137a8262182899fd0c8c16642de2e3ce65110c
+Ç
+Rsrc/test/java/com/finalProject/kuleshov/cinema/controller/ScheduleServletTest.java,0/0/00939bf49d8c8f2d70d5e0e8a86a2665d99481a3
+Ä
+Psrc/test/java/com/finalProject/kuleshov/cinema/controller/LogoutServletTest.java,e/1/e156c56431974329400406dcce48721e0ae20468
+ê
+`src/test/java/com/finalProject/kuleshov/cinema/controller/admin/AccountFilmsListServletTest.java,5/0/502a20e33b17c62d59b92b30d4ea7a33fc2d4bc4
+ê
+`src/test/java/com/finalProject/kuleshov/cinema/controller/admin/AccountUsersListServletTest.java,9/c/9c8ec88c5d9a95f8dcad0f01a1f5bbd12561795e
+Y
+)src/main/webapp/WEB-INF/tag/copyright.tld,e/7/e744c4eac2c13931db86a15dba710aa870c87ed8
+t
+Dsrc/main/java/com/finalProject/kuleshov/cinema/tag/CopyrightTag.java,3/b/3be70668896de5823c2616eedd082076f0f5c5d0
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+Ä
+Psrc/test/java/com/finalProject/kuleshov/cinema/dao/mysql/MySQLTicketDaoTest.java,d/a/da7ee9a4ca9df25e3eae1fc45bc0588b0919009f
+Ä
+Psrc/test/java/com/finalProject/kuleshov/cinema/dao/mysql/MySQLSeanceDaoTest.java,2/f/2fac7ad0dc9658907231f8d3395ef8db47fbf415
+O
+src/main/webapp/css/errpast.css,6/d/6dc09623e5feb0f3ff3afe48b41038fdec0f7cc6
+[
++src/main/webapp/WEB-INF/view/error-past.jsp,d/0/d0689b9293895c7c719d5a400fd85f9088f9609f
+Ü
+Vsrc/test/java/com/finalProject/kuleshov/cinema/controller/UserRegisterServletTest.java,9/3/9375861c14f41b04bf49745281f0b902fbe6fca5
+
+Osrc/main/java/com/finalProject/kuleshov/cinema/controller/ErrorPastServlet.java,4/a/4acaab3d7f5fbc35d6d271d16a6efe7ed52475cf

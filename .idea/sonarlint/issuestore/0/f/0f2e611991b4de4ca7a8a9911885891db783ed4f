@@ -1,12 +1,12 @@
 
-s
-java:S1128"VRemove this unused import 'com.finalProject.kuleshov.cinema.dao.mysql.MySQLTicketDao'.(÷–ı‡8æûöû.
+‚
+java:S1989"gHandle the following exceptions that could be thrown by "showUsersList": ServletException, IOException.(¸È”ãøÿÿÿÿ
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ş À‹
 s
 java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‘×œşÿÿÿÿ
 h
 java:S1128"KRemove this unused import 'com.finalProject.kuleshov.cinema.dao.TicketDao'.(•Ç¹Û8æûöû.
-‚
-java:S1989"gHandle the following exceptions that could be thrown by "showUsersList": ServletException, IOException.(¸È”ãøÿÿÿÿ
+s
+java:S1128"VRemove this unused import 'com.finalProject.kuleshov.cinema.dao.mysql.MySQLTicketDao'.(÷–ı‡8æûöû.
 Y
 java:S1128	"<Remove this unused import 'javax.servlet.RequestDispatcher'.(Ëöò¼8”ÜŸöû.

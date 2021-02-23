@@ -105,7 +105,7 @@
     <thead>
     <tr>
         <th><fmt:message key="statistics.amount.date" bundle="${bundle}"/></th>
-        <th>Amount</th>
+        <th><fmt:message key="statistics.amount.amount" bundle="${bundle}"/></th>
     </tr>
     </thead>
     <tbody>
